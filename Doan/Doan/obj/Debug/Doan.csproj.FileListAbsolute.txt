@@ -1,0 +1,12 @@
+D:\OOAD\Doan\Doan\bin\Debug\Doan.exe.config
+D:\OOAD\Doan\Doan\bin\Debug\Doan.exe
+D:\OOAD\Doan\Doan\bin\Debug\Doan.pdb
+D:\OOAD\Doan\Doan\bin\Debug\FontAwesome.Sharp.dll
+D:\OOAD\Doan\Doan\obj\Debug\Doan.csprojAssemblyReference.cache
+D:\OOAD\Doan\Doan\obj\Debug\Doan.Menu.resources
+D:\OOAD\Doan\Doan\obj\Debug\Doan.Properties.Resources.resources
+D:\OOAD\Doan\Doan\obj\Debug\Doan.csproj.GenerateResource.cache
+D:\OOAD\Doan\Doan\obj\Debug\Doan.csproj.CoreCompileInputs.cache
+D:\OOAD\Doan\Doan\obj\Debug\Doan.csproj.CopyComplete
+D:\OOAD\Doan\Doan\obj\Debug\Doan.exe
+D:\OOAD\Doan\Doan\obj\Debug\Doan.pdb
