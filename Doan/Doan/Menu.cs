@@ -4,9 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Doan.View.Employee;
+using Doan.View.Product;
+using Doan.View.Sale;
 using FontAwesome.Sharp;
 namespace Doan
 {
@@ -14,16 +18,40 @@ namespace Doan
     {
         private IconButton currentButton;
         private Panel leftBorderbtn;
+        private Form currentChildForm;
         public Menu()
         {
             InitializeComponent();
             leftBorderbtn = new Panel();
             leftBorderbtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderbtn);
+
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
         private struct RNBColor
         {
             public static Color color = Color.FromArgb(197,190,29);
+        }
+        private void OpenChildForm(Form childForm)
+        {
+            //open only form
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            //End
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(childForm);
+            panelDesktop.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            
         }
         private void ActiveButton(object senderbtn, Color color)
         {
@@ -43,6 +71,8 @@ namespace Doan
                 leftBorderbtn.Location = new Point(0, currentButton.Location.Y);
                 leftBorderbtn.Visible = true;
                 leftBorderbtn.BringToFront();
+
+                icbtncurentform.IconChar = currentButton.IconChar;
             }
         }
 
@@ -72,6 +102,7 @@ namespace Doan
         private void iconButtonSale_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RNBColor.color);
+            OpenChildForm(new SaleForm());
         }
 
         private void icButtonInventory_Click(object sender, EventArgs e)
@@ -87,17 +118,46 @@ namespace Doan
         private void icButtonProduct_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RNBColor.color);
+            OpenChildForm(new ProductForm());
+        }
+        private void icButtonEmployee_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RNBColor.color);
+            OpenChildForm(new EmployeeForm());
         }
 
         private void img_home_Click(object sender, EventArgs e)
         {
             Reset();
+            currentChildForm.Close();
         }
+
 
         private void Reset()
         {
             disableButton();
             leftBorderbtn.Visible = false;
+            icbtncurentform.IconChar = IconChar.Home;
         }
+
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private void pnTilteBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnCloseClick_Click(object sender, EventArgs e)
+        {
+            DialogResult r = MessageBox.Show("do you want to quit the app?", "Close Window", MessageBoxButtons.OKCancel);
+            if (r == DialogResult.OK)
+                this.Close();
+        }
+
+       
     }
 }
