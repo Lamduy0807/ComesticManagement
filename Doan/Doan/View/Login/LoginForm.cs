@@ -56,7 +56,12 @@ namespace Doan.View
         private void btnLogin_Click(object sender, EventArgs e)
         {
             LoginPresenter loginPresenter = new LoginPresenter(this);
-            loginPresenter.Login();           
+            if (loginPresenter.Login())
+            {
+                Menu menu = new Menu();
+                this.Hide();
+                menu.Show();
+            }           
         }
 
         private void btnCloseClick_Click(object sender, EventArgs e)
