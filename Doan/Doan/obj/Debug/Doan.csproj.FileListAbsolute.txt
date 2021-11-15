@@ -22,3 +22,4 @@ D:\OOAD\git\ComesticManagement\Doan\Doan\obj\Debug\Doan.csproj.CoreCompileInputs
 D:\OOAD\git\ComesticManagement\Doan\Doan\obj\Debug\Doan.csproj.CopyComplete
 D:\OOAD\git\ComesticManagement\Doan\Doan\obj\Debug\Doan.exe
 D:\OOAD\git\ComesticManagement\Doan\Doan\obj\Debug\Doan.pdb
+D:\OOAD\git\ComesticManagement\Doan\Doan\obj\Debug\Doan.View.LoginForm.resources

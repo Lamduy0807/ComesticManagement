@@ -58,7 +58,7 @@ namespace Doan
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 649);
+            this.panelMenu.Size = new System.Drawing.Size(220, 640);
             this.panelMenu.TabIndex = 0;
             // 
             // icButtonProduct
@@ -99,7 +99,7 @@ namespace Doan
             this.icButtonSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icButtonSettings.IconSize = 35;
             this.icButtonSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.icButtonSettings.Location = new System.Drawing.Point(0, 587);
+            this.icButtonSettings.Location = new System.Drawing.Point(0, 578);
             this.icButtonSettings.Margin = new System.Windows.Forms.Padding(4);
             this.icButtonSettings.MaximumSize = new System.Drawing.Size(227, 62);
             this.icButtonSettings.MinimumSize = new System.Drawing.Size(227, 62);
@@ -243,14 +243,14 @@ namespace Doan
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(220, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(864, 75);
+            this.panel2.Size = new System.Drawing.Size(964, 75);
             this.panel2.TabIndex = 1;
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 649);
+            this.ClientSize = new System.Drawing.Size(1184, 640);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelMenu);
             this.Name = "Menu";
