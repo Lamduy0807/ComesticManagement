@@ -26,3 +26,4 @@ D:\OOAD\git\ComesticManagement\Doan\Doan\obj\Debug\Doan.View.LoginForm.resources
 D:\OOAD\git\ComesticManagement\Doan\Doan\obj\Debug\Doan.View.Product.ProductForm.resources
 D:\OOAD\git\ComesticManagement\Doan\Doan\obj\Debug\Doan.View.Sale.SaleForm.resources
 D:\OOAD\git\ComesticManagement\Doan\Doan\obj\Debug\Doan.View.Employee.EmployeeForm.resources
+D:\OOAD\git\ComesticManagement\Doan\Doan\bin\Debug\MaterialSurface.dll
