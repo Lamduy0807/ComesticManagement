@@ -13,7 +13,7 @@ namespace Doan.Model
         SqlConnection connect;
         public ConnectDB()
         {
-            this.connect = new SqlConnection(@"Data Source = .\SQLEXPRESS; Initial Catalog = doan; Integrated Security = True");
+            this.connect = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=ComesticDB;Integrated Security=True");
         }
         public DataTable GetData(string sqlquery)
         {
