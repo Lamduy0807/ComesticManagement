@@ -31,8 +31,8 @@ namespace Doan.View.Product
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductForm));
             this.dtgvProduct = new System.Windows.Forms.DataGridView();
-            this.outlinedButton3 = new MaterialSurface.OutlinedButton();
-            this.outlinedButton2 = new MaterialSurface.OutlinedButton();
+            this.btnDelete = new MaterialSurface.OutlinedButton();
+            this.btnEdit = new MaterialSurface.OutlinedButton();
             this.btnAdd = new MaterialSurface.OutlinedButton();
             this.txtOriginal = new MaterialSurface.MaterialTextfield();
             this.txtProductName = new MaterialSurface.MaterialTextfield();
@@ -59,43 +59,45 @@ namespace Doan.View.Product
             this.dtgvProduct.TabIndex = 25;
             this.dtgvProduct.DoubleClick += new System.EventHandler(this.dtgvProduct_DoubleClick);
             // 
-            // outlinedButton3
+            // btnDelete
             // 
-            this.outlinedButton3.BorderColor = System.Drawing.Color.DimGray;
-            this.outlinedButton3.EffectType = MaterialSurface.ET.Custom;
-            this.outlinedButton3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outlinedButton3.ForeColor = System.Drawing.Color.Green;
-            this.outlinedButton3.Icon = null;
-            this.outlinedButton3.Location = new System.Drawing.Point(672, 297);
-            this.outlinedButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.outlinedButton3.MouseState = MaterialSurface.MouseState.OUT;
-            this.outlinedButton3.Name = "outlinedButton3";
-            this.outlinedButton3.PrimaryColor = System.Drawing.Color.Green;
-            this.outlinedButton3.Radius = 6;
-            this.outlinedButton3.Size = new System.Drawing.Size(305, 64);
-            this.outlinedButton3.TabIndex = 23;
-            this.outlinedButton3.Text = "Delete";
-            this.outlinedButton3.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.outlinedButton3.UseVisualStyleBackColor = true;
+            this.btnDelete.BorderColor = System.Drawing.Color.DimGray;
+            this.btnDelete.EffectType = MaterialSurface.ET.Custom;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Green;
+            this.btnDelete.Icon = null;
+            this.btnDelete.Location = new System.Drawing.Point(672, 297);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.MouseState = MaterialSurface.MouseState.OUT;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.PrimaryColor = System.Drawing.Color.Green;
+            this.btnDelete.Radius = 6;
+            this.btnDelete.Size = new System.Drawing.Size(305, 64);
+            this.btnDelete.TabIndex = 23;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // outlinedButton2
+            // btnEdit
             // 
-            this.outlinedButton2.BorderColor = System.Drawing.Color.DimGray;
-            this.outlinedButton2.EffectType = MaterialSurface.ET.Custom;
-            this.outlinedButton2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outlinedButton2.ForeColor = System.Drawing.Color.Green;
-            this.outlinedButton2.Icon = null;
-            this.outlinedButton2.Location = new System.Drawing.Point(361, 297);
-            this.outlinedButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.outlinedButton2.MouseState = MaterialSurface.MouseState.OUT;
-            this.outlinedButton2.Name = "outlinedButton2";
-            this.outlinedButton2.PrimaryColor = System.Drawing.Color.Green;
-            this.outlinedButton2.Radius = 6;
-            this.outlinedButton2.Size = new System.Drawing.Size(305, 64);
-            this.outlinedButton2.TabIndex = 22;
-            this.outlinedButton2.Text = "Edit";
-            this.outlinedButton2.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.outlinedButton2.UseVisualStyleBackColor = true;
+            this.btnEdit.BorderColor = System.Drawing.Color.DimGray;
+            this.btnEdit.EffectType = MaterialSurface.ET.Custom;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.Green;
+            this.btnEdit.Icon = null;
+            this.btnEdit.Location = new System.Drawing.Point(361, 297);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEdit.MouseState = MaterialSurface.MouseState.OUT;
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.PrimaryColor = System.Drawing.Color.Green;
+            this.btnEdit.Radius = 6;
+            this.btnEdit.Size = new System.Drawing.Size(305, 64);
+            this.btnEdit.TabIndex = 22;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -269,7 +271,7 @@ namespace Doan.View.Product
             this.txtProductId.Name = "txtProductId";
             this.txtProductId.PasswordChar = '\0';
             this.txtProductId.PrimaryColor = System.Drawing.Color.DarkGreen;
-            this.txtProductId.ReadOnly = false;
+            this.txtProductId.ReadOnly = true;
             this.txtProductId.ShortcutsEnable = true;
             this.txtProductId.ShowCaret = true;
             this.txtProductId.Size = new System.Drawing.Size(373, 49);
@@ -339,8 +341,8 @@ namespace Doan.View.Product
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.outlinedButton4);
             this.Controls.Add(this.dtgvProduct);
-            this.Controls.Add(this.outlinedButton3);
-            this.Controls.Add(this.outlinedButton2);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtOriginal);
             this.Controls.Add(this.txtProductName);
@@ -362,8 +364,8 @@ namespace Doan.View.Product
         #endregion
 
         private System.Windows.Forms.DataGridView dtgvProduct;
-        private MaterialSurface.OutlinedButton outlinedButton3;
-        private MaterialSurface.OutlinedButton outlinedButton2;
+        private MaterialSurface.OutlinedButton btnDelete;
+        private MaterialSurface.OutlinedButton btnEdit;
         private MaterialSurface.OutlinedButton btnAdd;
         private MaterialSurface.MaterialTextfield txtOriginal;
         private MaterialSurface.MaterialTextfield txtProductName;

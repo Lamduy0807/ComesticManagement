@@ -22,7 +22,7 @@ namespace Doan.Model
             sqldata.Fill(dataTable);
             return dataTable;
         }
-        public bool AddData(SqlCommand cmd)
+        public bool HandleData(SqlCommand cmd)
         {
             cmd.Connection = this.connect;
             connect.Open();

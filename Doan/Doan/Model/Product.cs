@@ -38,7 +38,7 @@ namespace Doan.Model
         {
             ConnectDB connect = new ConnectDB();
             string sqlQuery = "select ProductType_id from ProductType where TypeName = '" + name + "'";
-            return connect.GetData(sqlQuery).Rows.ToString();
+            return connect.GetData(sqlQuery).Rows[0]["ProductType_id"].ToString();
         }
         public bool AddProduct(string name, string price, string des, string ori, string unit, string type)
         {
@@ -55,12 +55,51 @@ namespace Doan.Model
             cmd.Parameters["@ptid"].Value = Convert.ToInt32(typeid);
 
             ConnectDB connect = new ConnectDB();
-            if (connect.AddData(cmd))
+            if (connect.HandleData(cmd))
             {
                 return true;
             }
             else
                 return false;
         }
+
+        public bool DeleteProduct(string id)
+        {
+            SqlCommand cmd = new SqlCommand("DELETE Product WHERE Product_id = @id");
+            cmd.Parameters.Add("@id", SqlDbType.Int);
+            cmd.Parameters["@id"].Value = Convert.ToInt32(id);
+
+            ConnectDB connect = new ConnectDB();
+            if (connect.HandleData(cmd))
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public bool UpdateProduct(string id, string name, string price, string des, string ori, string unit, string type)
+        {
+            string typeid = GetTypeString(type);
+
+            SqlCommand cmd = new SqlCommand("UPDATE	Product SET ProductName = @name, Price = @price, Description= @des, Origin = @ori, Unit = @uni, ProductType = @ptid WHERE Product_id = @id");
+            cmd.Parameters.AddWithValue("@name", name);
+            cmd.Parameters.AddWithValue("@price", price);
+            cmd.Parameters.AddWithValue("@des", des);
+            cmd.Parameters.AddWithValue("@ori", ori);
+            cmd.Parameters.AddWithValue("@uni", unit);
+            cmd.Parameters.Add("@ptid", SqlDbType.Int);
+            cmd.Parameters["@ptid"].Value = Convert.ToInt32(typeid);
+            cmd.Parameters.Add("@id", SqlDbType.Int);
+            cmd.Parameters["@id"].Value = Convert.ToInt32(id);
+            ConnectDB connect = new ConnectDB();
+            if (connect.HandleData(cmd))
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
     }
 }
