@@ -26,6 +26,7 @@ D:\OOAD\git\ComesticManagement\Doan\Doan\obj\Debug\Doan.View.LoginForm.resources
 D:\OOAD\git\ComesticManagement\Doan\Doan\obj\Debug\Doan.View.Product.ProductForm.resources
 D:\OOAD\git\ComesticManagement\Doan\Doan\obj\Debug\Doan.View.Sale.SaleForm.resources
 D:\OOAD\git\ComesticManagement\Doan\Doan\obj\Debug\Doan.View.Employee.EmployeeForm.resources
+<<<<<<< HEAD
 D:\THANHNGA\Documents\Term5\ComesticManagement\Doan\Doan\bin\Debug\Doan.exe.config
 D:\THANHNGA\Documents\Term5\ComesticManagement\Doan\Doan\bin\Debug\Doan.exe
 D:\THANHNGA\Documents\Term5\ComesticManagement\Doan\Doan\bin\Debug\Doan.pdb
@@ -42,3 +43,6 @@ D:\THANHNGA\Documents\Term5\ComesticManagement\Doan\Doan\obj\Debug\Doan.csproj.C
 D:\THANHNGA\Documents\Term5\ComesticManagement\Doan\Doan\obj\Debug\Doan.exe
 D:\THANHNGA\Documents\Term5\ComesticManagement\Doan\Doan\obj\Debug\Doan.pdb
 D:\THANHNGA\Documents\Term5\ComesticManagement\Doan\Doan\obj\Debug\Doan.View.Employee.frmManageEmployee.resources
+=======
+D:\OOAD\git\ComesticManagement\Doan\Doan\bin\Debug\MaterialSurface.dll
+>>>>>>> main
