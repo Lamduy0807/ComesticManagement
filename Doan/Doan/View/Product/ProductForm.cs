@@ -59,14 +59,18 @@ namespace Doan.View.Product
         }
         string IProduct.ProductType
         {
-            get { return cbProductType.SelectedText; }
-            set { cbProductType.Text = value; }
+            get { return cbProductType.GetItemText(cbProductType.SelectedItem); }
+            set { cbProductType.Text= value; }
         }
         private string _message;
         string IProduct.message
         {
             get { return _message; }
-            set { _message = value; }
+            set 
+            { 
+                _message = value;
+                MessageBox.Show(_message);
+            }
         }
 
         public DataGridView gvData 
@@ -89,13 +93,36 @@ namespace Doan.View.Product
                 , dtgvProduct.CurrentRow.Cells[1].Value.ToString(), dtgvProduct.CurrentRow.Cells[2].Value.ToString(), 
                 dtgvProduct.CurrentRow.Cells[3].Value.ToString(), dtgvProduct.CurrentRow.Cells[4].Value.ToString(),
                 dtgvProduct.CurrentRow.Cells[5].Value.ToString(), dtgvProduct.CurrentRow.Cells[6].Value.ToString());
-            //MessageBox.Show(dtgvProduct.CurrentRow.Cells[6].Value.ToString());
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ProductPresenter productPresenter = new ProductPresenter(this);
-            productPresenter.AddData();
+            if (productPresenter.AddData())
+            {
+                productPresenter.GetProduct();
+                productPresenter.ClearInformation();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            ProductPresenter productPresenter = new ProductPresenter(this);
+            if (productPresenter.DeleteData())
+            { 
+                productPresenter.GetProduct();
+                productPresenter.ClearInformation();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            ProductPresenter productPresenter = new ProductPresenter(this);
+            if (productPresenter.EditData())
+            {
+                productPresenter.GetProduct();
+                productPresenter.ClearInformation();
+            }
         }
     }
 }

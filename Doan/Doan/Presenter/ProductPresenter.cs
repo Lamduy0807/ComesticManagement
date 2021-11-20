@@ -39,11 +39,11 @@ namespace Doan.Presenter
         {
             productview.ProductID = "";
             productview.ProductName = "";
-            productview.ProductType = "";
+            productview.ProductType = null;
             productview.Price = "";
             productview.Description = "";
             productview.Original = "";
-            productview.Unit = "";
+            productview.Unit = null;
             return true;
 
         }
@@ -54,7 +54,7 @@ namespace Doan.Presenter
                 ClearInformation();
                 productview.ProductID = id;
                 productview.ProductName = name;
-                productview.ProductType = "Test";
+                productview.ProductType = type;
                 productview.Price = pri;
                 productview.Description = des;
                 productview.Original = ori;
@@ -67,14 +67,42 @@ namespace Doan.Presenter
         {
             if (product.AddProduct(productview.ProductName, productview.Price, productview.Description, productview.Original, productview.Unit, productview.ProductType))
             {
-                productview.message = "add thành công";
+                productview.message = "Add new product successfully";
                 return true;
             }
             else
             {
-                productview.message = "Add không thành công";
+                productview.message = "Add new product fail";
                 return false;
             }
         }
+        public bool DeleteData()
+        {
+            if(product.DeleteProduct(productview.ProductID))
+            {
+                productview.message = "Deleted product successfully";
+                return true;
+            }
+            else
+            {
+                productview.message = "Deleted product fail";
+                return false;
+            }
+        }
+
+        public bool EditData()
+        {
+            if (product.UpdateProduct(productview.ProductID, productview.ProductName, productview.Price, productview.Description, productview.Original, productview.Unit, productview.ProductType))
+            {
+                productview.message = "Update product successfully";
+                return true;
+            }
+            else
+            {
+                productview.message = "Update product fail";
+                return false;
+            }
+        }
+
     }
 }
