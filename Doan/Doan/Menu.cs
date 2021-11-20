@@ -123,7 +123,7 @@ namespace Doan
         private void icButtonEmployee_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RNBColor.color);
-            OpenChildForm(new EmployeeForm());
+            OpenChildForm(new frmManageEmployee());
         }
 
         private void img_home_Click(object sender, EventArgs e)
