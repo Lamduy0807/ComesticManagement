@@ -61,6 +61,7 @@
     <Compile Include="Model\ConnectDB.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Presenter\EmployeePresenter.cs" />
     <Compile Include="Presenter\LoginPresenter.cs" />
     <Compile Include="Presenter\ProductPresenter.cs" />
     <Compile Include="Program.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="View\Employee\EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Employee\IManageEmployee.cs" />
     <Compile Include="View\Login\ILogin.cs" />
     <Compile Include="View\Login\LoginForm.cs">
       <SubType>Form</SubType>
