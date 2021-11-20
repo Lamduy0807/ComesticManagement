@@ -57,7 +57,7 @@ namespace Doan.Model
             cmd.Parameters.AddWithValue("@password", citizen_id);
            
             ConnectDB connect = new ConnectDB();
-            if (connect.AddData(cmd))
+            if (connect.HandleData(cmd))
             {
                 return true;
             }
