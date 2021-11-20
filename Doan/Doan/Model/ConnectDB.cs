@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Doan.Model
 {
-    class ConnectDB
+    public class ConnectDB
     {
         SqlConnection connect;
         public ConnectDB()
@@ -21,6 +21,18 @@ namespace Doan.Model
             DataTable dataTable = new DataTable();
             sqldata.Fill(dataTable);
             return dataTable;
+        }
+        public bool AddData(SqlCommand cmd)
+        {
+            cmd.Connection = this.connect;
+            connect.Open();
+            if(cmd.ExecuteNonQuery()> 0)
+            {
+                connect.Close();
+                return true;
+            }
+            connect.Close();
+            return false;
         }
     }
 
