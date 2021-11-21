@@ -44,22 +44,24 @@ namespace Doan.View.Employee
         {
             get
             {
-                return tbCitizenID.Text;
+                return tbEmail.Text;
+                
             }
             set
             {
-                tbCitizenID.Text = value;
+                tbEmail.Text = value;
+                
             }
         }
         public string Citizen_idtext
         {
             get
             {
-                return tbEmail.Text;
+                return tbCitizenID.Text;
             }
             set
             {
-                tbEmail.Text = value;
+                tbCitizenID.Text = value;
             }
         }
         public string Addresstext
@@ -77,22 +79,24 @@ namespace Doan.View.Employee
         {
             get
             {
-                return tbPhone.Text;
+                return tbPosition.Text;
             }
             set
             {
-                tbPhone.Text = value;
+                tbPosition.Text = value;
             }
         }
         public string PhoneNumtext
         {
             get
             {
-                return tbPosition.Text;
+                return tbPhone.Text;
+               
             }
             set
             {
-                tbPosition.Text = value;
+                tbPhone.Text = value;
+                
             }
         }
 
@@ -124,13 +128,16 @@ namespace Doan.View.Employee
             }
         }
 
-        //public string Username { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        //public string Password { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        /*private void button4_Click(object sender, EventArgs e)
-        {
-
-        }*/
+        private string _message;
+        public string message {
+            get { return _message; }
+            set
+            {
+                _message = value;
+                MessageBox.Show(_message);
+            }
+        }
 
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
@@ -142,8 +149,41 @@ namespace Doan.View.Employee
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            EmployeePresenter employeePresenter = new EmployeePresenter(this);            
+            if (employeePresenter.AddData())
+            {
+                employeePresenter.LoadListEmployee();
+                employeePresenter.ClearEmployee();
+            }
+        }
+
+        private void dgvEmployee_DoubleClick(object sender, EventArgs e)
+        {
             EmployeePresenter employeePresenter = new EmployeePresenter(this);
-            employeePresenter.AddData();
+            employeePresenter.RetriveEmployee(dgvEmployee.CurrentRow.Index, dgvEmployee.CurrentRow.Cells[0].Value.ToString(),
+               dgvEmployee.CurrentRow.Cells[1].Value.ToString(), dgvEmployee.CurrentRow.Cells[2].Value.ToString(),
+               dgvEmployee.CurrentRow.Cells[3].Value.ToString(), dgvEmployee.CurrentRow.Cells[4].Value.ToString(),
+               dgvEmployee.CurrentRow.Cells[5].Value.ToString(), dgvEmployee.CurrentRow.Cells[6].Value.ToString(),
+               dgvEmployee.CurrentRow.Cells[7].Value.ToString(), dgvEmployee.CurrentRow.Cells[8].Value.ToString());
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {   
+            EmployeePresenter employeePresenter = new EmployeePresenter(this);
+            if(employeePresenter.DeleteData())
+            { employeePresenter.LoadListEmployee();
+                employeePresenter.ClearEmployee();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {           
+            EmployeePresenter employeePresenter = new EmployeePresenter(this);
+            if(employeePresenter.EditData())
+            {
+                employeePresenter.LoadListEmployee();
+                employeePresenter.ClearEmployee();
+            }
 
         }
     }

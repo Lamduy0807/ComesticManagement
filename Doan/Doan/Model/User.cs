@@ -35,15 +35,13 @@ namespace Doan.Model
         public DataTable LoadListEmployee()
         {
             ConnectDB connect = new ConnectDB();
-            string sqlQuery = "Select * from Employee";
-            /*DataSet list = new DataSet();*/
+            string sqlQuery = "Select * from Employee";           
             return connect.GetData(sqlQuery);
 
         }
 
         public bool AddEmployee(string name, string citizen_id, string email, string phone, string position, string address)
-        {           
-
+        { 
             SqlCommand cmd = new SqlCommand("INSERT INTO Employee (EmployName, Citizen_id, Address, PhoneNumber, Email, Position, Username, Password) VALUES (@name, @citizen_id, @address, @phone, @email, @position, @username, @password)");
             
             cmd.Parameters.AddWithValue("@name", name);
@@ -51,11 +49,49 @@ namespace Doan.Model
             cmd.Parameters.AddWithValue("@email", email);
             cmd.Parameters.AddWithValue("@phone", phone);
             cmd.Parameters.AddWithValue("@position", position);
-            cmd.Parameters.AddWithValue("@address", address);
-            
+            cmd.Parameters.AddWithValue("@address", address);            
             cmd.Parameters.AddWithValue("@username", email);
             cmd.Parameters.AddWithValue("@password", citizen_id);
            
+            ConnectDB connect = new ConnectDB();
+            if (connect.HandleData(cmd))
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public bool DeleteEmployee(string id)
+        {
+            SqlCommand cmd = new SqlCommand("DELETE Employee WHERE Employee_id = @id");
+            cmd.Parameters.Add("@id", SqlDbType.Int);
+            cmd.Parameters["@id"].Value = Convert.ToInt32(id);
+
+            ConnectDB connect = new ConnectDB();
+            if (connect.HandleData(cmd))
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+       
+        public bool UpdateEmployee(string id, string name, string citizen_id, string email, string phone, string position,
+            string address, string password)
+        {  
+            SqlCommand cmd = new SqlCommand("UPDATE	Employee SET EmployName = @name, Citizen_id = @citizen_id, Address = @address, PhoneNumber = @phone, Email = @email, Position = @position, Password = @password WHERE Employee_id = @id");
+            cmd.Parameters.AddWithValue("@name", name);
+            cmd.Parameters.AddWithValue("@citizen_id", citizen_id); 
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@phone", phone);
+            cmd.Parameters.AddWithValue("@position", position);
+            cmd.Parameters.AddWithValue("@address", address);
+            cmd.Parameters.AddWithValue("@password", password);
+            cmd.Parameters.Add("@id", SqlDbType.Int);
+            cmd.Parameters["@id"].Value = Convert.ToInt32(id);
+
+
             ConnectDB connect = new ConnectDB();
             if (connect.HandleData(cmd))
             {
