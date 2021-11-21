@@ -29,8 +29,8 @@ namespace Doan.View.Employee
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,14 +38,18 @@ namespace Doan.View.Employee
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbEmail = new System.Windows.Forms.TextBox();
+            this.tbPassword = new System.Windows.Forms.TextBox();
             this.tbAddress = new System.Windows.Forms.TextBox();
             this.tbCitizenID = new System.Windows.Forms.TextBox();
+            this.tbUsername = new System.Windows.Forms.TextBox();
             this.tbPosition = new System.Windows.Forms.TextBox();
             this.tbPhone = new System.Windows.Forms.TextBox();
             this.tbName = new System.Windows.Forms.TextBox();
             this.tbEmployeeID = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvEmployee = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -53,10 +57,6 @@ namespace Doan.View.Employee
             this.button2 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tbUsername = new System.Windows.Forms.TextBox();
-            this.tbPassword = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
             this.panel2.SuspendLayout();
@@ -76,7 +76,7 @@ namespace Doan.View.Employee
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(18, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 17);
+            this.label2.Size = new System.Drawing.Size(104, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Employee ID";
             // 
@@ -85,7 +85,7 @@ namespace Doan.View.Employee
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(18, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 17);
+            this.label3.Size = new System.Drawing.Size(53, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "Name";
             // 
@@ -94,7 +94,7 @@ namespace Doan.View.Employee
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(18, 107);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 17);
+            this.label4.Size = new System.Drawing.Size(83, 20);
             this.label4.TabIndex = 1;
             this.label4.Text = "Citizen ID";
             // 
@@ -103,7 +103,7 @@ namespace Doan.View.Employee
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(18, 151);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 17);
+            this.label5.Size = new System.Drawing.Size(51, 20);
             this.label5.TabIndex = 1;
             this.label5.Text = "Email";
             // 
@@ -127,6 +127,7 @@ namespace Doan.View.Employee
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label4);
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(28, 50);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(879, 227);
@@ -136,57 +137,83 @@ namespace Doan.View.Employee
             // 
             this.tbEmail.Location = new System.Drawing.Point(125, 148);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(230, 22);
+            this.tbEmail.Size = new System.Drawing.Size(230, 27);
             this.tbEmail.TabIndex = 2;
+            // 
+            // tbPassword
+            // 
+            this.tbPassword.Enabled = false;
+            this.tbPassword.Location = new System.Drawing.Point(590, 192);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(230, 27);
+            this.tbPassword.TabIndex = 2;
             // 
             // tbAddress
             // 
             this.tbAddress.Location = new System.Drawing.Point(588, 102);
             this.tbAddress.Name = "tbAddress";
-            this.tbAddress.Size = new System.Drawing.Size(230, 22);
+            this.tbAddress.Size = new System.Drawing.Size(230, 27);
             this.tbAddress.TabIndex = 2;
             // 
             // tbCitizenID
             // 
             this.tbCitizenID.Location = new System.Drawing.Point(125, 102);
             this.tbCitizenID.Name = "tbCitizenID";
-            this.tbCitizenID.Size = new System.Drawing.Size(230, 22);
+            this.tbCitizenID.Size = new System.Drawing.Size(230, 27);
             this.tbCitizenID.TabIndex = 2;
+            // 
+            // tbUsername
+            // 
+            this.tbUsername.Enabled = false;
+            this.tbUsername.Location = new System.Drawing.Point(590, 144);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(230, 27);
+            this.tbUsername.TabIndex = 2;
             // 
             // tbPosition
             // 
             this.tbPosition.Location = new System.Drawing.Point(588, 54);
             this.tbPosition.Name = "tbPosition";
-            this.tbPosition.Size = new System.Drawing.Size(230, 22);
+            this.tbPosition.Size = new System.Drawing.Size(230, 27);
             this.tbPosition.TabIndex = 2;
             // 
             // tbPhone
             // 
             this.tbPhone.Location = new System.Drawing.Point(588, 9);
             this.tbPhone.Name = "tbPhone";
-            this.tbPhone.Size = new System.Drawing.Size(230, 22);
+            this.tbPhone.Size = new System.Drawing.Size(230, 27);
             this.tbPhone.TabIndex = 2;
             // 
             // tbName
             // 
             this.tbName.Location = new System.Drawing.Point(125, 54);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(230, 22);
+            this.tbName.Size = new System.Drawing.Size(230, 27);
             this.tbName.TabIndex = 2;
             // 
             // tbEmployeeID
             // 
+            this.tbEmployeeID.Enabled = false;
             this.tbEmployeeID.Location = new System.Drawing.Point(125, 10);
             this.tbEmployeeID.Name = "tbEmployeeID";
-            this.tbEmployeeID.Size = new System.Drawing.Size(230, 22);
+            this.tbEmployeeID.Size = new System.Drawing.Size(230, 27);
             this.tbEmployeeID.TabIndex = 2;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(480, 148);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 20);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Username";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(478, 58);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 17);
+            this.label8.Size = new System.Drawing.Size(69, 20);
             this.label8.TabIndex = 1;
             this.label8.Text = "Position";
             // 
@@ -195,44 +222,54 @@ namespace Doan.View.Employee
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(478, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 17);
+            this.label7.Size = new System.Drawing.Size(56, 20);
             this.label7.TabIndex = 1;
             this.label7.Text = "Phone";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(480, 196);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(83, 20);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Password";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(478, 106);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 17);
+            this.label6.Size = new System.Drawing.Size(71, 20);
             this.label6.TabIndex = 1;
             this.label6.Text = "Address";
             // 
             // dgvEmployee
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEmployee.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmployee.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvEmployee.Location = new System.Drawing.Point(28, 283);
             this.dgvEmployee.Name = "dgvEmployee";
             this.dgvEmployee.RowHeadersWidth = 51;
             this.dgvEmployee.RowTemplate.Height = 24;
             this.dgvEmployee.Size = new System.Drawing.Size(879, 235);
             this.dgvEmployee.TabIndex = 3;
+            this.dgvEmployee.DoubleClick += new System.EventHandler(this.dgvEmployee_DoubleClick);
             // 
             // panel2
             // 
@@ -253,6 +290,7 @@ namespace Doan.View.Employee
             this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // button2
             // 
@@ -281,38 +319,7 @@ namespace Doan.View.Employee
             this.btnEdit.TabIndex = 0;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(480, 196);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 17);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Password";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(480, 148);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 17);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Username";
-            // 
-            // tbUsername
-            // 
-            this.tbUsername.Location = new System.Drawing.Point(590, 144);
-            this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(230, 22);
-            this.tbUsername.TabIndex = 2;
-            // 
-            // tbPassword
-            // 
-            this.tbPassword.Location = new System.Drawing.Point(590, 192);
-            this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(230, 22);
-            this.tbPassword.TabIndex = 2;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // EmployeeForm
             // 
