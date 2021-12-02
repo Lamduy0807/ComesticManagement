@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Doan.View.Employee;
 using Doan.View.Product;
 using Doan.View.Sale;
+using Doan.View.Suplier;
 using FontAwesome.Sharp;
 namespace Doan
 {
@@ -131,7 +132,11 @@ namespace Doan
             Reset();
             currentChildForm.Close();
         }
-
+        private void icButtonSuplier_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RNBColor.color);
+            OpenChildForm(new SuplierForm());
+        }
 
         private void Reset()
         {
@@ -158,6 +163,6 @@ namespace Doan
                 this.Close();
         }
 
-       
+        
     }
 }

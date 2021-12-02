@@ -256,6 +256,7 @@ namespace Doan.View.Product
             this.txtProductId.AutoScaleColor = true;
             this.txtProductId.BackColor = System.Drawing.SystemColors.Control;
             this.txtProductId.CountText = false;
+            this.txtProductId.Enabled = false;
             this.txtProductId.FieldType = MaterialSurface.BoxType.Normal;
             this.txtProductId.FloatingLabelText = "";
             this.txtProductId.Font = new System.Drawing.Font("Segoe UI", 11F);

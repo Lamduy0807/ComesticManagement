@@ -44,6 +44,7 @@ namespace Doan
             this.btnCloseClick = new System.Windows.Forms.Button();
             this.icbtncurentform = new FontAwesome.Sharp.IconPictureBox();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.icButtonSuplier = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_home)).BeginInit();
@@ -54,6 +55,7 @@ namespace Doan
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(140)))), ((int)(((byte)(44)))));
+            this.panelMenu.Controls.Add(this.icButtonSuplier);
             this.panelMenu.Controls.Add(this.icButtonEmployee);
             this.panelMenu.Controls.Add(this.icButtonProduct);
             this.panelMenu.Controls.Add(this.icButtonSettings);
@@ -134,11 +136,11 @@ namespace Doan
             this.icButtonSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.icButtonSettings.Location = new System.Drawing.Point(0, 791);
             this.icButtonSettings.Margin = new System.Windows.Forms.Padding(4);
-            this.icButtonSettings.MaximumSize = new System.Drawing.Size(227, 62);
+            this.icButtonSettings.MaximumSize = new System.Drawing.Size(260, 60);
             this.icButtonSettings.MinimumSize = new System.Drawing.Size(227, 62);
             this.icButtonSettings.Name = "icButtonSettings";
             this.icButtonSettings.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.icButtonSettings.Size = new System.Drawing.Size(227, 62);
+            this.icButtonSettings.Size = new System.Drawing.Size(260, 62);
             this.icButtonSettings.TabIndex = 12;
             this.icButtonSettings.Text = "Settings";
             this.icButtonSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -319,6 +321,32 @@ namespace Doan
             this.panelDesktop.Size = new System.Drawing.Size(1322, 778);
             this.panelDesktop.TabIndex = 2;
             // 
+            // icButtonSuplier
+            // 
+            this.icButtonSuplier.Dock = System.Windows.Forms.DockStyle.Top;
+            this.icButtonSuplier.FlatAppearance.BorderSize = 0;
+            this.icButtonSuplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icButtonSuplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.icButtonSuplier.ForeColor = System.Drawing.Color.Gainsboro;
+            this.icButtonSuplier.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.icButtonSuplier.IconColor = System.Drawing.Color.Gainsboro;
+            this.icButtonSuplier.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icButtonSuplier.IconSize = 35;
+            this.icButtonSuplier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.icButtonSuplier.Location = new System.Drawing.Point(0, 547);
+            this.icButtonSuplier.Margin = new System.Windows.Forms.Padding(4);
+            this.icButtonSuplier.MaximumSize = new System.Drawing.Size(260, 60);
+            this.icButtonSuplier.MinimumSize = new System.Drawing.Size(220, 60);
+            this.icButtonSuplier.Name = "icButtonSuplier";
+            this.icButtonSuplier.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.icButtonSuplier.Size = new System.Drawing.Size(260, 60);
+            this.icButtonSuplier.TabIndex = 15;
+            this.icButtonSuplier.Text = "Supliers";
+            this.icButtonSuplier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.icButtonSuplier.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.icButtonSuplier.UseVisualStyleBackColor = true;
+            this.icButtonSuplier.Click += new System.EventHandler(this.icButtonSuplier_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -356,6 +384,7 @@ namespace Doan
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.Button btnCloseClick;
         private FontAwesome.Sharp.IconButton icButtonEmployee;
+        private FontAwesome.Sharp.IconButton icButtonSuplier;
     }
 }
 
