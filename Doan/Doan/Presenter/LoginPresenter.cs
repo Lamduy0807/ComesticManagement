@@ -31,6 +31,10 @@ namespace Doan.Presenter
                 return false;
             }
         }
-        
+        public string GetId()
+        {
+            User user = new User();
+            return user.UserID(loginview.Usernametext, loginview.Passwordtext);
+        }
     }
 }
