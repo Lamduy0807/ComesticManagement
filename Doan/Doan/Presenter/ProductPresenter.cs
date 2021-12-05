@@ -45,7 +45,6 @@ namespace Doan.Presenter
             productview.Original = "";
             productview.Unit = null;
             return true;
-
         }
         public bool RetriveProduct(int index, string id, string name, string pri, string des, string ori, string unit, string type)
         {

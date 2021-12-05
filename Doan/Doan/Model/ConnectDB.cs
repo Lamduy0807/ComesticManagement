@@ -34,6 +34,14 @@ namespace Doan.Model
             connect.Close();
             return false;
         }
+        public int GetId(SqlCommand cmd)
+        {
+            cmd.Connection = this.connect;
+            connect.Open();
+            int i = Convert.ToInt32(cmd.ExecuteScalar());
+            connect.Close();
+            return i;
+        }
     }
 
 }

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Doan.View.Employee;
+using Doan.View.Import;
 using Doan.View.Product;
 using Doan.View.Sale;
 using Doan.View.Suplier;
@@ -20,6 +21,7 @@ namespace Doan
         private IconButton currentButton;
         private Panel leftBorderbtn;
         private Form currentChildForm;
+        private string id;
         public Menu()
         {
             InitializeComponent();
@@ -31,6 +33,10 @@ namespace Doan
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+        }
+        public Menu(string id) : this()
+        {
+            this.id = id;
         }
         private struct RNBColor
         {
@@ -98,6 +104,7 @@ namespace Doan
         private void icButtonImport_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RNBColor.color);
+            OpenChildForm(new ImportForm(id));
         }
 
         private void iconButtonSale_Click(object sender, EventArgs e)

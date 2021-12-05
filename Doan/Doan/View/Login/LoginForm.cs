@@ -58,7 +58,8 @@ namespace Doan.View
             LoginPresenter loginPresenter = new LoginPresenter(this);
             if (loginPresenter.Login())
             {
-                Menu menu = new Menu();
+                string id = loginPresenter.GetId();
+                Menu menu = new Menu(id);
                 this.Hide();
                 menu.Show();
             }           
