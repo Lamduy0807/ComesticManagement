@@ -31,11 +31,13 @@ namespace Doan
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.icButtonSuplier = new FontAwesome.Sharp.IconButton();
             this.icButtonEmployee = new FontAwesome.Sharp.IconButton();
             this.icButtonProduct = new FontAwesome.Sharp.IconButton();
-            this.icButtonSettings = new FontAwesome.Sharp.IconButton();
             this.icButtonReport = new FontAwesome.Sharp.IconButton();
             this.icButtonInventory = new FontAwesome.Sharp.IconButton();
+            this.icButtonExport = new FontAwesome.Sharp.IconButton();
+            this.icButtonSettings = new FontAwesome.Sharp.IconButton();
             this.icButtonImport = new FontAwesome.Sharp.IconButton();
             this.iconButtonSale = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,7 +46,6 @@ namespace Doan
             this.btnCloseClick = new System.Windows.Forms.Button();
             this.icbtncurentform = new FontAwesome.Sharp.IconPictureBox();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.icButtonSuplier = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_home)).BeginInit();
@@ -58,9 +59,10 @@ namespace Doan
             this.panelMenu.Controls.Add(this.icButtonSuplier);
             this.panelMenu.Controls.Add(this.icButtonEmployee);
             this.panelMenu.Controls.Add(this.icButtonProduct);
-            this.panelMenu.Controls.Add(this.icButtonSettings);
             this.panelMenu.Controls.Add(this.icButtonReport);
             this.panelMenu.Controls.Add(this.icButtonInventory);
+            this.panelMenu.Controls.Add(this.icButtonExport);
+            this.panelMenu.Controls.Add(this.icButtonSettings);
             this.panelMenu.Controls.Add(this.icButtonImport);
             this.panelMenu.Controls.Add(this.iconButtonSale);
             this.panelMenu.Controls.Add(this.panel1);
@@ -69,6 +71,32 @@ namespace Doan
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(260, 853);
             this.panelMenu.TabIndex = 0;
+            // 
+            // icButtonSuplier
+            // 
+            this.icButtonSuplier.Dock = System.Windows.Forms.DockStyle.Top;
+            this.icButtonSuplier.FlatAppearance.BorderSize = 0;
+            this.icButtonSuplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icButtonSuplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.icButtonSuplier.ForeColor = System.Drawing.Color.Gainsboro;
+            this.icButtonSuplier.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.icButtonSuplier.IconColor = System.Drawing.Color.Gainsboro;
+            this.icButtonSuplier.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icButtonSuplier.IconSize = 35;
+            this.icButtonSuplier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.icButtonSuplier.Location = new System.Drawing.Point(0, 607);
+            this.icButtonSuplier.Margin = new System.Windows.Forms.Padding(4);
+            this.icButtonSuplier.MaximumSize = new System.Drawing.Size(260, 60);
+            this.icButtonSuplier.MinimumSize = new System.Drawing.Size(220, 60);
+            this.icButtonSuplier.Name = "icButtonSuplier";
+            this.icButtonSuplier.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.icButtonSuplier.Size = new System.Drawing.Size(260, 60);
+            this.icButtonSuplier.TabIndex = 21;
+            this.icButtonSuplier.Text = "Supliers";
+            this.icButtonSuplier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.icButtonSuplier.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.icButtonSuplier.UseVisualStyleBackColor = true;
+            this.icButtonSuplier.Click += new System.EventHandler(this.icButtonSuplier_Click);
             // 
             // icButtonEmployee
             // 
@@ -82,14 +110,14 @@ namespace Doan
             this.icButtonEmployee.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icButtonEmployee.IconSize = 35;
             this.icButtonEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.icButtonEmployee.Location = new System.Drawing.Point(0, 487);
+            this.icButtonEmployee.Location = new System.Drawing.Point(0, 547);
             this.icButtonEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.icButtonEmployee.MaximumSize = new System.Drawing.Size(260, 60);
             this.icButtonEmployee.MinimumSize = new System.Drawing.Size(220, 60);
             this.icButtonEmployee.Name = "icButtonEmployee";
             this.icButtonEmployee.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.icButtonEmployee.Size = new System.Drawing.Size(260, 60);
-            this.icButtonEmployee.TabIndex = 14;
+            this.icButtonEmployee.TabIndex = 20;
             this.icButtonEmployee.Text = "Employee";
             this.icButtonEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.icButtonEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -108,19 +136,95 @@ namespace Doan
             this.icButtonProduct.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icButtonProduct.IconSize = 35;
             this.icButtonProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.icButtonProduct.Location = new System.Drawing.Point(0, 427);
+            this.icButtonProduct.Location = new System.Drawing.Point(0, 487);
             this.icButtonProduct.Margin = new System.Windows.Forms.Padding(4);
             this.icButtonProduct.MaximumSize = new System.Drawing.Size(260, 60);
             this.icButtonProduct.MinimumSize = new System.Drawing.Size(220, 60);
             this.icButtonProduct.Name = "icButtonProduct";
             this.icButtonProduct.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.icButtonProduct.Size = new System.Drawing.Size(260, 60);
-            this.icButtonProduct.TabIndex = 13;
+            this.icButtonProduct.TabIndex = 19;
             this.icButtonProduct.Text = "Product";
             this.icButtonProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.icButtonProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.icButtonProduct.UseVisualStyleBackColor = true;
             this.icButtonProduct.Click += new System.EventHandler(this.icButtonProduct_Click);
+            // 
+            // icButtonReport
+            // 
+            this.icButtonReport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.icButtonReport.FlatAppearance.BorderSize = 0;
+            this.icButtonReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icButtonReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.icButtonReport.ForeColor = System.Drawing.Color.Gainsboro;
+            this.icButtonReport.IconChar = FontAwesome.Sharp.IconChar.TachometerAlt;
+            this.icButtonReport.IconColor = System.Drawing.Color.Gainsboro;
+            this.icButtonReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icButtonReport.IconSize = 35;
+            this.icButtonReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.icButtonReport.Location = new System.Drawing.Point(0, 427);
+            this.icButtonReport.Margin = new System.Windows.Forms.Padding(4);
+            this.icButtonReport.MaximumSize = new System.Drawing.Size(260, 60);
+            this.icButtonReport.MinimumSize = new System.Drawing.Size(220, 60);
+            this.icButtonReport.Name = "icButtonReport";
+            this.icButtonReport.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.icButtonReport.Size = new System.Drawing.Size(260, 60);
+            this.icButtonReport.TabIndex = 17;
+            this.icButtonReport.Text = "Report";
+            this.icButtonReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.icButtonReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.icButtonReport.UseVisualStyleBackColor = true;
+            // 
+            // icButtonInventory
+            // 
+            this.icButtonInventory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.icButtonInventory.FlatAppearance.BorderSize = 0;
+            this.icButtonInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icButtonInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.icButtonInventory.ForeColor = System.Drawing.Color.Gainsboro;
+            this.icButtonInventory.IconChar = FontAwesome.Sharp.IconChar.Boxes;
+            this.icButtonInventory.IconColor = System.Drawing.Color.Gainsboro;
+            this.icButtonInventory.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icButtonInventory.IconSize = 35;
+            this.icButtonInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.icButtonInventory.Location = new System.Drawing.Point(0, 367);
+            this.icButtonInventory.Margin = new System.Windows.Forms.Padding(4);
+            this.icButtonInventory.MaximumSize = new System.Drawing.Size(260, 60);
+            this.icButtonInventory.MinimumSize = new System.Drawing.Size(220, 60);
+            this.icButtonInventory.Name = "icButtonInventory";
+            this.icButtonInventory.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.icButtonInventory.Size = new System.Drawing.Size(260, 60);
+            this.icButtonInventory.TabIndex = 18;
+            this.icButtonInventory.Text = "Inventory";
+            this.icButtonInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.icButtonInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.icButtonInventory.UseVisualStyleBackColor = true;
+            // 
+            // icButtonExport
+            // 
+            this.icButtonExport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.icButtonExport.FlatAppearance.BorderSize = 0;
+            this.icButtonExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icButtonExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.icButtonExport.ForeColor = System.Drawing.Color.Gainsboro;
+            this.icButtonExport.IconChar = FontAwesome.Sharp.IconChar.Truck;
+            this.icButtonExport.IconColor = System.Drawing.Color.Gainsboro;
+            this.icButtonExport.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icButtonExport.IconSize = 35;
+            this.icButtonExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.icButtonExport.Location = new System.Drawing.Point(0, 307);
+            this.icButtonExport.Margin = new System.Windows.Forms.Padding(4);
+            this.icButtonExport.MaximumSize = new System.Drawing.Size(260, 60);
+            this.icButtonExport.MinimumSize = new System.Drawing.Size(220, 60);
+            this.icButtonExport.Name = "icButtonExport";
+            this.icButtonExport.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.icButtonExport.Size = new System.Drawing.Size(260, 60);
+            this.icButtonExport.TabIndex = 16;
+            this.icButtonExport.Text = "Export";
+            this.icButtonExport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.icButtonExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.icButtonExport.UseVisualStyleBackColor = true;
+            this.icButtonExport.Click += new System.EventHandler(this.icButtonExport_Click);
             // 
             // icButtonSettings
             // 
@@ -146,58 +250,6 @@ namespace Doan
             this.icButtonSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.icButtonSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.icButtonSettings.UseVisualStyleBackColor = true;
-            // 
-            // icButtonReport
-            // 
-            this.icButtonReport.Dock = System.Windows.Forms.DockStyle.Top;
-            this.icButtonReport.FlatAppearance.BorderSize = 0;
-            this.icButtonReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.icButtonReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.icButtonReport.ForeColor = System.Drawing.Color.Gainsboro;
-            this.icButtonReport.IconChar = FontAwesome.Sharp.IconChar.TachometerAlt;
-            this.icButtonReport.IconColor = System.Drawing.Color.Gainsboro;
-            this.icButtonReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.icButtonReport.IconSize = 35;
-            this.icButtonReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.icButtonReport.Location = new System.Drawing.Point(0, 367);
-            this.icButtonReport.Margin = new System.Windows.Forms.Padding(4);
-            this.icButtonReport.MaximumSize = new System.Drawing.Size(260, 60);
-            this.icButtonReport.MinimumSize = new System.Drawing.Size(220, 60);
-            this.icButtonReport.Name = "icButtonReport";
-            this.icButtonReport.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.icButtonReport.Size = new System.Drawing.Size(260, 60);
-            this.icButtonReport.TabIndex = 7;
-            this.icButtonReport.Text = "Report";
-            this.icButtonReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.icButtonReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.icButtonReport.UseVisualStyleBackColor = true;
-            this.icButtonReport.Click += new System.EventHandler(this.icButtonReport_Click);
-            // 
-            // icButtonInventory
-            // 
-            this.icButtonInventory.Dock = System.Windows.Forms.DockStyle.Top;
-            this.icButtonInventory.FlatAppearance.BorderSize = 0;
-            this.icButtonInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.icButtonInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.icButtonInventory.ForeColor = System.Drawing.Color.Gainsboro;
-            this.icButtonInventory.IconChar = FontAwesome.Sharp.IconChar.Boxes;
-            this.icButtonInventory.IconColor = System.Drawing.Color.Gainsboro;
-            this.icButtonInventory.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.icButtonInventory.IconSize = 35;
-            this.icButtonInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.icButtonInventory.Location = new System.Drawing.Point(0, 307);
-            this.icButtonInventory.Margin = new System.Windows.Forms.Padding(4);
-            this.icButtonInventory.MaximumSize = new System.Drawing.Size(260, 60);
-            this.icButtonInventory.MinimumSize = new System.Drawing.Size(220, 60);
-            this.icButtonInventory.Name = "icButtonInventory";
-            this.icButtonInventory.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.icButtonInventory.Size = new System.Drawing.Size(260, 60);
-            this.icButtonInventory.TabIndex = 10;
-            this.icButtonInventory.Text = "Inventory";
-            this.icButtonInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.icButtonInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.icButtonInventory.UseVisualStyleBackColor = true;
-            this.icButtonInventory.Click += new System.EventHandler(this.icButtonInventory_Click);
             // 
             // icButtonImport
             // 
@@ -321,32 +373,6 @@ namespace Doan
             this.panelDesktop.Size = new System.Drawing.Size(1322, 778);
             this.panelDesktop.TabIndex = 2;
             // 
-            // icButtonSuplier
-            // 
-            this.icButtonSuplier.Dock = System.Windows.Forms.DockStyle.Top;
-            this.icButtonSuplier.FlatAppearance.BorderSize = 0;
-            this.icButtonSuplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.icButtonSuplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.icButtonSuplier.ForeColor = System.Drawing.Color.Gainsboro;
-            this.icButtonSuplier.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.icButtonSuplier.IconColor = System.Drawing.Color.Gainsboro;
-            this.icButtonSuplier.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.icButtonSuplier.IconSize = 35;
-            this.icButtonSuplier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.icButtonSuplier.Location = new System.Drawing.Point(0, 547);
-            this.icButtonSuplier.Margin = new System.Windows.Forms.Padding(4);
-            this.icButtonSuplier.MaximumSize = new System.Drawing.Size(260, 60);
-            this.icButtonSuplier.MinimumSize = new System.Drawing.Size(220, 60);
-            this.icButtonSuplier.Name = "icButtonSuplier";
-            this.icButtonSuplier.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.icButtonSuplier.Size = new System.Drawing.Size(260, 60);
-            this.icButtonSuplier.TabIndex = 15;
-            this.icButtonSuplier.Text = "Supliers";
-            this.icButtonSuplier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.icButtonSuplier.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.icButtonSuplier.UseVisualStyleBackColor = true;
-            this.icButtonSuplier.Click += new System.EventHandler(this.icButtonSuplier_Click);
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -372,19 +398,20 @@ namespace Doan
 
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconButton icButtonReport;
-        private FontAwesome.Sharp.IconButton icButtonInventory;
         private FontAwesome.Sharp.IconButton icButtonImport;
         private FontAwesome.Sharp.IconButton iconButtonSale;
-        private FontAwesome.Sharp.IconButton icButtonProduct;
         private FontAwesome.Sharp.IconButton icButtonSettings;
         private System.Windows.Forms.PictureBox img_home;
         private System.Windows.Forms.Panel pnTilteBar;
         private FontAwesome.Sharp.IconPictureBox icbtncurentform;
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.Button btnCloseClick;
-        private FontAwesome.Sharp.IconButton icButtonEmployee;
         private FontAwesome.Sharp.IconButton icButtonSuplier;
+        private FontAwesome.Sharp.IconButton icButtonEmployee;
+        private FontAwesome.Sharp.IconButton icButtonProduct;
+        private FontAwesome.Sharp.IconButton icButtonReport;
+        private FontAwesome.Sharp.IconButton icButtonInventory;
+        private FontAwesome.Sharp.IconButton icButtonExport;
     }
 }
 

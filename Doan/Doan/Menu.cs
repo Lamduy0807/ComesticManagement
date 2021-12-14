@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Doan.View.Employee;
+using Doan.View.Export;
 using Doan.View.Import;
 using Doan.View.Product;
 using Doan.View.Sale;
@@ -144,7 +145,11 @@ namespace Doan
             ActiveButton(sender, RNBColor.color);
             OpenChildForm(new SuplierForm());
         }
-
+        private void icButtonExport_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RNBColor.color);
+            OpenChildForm(new ExportForm(id));
+        }
         private void Reset()
         {
             disableButton();

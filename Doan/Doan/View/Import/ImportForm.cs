@@ -106,9 +106,7 @@ namespace Doan.View.Import
         {
             ImportPresenter importPresenter = new ImportPresenter(this);
             importPresenter.GetProduct();
-            importPresenter.GetSuplier();
-            DateTime dateTime = DateTime.UtcNow.Date;
-            MessageBox.Show(dateTime.ToString());
+            importPresenter.GetSuplier();        
         }
 
         private void dtgvProduct_DoubleClick(object sender, EventArgs e)

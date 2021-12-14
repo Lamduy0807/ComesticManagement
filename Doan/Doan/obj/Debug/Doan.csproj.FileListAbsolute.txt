@@ -63,3 +63,4 @@ D:\ComesticManagement\Doan\Doan\obj\Debug\Doan.exe
 D:\ComesticManagement\Doan\Doan\obj\Debug\Doan.pdb
 D:\OOAD\git\ComesticManagement\Doan\Doan\obj\Debug\Doan.View.Suplier.SuplierForm.resources
 D:\OOAD\git\ComesticManagement\Doan\Doan\obj\Debug\Doan.View.Import.ImportForm.resources
+D:\OOAD\git\ComesticManagement\Doan\Doan\obj\Debug\Doan.View.Export.ExportForm.resources
