@@ -41,25 +41,25 @@ namespace Doan.View
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCloseClick = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnCloseClick = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsername
@@ -91,9 +91,9 @@ namespace Doan.View
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(198)))), ((int)(((byte)(102)))));
-            this.btnLogin.Location = new System.Drawing.Point(120, 190);
+            this.btnLogin.Location = new System.Drawing.Point(151, 195);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(423, 63);
+            this.btnLogin.Size = new System.Drawing.Size(368, 59);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -190,42 +190,6 @@ namespace Doan.View
             this.panel2.Size = new System.Drawing.Size(632, 679);
             this.panel2.TabIndex = 4;
             // 
-            // btnCloseClick
-            // 
-            this.btnCloseClick.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCloseClick.BackColor = System.Drawing.Color.Transparent;
-            this.btnCloseClick.FlatAppearance.BorderSize = 0;
-            this.btnCloseClick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseClick.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCloseClick.ForeColor = System.Drawing.Color.White;
-            this.btnCloseClick.Location = new System.Drawing.Point(592, 0);
-            this.btnCloseClick.Name = "btnCloseClick";
-            this.btnCloseClick.Size = new System.Drawing.Size(40, 40);
-            this.btnCloseClick.TabIndex = 3;
-            this.btnCloseClick.Text = "X";
-            this.btnCloseClick.UseVisualStyleBackColor = false;
-            this.btnCloseClick.Click += new System.EventHandler(this.btnCloseClick_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(60, 235);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(346, 34);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Login with your account";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(632, 299);
-            this.panel4.TabIndex = 6;
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.panel8);
@@ -237,14 +201,6 @@ namespace Doan.View
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(632, 380);
             this.panel5.TabIndex = 7;
-            // 
-            // panel7
-            // 
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 60);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(632, 10);
-            this.panel7.TabIndex = 1;
             // 
             // panel8
             // 
@@ -267,6 +223,24 @@ namespace Doan.View
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
+            // panel7
+            // 
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 60);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(632, 10);
+            this.panel7.TabIndex = 1;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.pictureBox2);
+            this.panel6.Controls.Add(this.txtUsername);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(632, 60);
+            this.panel6.TabIndex = 0;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -278,15 +252,41 @@ namespace Doan.View
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // panel6
+            // btnCloseClick
             // 
-            this.panel6.Controls.Add(this.pictureBox2);
-            this.panel6.Controls.Add(this.txtUsername);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(632, 60);
-            this.panel6.TabIndex = 0;
+            this.btnCloseClick.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCloseClick.BackColor = System.Drawing.Color.Transparent;
+            this.btnCloseClick.FlatAppearance.BorderSize = 0;
+            this.btnCloseClick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseClick.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseClick.ForeColor = System.Drawing.Color.White;
+            this.btnCloseClick.Location = new System.Drawing.Point(592, 0);
+            this.btnCloseClick.Name = "btnCloseClick";
+            this.btnCloseClick.Size = new System.Drawing.Size(40, 40);
+            this.btnCloseClick.TabIndex = 3;
+            this.btnCloseClick.Text = "X";
+            this.btnCloseClick.UseVisualStyleBackColor = false;
+            this.btnCloseClick.Click += new System.EventHandler(this.btnCloseClick_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(632, 299);
+            this.panel4.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(60, 235);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(346, 34);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Login with your account";
             // 
             // LoginForm
             // 
@@ -305,15 +305,15 @@ namespace Doan.View
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
