@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -200,6 +201,56 @@ namespace Doan.Presenter
                 importview.message = "Check information again";
                 return false;
             }
+        }
+        public bool Print(System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Graphics graphic = e.Graphics;
+
+            Font font = new Font("Courier New", 12); //must use a mono spaced font as the spaces need to line up
+
+            float fontHeight = font.GetHeight();
+
+            int startX = 10;
+            int startY = 10;
+            int offset = 40;
+
+            graphic.DrawString("Green Beauty", new Font("Courier New", 18), new SolidBrush(Color.Black), startX, startY);
+
+            graphic.DrawString("Addresss: 136, Linh Trung, Thủ Đức, TP Thủ Đức", font, new SolidBrush(Color.Black), startX, 40);
+
+            graphic.DrawString("Phone: 1900 1555".PadRight(40) + "Employee: "+ importview.EmployeeName, font, new SolidBrush(Color.Black), startX, 60);
+            offset = offset + 50;
+            string top = "Product".PadRight(20) + "Quantities".PadRight(20) + "Unit Price".PadRight(20) + "Total".PadRight(10);
+            graphic.DrawString(top, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight; //make the spacing consistent
+            graphic.DrawString("-------------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight + 5; //make the spacing consistent
+
+            if (importview.gvDetailProductData.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in importview.gvDetailProductData.Rows)
+                {
+                    if (Convert.ToString(row.Cells[0].Value) != "")
+                    {
+                        string Name = row.Cells[1].Value.ToString();
+                        int Quantities = int.Parse(row.Cells[3].Value.ToString());
+                        float UnitPrice = float.Parse(row.Cells[2].Value.ToString());
+                        float Total= float.Parse(row.Cells[4].Value.ToString());
+
+                        graphic.DrawString(Name, font, new SolidBrush(Color.Black), startX, startY + offset);
+                        graphic.DrawString(Quantities.ToString(), font, new SolidBrush(Color.Black), 260, startY + offset);
+                        graphic.DrawString(UnitPrice.ToString(), font, new SolidBrush(Color.Black), 440, startY + offset);
+                        graphic.DrawString(Total.ToString(), font, new SolidBrush(Color.Black), 620, startY + offset);
+                        offset = offset + (int)fontHeight + 5; //make the spacing consistent       
+                    }
+                }
+                float total = 0f;
+                float productTotal = float.Parse(importview.TotalPrice);
+                total = productTotal;
+                offset = offset + 20;
+                graphic.DrawString("Total: ".PadRight(60) + total.ToString("###,###"), new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX, startY + offset);
+            }
+            return true;
         }
     }
 }

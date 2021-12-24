@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace Doan.View.Import
             InitializeComponent();
         }
         private string _id;
-
+        private string _name;
         public string ProductId
         {
             get { return txtProductId.Text; }
@@ -97,9 +98,12 @@ namespace Doan.View.Import
             set { txtProductName.Text = value; } 
         }
 
-        public ImportForm(string id) : this()
+        public string EmployeeName { get { return _name; } }
+
+        public ImportForm(string id, string name) : this()
         {
             this._id = id;
+            this._name = name;
         }
 
         private void ImportForm_Load(object sender, EventArgs e)
@@ -171,7 +175,28 @@ namespace Doan.View.Import
         {
             ImportPresenter importPresenter = new ImportPresenter(this);
             if (importPresenter.AddDataToDB())
+            {
+                PrintDialog printDialog = new PrintDialog();
+
+                PrintDocument printDocument = new PrintDocument();
+
+                printDialog.Document = printDocument;
+                printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(Createform);
+                DialogResult result = printDialog.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    printDocument.Print();
+
+                }
                 importPresenter.ClearData();
+            }
         }
+        public void Createform(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            ImportPresenter importPresenter = new ImportPresenter(this);
+            importPresenter.Print(e);
+        }
+        
     }
 }

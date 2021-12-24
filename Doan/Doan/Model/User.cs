@@ -37,6 +37,12 @@ namespace Doan.Model
             string sqlQuery = "Select Employee_id from Employee where Username = '" + username + "' and Password = '" + password + "'";
             return connect.GetData(sqlQuery).Rows[0]["Employee_id"].ToString();
         }
+        public string UserName(string username, string password)
+        {
+            ConnectDB connect = new ConnectDB();
+            string sqlQuery = "Select EmployName from Employee where Username = '" + username + "' and Password = '" + password + "'";
+            return connect.GetData(sqlQuery).Rows[0]["EmployName"].ToString();
+        }
         public DataTable LoadListEmployee()
         {
             ConnectDB connect = new ConnectDB();
