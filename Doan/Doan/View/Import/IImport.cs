@@ -14,6 +14,7 @@ namespace Doan.View.Import
         string ProductName { get; set; }
         string SuplierName { get; set; }
         string EmployeeID { get; }
+        string EmployeeName { get; }
         string TotalPrice { get; set; }
         string ImportPrice { get; set; }
         string Quantity { get; set; }

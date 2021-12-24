@@ -23,6 +23,7 @@ namespace Doan
         private Panel leftBorderbtn;
         private Form currentChildForm;
         private string id;
+        private string name;
         public Menu()
         {
             InitializeComponent();
@@ -35,9 +36,10 @@ namespace Doan
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
-        public Menu(string id) : this()
+        public Menu(string id, string name) : this()
         {
             this.id = id;
+            this.name = name;
         }
         private struct RNBColor
         {
@@ -105,7 +107,7 @@ namespace Doan
         private void icButtonImport_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RNBColor.color);
-            OpenChildForm(new ImportForm(id));
+            OpenChildForm(new ImportForm(id,name));
         }
 
         private void iconButtonSale_Click(object sender, EventArgs e)
