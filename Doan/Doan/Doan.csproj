@@ -64,9 +64,14 @@
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Suplier.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Presenter\cImport\CancelCommand.cs" />
+    <Compile Include="Presenter\cImport\DeleteCommand.cs" />
+    <Compile Include="Presenter\cImport\EditCommand.cs" />
+    <Compile Include="Presenter\cImport\Invorker.cs" />
     <Compile Include="Presenter\EmployeePresenter.cs" />
     <Compile Include="Presenter\ExportPresenter.cs" />
     <Compile Include="Presenter\ImportPresenter.cs" />
+    <Compile Include="Presenter\cImport\AddCommand.cs" />
     <Compile Include="Presenter\LoginPresenter.cs" />
     <Compile Include="Presenter\ProductPresenter.cs" />
     <Compile Include="Presenter\SuplierPresenter.cs" />
@@ -86,6 +91,7 @@
       <DependentUpon>ExportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Export\IExport.cs" />
+    <Compile Include="View\Import\Command.cs" />
     <Compile Include="View\Import\IImport.cs" />
     <Compile Include="View\Import\ImportForm.cs">
       <SubType>Form</SubType>

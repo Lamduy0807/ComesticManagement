@@ -46,7 +46,6 @@ namespace Doan.View.Import
             this.btnEdit = new MaterialSurface.OutlinedButton();
             this.btnAdd = new MaterialSurface.OutlinedButton();
             this.btnCreate = new MaterialSurface.OutlinedButton();
-            this.btnExport = new MaterialSurface.OutlinedButton();
             this.btnCancel = new MaterialSurface.OutlinedButton();
             this.txtSearch = new MaterialSurface.MaterialTextfield();
             this.dtgvProduct = new System.Windows.Forms.DataGridView();
@@ -365,37 +364,18 @@ namespace Doan.View.Import
             this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.ForeColor = System.Drawing.Color.Green;
             this.btnCreate.Icon = null;
-            this.btnCreate.Location = new System.Drawing.Point(1084, 520);
+            this.btnCreate.Location = new System.Drawing.Point(885, 656);
             this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCreate.MouseState = MaterialSurface.MouseState.OUT;
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.PrimaryColor = System.Drawing.Color.Green;
             this.btnCreate.Radius = 6;
-            this.btnCreate.Size = new System.Drawing.Size(174, 64);
+            this.btnCreate.Size = new System.Drawing.Size(373, 64);
             this.btnCreate.TabIndex = 30;
-            this.btnCreate.Text = "Create";
+            this.btnCreate.Text = "Create Form";
             this.btnCreate.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
-            // 
-            // btnExport
-            // 
-            this.btnExport.BorderColor = System.Drawing.Color.DimGray;
-            this.btnExport.EffectType = MaterialSurface.ET.Custom;
-            this.btnExport.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.ForeColor = System.Drawing.Color.Green;
-            this.btnExport.Icon = null;
-            this.btnExport.Location = new System.Drawing.Point(1084, 665);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExport.MouseState = MaterialSurface.MouseState.OUT;
-            this.btnExport.Name = "btnExport";
-            this.btnExport.PrimaryColor = System.Drawing.Color.Green;
-            this.btnExport.Radius = 6;
-            this.btnExport.Size = new System.Drawing.Size(174, 64);
-            this.btnExport.TabIndex = 31;
-            this.btnExport.Text = "Export Form";
-            this.btnExport.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btnExport.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
@@ -404,7 +384,7 @@ namespace Doan.View.Import
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Green;
             this.btnCancel.Icon = null;
-            this.btnCancel.Location = new System.Drawing.Point(885, 665);
+            this.btnCancel.Location = new System.Drawing.Point(1084, 520);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.MouseState = MaterialSurface.MouseState.OUT;
             this.btnCancel.Name = "btnCancel";
@@ -466,7 +446,6 @@ namespace Doan.View.Import
             this.Controls.Add(this.dtgvProduct);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
@@ -501,7 +480,6 @@ namespace Doan.View.Import
         private MaterialSurface.OutlinedButton btnEdit;
         private MaterialSurface.OutlinedButton btnAdd;
         private MaterialSurface.OutlinedButton btnCreate;
-        private MaterialSurface.OutlinedButton btnExport;
         private MaterialSurface.OutlinedButton btnCancel;
         private MaterialSurface.MaterialTextfield txtSearch;
         private System.Windows.Forms.DataGridView dtgvProduct;

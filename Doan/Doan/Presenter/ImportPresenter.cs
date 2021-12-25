@@ -240,7 +240,7 @@ namespace Doan.Presenter
                         graphic.DrawString(Name, font, new SolidBrush(Color.Black), startX, startY + offset);
                         graphic.DrawString(Quantities.ToString(), font, new SolidBrush(Color.Black), 260, startY + offset);
                         graphic.DrawString(UnitPrice.ToString(), font, new SolidBrush(Color.Black), 440, startY + offset);
-                        graphic.DrawString(Total.ToString(), font, new SolidBrush(Color.Black), 620, startY + offset);
+                        graphic.DrawString(Total.ToString(), font, new SolidBrush(Color.Black), 630, startY + offset);
                         offset = offset + (int)fontHeight + 5; //make the spacing consistent       
                     }
                 }
