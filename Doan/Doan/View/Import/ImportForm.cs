@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Doan.Presenter;
+using Doan.Presenter.cImport;
 
 namespace Doan.View.Import
 {
@@ -123,11 +124,12 @@ namespace Doan.View.Import
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ImportPresenter importPresenter = new ImportPresenter(this);
-            if (importPresenter.AddDataToDataGridview())
-            {
-                importPresenter.CalculateTotalPrice();
-                importPresenter.ClearInformation();
-            }
+            Command add = new AddCommand(importPresenter);
+            Command delete = new DeleteCommand(importPresenter);
+            Command cancel = new CancelCommand(importPresenter);
+            Command edit = new EditCommand(importPresenter, 0);
+            Invorker invorker = new Invorker(add,delete,cancel,edit);
+            invorker.AddData();
         }
 
         private void txtQuantity_TextChanged(object sender, EventArgs e)
@@ -153,22 +155,34 @@ namespace Doan.View.Import
         private void btnDelete_Click(object sender, EventArgs e)
         {
             ImportPresenter importPresenter = new ImportPresenter(this);
-            importPresenter.DeleteDatainDataGridview();
-            importPresenter.CalculateTotalPrice();
-
+            Command add = new AddCommand(importPresenter);
+            Command delete = new DeleteCommand(importPresenter);
+            Command cancel = new CancelCommand(importPresenter);
+            Command edit = new EditCommand(importPresenter, 0);
+            Invorker invorker = new Invorker(add, delete, cancel, edit);
+            invorker.DeleteData();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             ImportPresenter importPresenter = new ImportPresenter(this);
-            importPresenter.EditData(dtgvData.CurrentRow.Index);
-            importPresenter.CalculateTotalPrice();
+            Command edit = new EditCommand(importPresenter, dtgvData.CurrentRow.Index);
+            Command add = new AddCommand(importPresenter);
+            Command delete = new DeleteCommand(importPresenter);
+            Command cancel = new CancelCommand(importPresenter);
+            Invorker invorker = new Invorker(add, delete, cancel, edit);
+            invorker.EditData();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             ImportPresenter importPresenter = new ImportPresenter(this);
-            importPresenter.ClearData();
+            Command add = new AddCommand(importPresenter);
+            Command delete = new DeleteCommand(importPresenter);
+            Command cancel = new CancelCommand(importPresenter);
+            Command edit = new EditCommand(importPresenter, 0);
+            Invorker invorker = new Invorker(add, delete, cancel, edit);
+            invorker.CancelData();
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
