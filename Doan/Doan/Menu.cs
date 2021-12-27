@@ -13,6 +13,7 @@ using Doan.View.Export;
 using Doan.View.Import;
 using Doan.View.Product;
 using Doan.View.Sale;
+using Doan.View.Statistic;
 using Doan.View.Suplier;
 using FontAwesome.Sharp;
 namespace Doan
@@ -177,6 +178,10 @@ namespace Doan
                 this.Close();
         }
 
-        
+        private void icButtonReport_Click_1(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RNBColor.color);
+            OpenChildForm(new StatisticsForm());
+        }
     }
 }

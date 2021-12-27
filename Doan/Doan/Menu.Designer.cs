@@ -174,6 +174,7 @@ namespace Doan
             this.icButtonReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.icButtonReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.icButtonReport.UseVisualStyleBackColor = true;
+            this.icButtonReport.Click += new System.EventHandler(this.icButtonReport_Click_1);
             // 
             // icButtonInventory
             // 

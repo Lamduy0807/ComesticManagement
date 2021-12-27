@@ -62,6 +62,7 @@
     <Compile Include="Model\Export.cs" />
     <Compile Include="Model\Import.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\Statistics.cs" />
     <Compile Include="Model\Suplier.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Presenter\cImport\CancelCommand.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Presenter\cImport\AddCommand.cs" />
     <Compile Include="Presenter\LoginPresenter.cs" />
     <Compile Include="Presenter\ProductPresenter.cs" />
+    <Compile Include="Presenter\StatisticPresenter.cs" />
     <Compile Include="Presenter\SuplierPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -119,6 +121,13 @@
     <Compile Include="View\Sale\SaleForm.Designer.cs">
       <DependentUpon>SaleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Statistic\IStatistics.cs" />
+    <Compile Include="View\Statistic\StatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Statistic\StatisticsForm.Designer.cs">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Suplier\ISuplier.cs" />
     <Compile Include="View\Suplier\SuplierForm.cs">
       <SubType>Form</SubType>
@@ -155,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Sale\SaleForm.resx">
       <DependentUpon>SaleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Statistic\StatisticsForm.resx">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Suplier\SuplierForm.resx">
       <DependentUpon>SuplierForm.cs</DependentUpon>
