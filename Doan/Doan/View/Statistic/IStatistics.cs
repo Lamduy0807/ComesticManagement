@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Doan.View.Statistic
 {
@@ -16,5 +18,6 @@ namespace Doan.View.Statistic
         string BillMonth { get; set; }
         string BillToday { get; set; }
         DataGridView gvBestSeller { get; set; }
+        DataTable data { set; }
     }
 }

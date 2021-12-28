@@ -29,6 +29,9 @@ namespace Doan.View.Statistic
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.iconDBMoney = new FontAwesome.Sharp.IconPictureBox();
@@ -37,7 +40,6 @@ namespace Doan.View.Statistic
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconDBProduct = new FontAwesome.Sharp.IconPictureBox();
-            this.lbSPtoday = new System.Windows.Forms.Label();
             this.lbSumProduct = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -48,8 +50,9 @@ namespace Doan.View.Statistic
             this.label1 = new System.Windows.Forms.Label();
             this.dtgvBestSeller = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new Doan.Custom_And_Resources.DateTimePickerCustom();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconDBMoney)).BeginInit();
             this.panel2.SuspendLayout();
@@ -57,6 +60,8 @@ namespace Doan.View.Statistic
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconDBHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBestSeller)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -81,9 +86,9 @@ namespace Doan.View.Statistic
             this.label3.Location = new System.Drawing.Point(21, 112);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 25);
+            this.label3.Size = new System.Drawing.Size(53, 25);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Today:";
+            this.label3.Text = "Day:";
             // 
             // iconDBMoney
             // 
@@ -104,7 +109,7 @@ namespace Doan.View.Statistic
             this.lbRevenueToday.AutoSize = true;
             this.lbRevenueToday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRevenueToday.ForeColor = System.Drawing.Color.White;
-            this.lbRevenueToday.Location = new System.Drawing.Point(118, 112);
+            this.lbRevenueToday.Location = new System.Drawing.Point(95, 112);
             this.lbRevenueToday.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbRevenueToday.Name = "lbRevenueToday";
             this.lbRevenueToday.Size = new System.Drawing.Size(110, 25);
@@ -139,7 +144,6 @@ namespace Doan.View.Statistic
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkMagenta;
             this.panel2.Controls.Add(this.iconDBProduct);
-            this.panel2.Controls.Add(this.lbSPtoday);
             this.panel2.Controls.Add(this.lbSumProduct);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Location = new System.Drawing.Point(904, 67);
@@ -161,18 +165,6 @@ namespace Doan.View.Statistic
             this.iconDBProduct.Size = new System.Drawing.Size(96, 95);
             this.iconDBProduct.TabIndex = 3;
             this.iconDBProduct.TabStop = false;
-            // 
-            // lbSPtoday
-            // 
-            this.lbSPtoday.AutoSize = true;
-            this.lbSPtoday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSPtoday.ForeColor = System.Drawing.Color.White;
-            this.lbSPtoday.Location = new System.Drawing.Point(21, 112);
-            this.lbSPtoday.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbSPtoday.Name = "lbSPtoday";
-            this.lbSPtoday.Size = new System.Drawing.Size(110, 25);
-            this.lbSPtoday.TabIndex = 2;
-            this.lbSPtoday.Text = "99.000.000";
             // 
             // lbSumProduct
             // 
@@ -220,9 +212,9 @@ namespace Doan.View.Statistic
             this.label2.Location = new System.Drawing.Point(21, 112);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 25);
+            this.label2.Size = new System.Drawing.Size(53, 25);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Today:";
+            this.label2.Text = "Day:";
             // 
             // iconDBHoaDon
             // 
@@ -243,7 +235,7 @@ namespace Doan.View.Statistic
             this.lbBillToday.AutoSize = true;
             this.lbBillToday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBillToday.ForeColor = System.Drawing.Color.White;
-            this.lbBillToday.Location = new System.Drawing.Point(127, 112);
+            this.lbBillToday.Location = new System.Drawing.Point(101, 112);
             this.lbBillToday.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbBillToday.Name = "lbBillToday";
             this.lbBillToday.Size = new System.Drawing.Size(110, 25);
@@ -270,33 +262,53 @@ namespace Doan.View.Statistic
             this.label1.Location = new System.Drawing.Point(21, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 25);
+            this.label1.Size = new System.Drawing.Size(127, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Bills this month";
+            this.label1.Text = "Bills of month";
             // 
             // dtgvBestSeller
             // 
             this.dtgvBestSeller.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dtgvBestSeller.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvBestSeller.Location = new System.Drawing.Point(880, 302);
+            this.dtgvBestSeller.Location = new System.Drawing.Point(930, 342);
             this.dtgvBestSeller.Name = "dtgvBestSeller";
             this.dtgvBestSeller.RowHeadersWidth = 51;
             this.dtgvBestSeller.RowTemplate.Height = 24;
-            this.dtgvBestSeller.Size = new System.Drawing.Size(411, 427);
+            this.dtgvBestSeller.Size = new System.Drawing.Size(336, 374);
             this.dtgvBestSeller.TabIndex = 9;
             // 
             // panel4
             // 
-            this.panel4.Location = new System.Drawing.Point(23, 251);
+            this.panel4.Controls.Add(this.chart1);
+            this.panel4.Location = new System.Drawing.Point(23, 278);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(836, 478);
+            this.panel4.Size = new System.Drawing.Size(870, 478);
             this.panel4.TabIndex = 10;
+            // 
+            // chart1
+            // 
+            this.chart1.BackColor = System.Drawing.SystemColors.Control;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(0, 0);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Revenue";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(870, 478);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(925, 261);
+            this.label4.Location = new System.Drawing.Point(934, 301);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(264, 29);
             this.label4.TabIndex = 11;
@@ -304,12 +316,19 @@ namespace Doan.View.Statistic
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.dateTimePicker1.BorderSize = 0;
+            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(66, 25);
+            this.dateTimePicker1.Location = new System.Drawing.Point(23, 12);
+            this.dateTimePicker1.MinimumSize = new System.Drawing.Size(4, 35);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(119, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(267, 35);
+            this.dateTimePicker1.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(198)))), ((int)(((byte)(102)))));
             this.dateTimePicker1.TabIndex = 12;
-            this.dateTimePicker1.Value = new System.DateTime(2021, 12, 27, 0, 0, 0, 0);
+            this.dateTimePicker1.TextColor = System.Drawing.Color.White;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // StatisticsForm
             // 
@@ -336,6 +355,8 @@ namespace Doan.View.Statistic
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconDBHoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBestSeller)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,7 +372,6 @@ namespace Doan.View.Statistic
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconPictureBox iconDBProduct;
-        private System.Windows.Forms.Label lbSPtoday;
         private System.Windows.Forms.Label lbSumProduct;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
@@ -363,6 +383,7 @@ namespace Doan.View.Statistic
         private System.Windows.Forms.DataGridView dtgvBestSeller;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private Custom_And_Resources.DateTimePickerCustom dateTimePicker1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
