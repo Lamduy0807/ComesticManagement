@@ -29,347 +29,386 @@ namespace Doan.View.Employee
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            this.dgv_Employee = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.bunifuGroupBox2 = new Bunifu.UI.WinForms.BunifuGroupBox();
+            this.bunifuGroupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tbEmail = new System.Windows.Forms.TextBox();
-            this.tbPassword = new System.Windows.Forms.TextBox();
-            this.tbAddress = new System.Windows.Forms.TextBox();
-            this.tbCitizenID = new System.Windows.Forms.TextBox();
-            this.tbUsername = new System.Windows.Forms.TextBox();
-            this.tbPosition = new System.Windows.Forms.TextBox();
-            this.tbPhone = new System.Windows.Forms.TextBox();
-            this.tbName = new System.Windows.Forms.TextBox();
-            this.tbEmployeeID = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dgvEmployee = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.dgvEmployee = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.btnDelete = new MaterialSurface.OutlinedButton();
+            this.btnAddEmployee = new MaterialSurface.OutlinedButton();
+            this.btnEditEmployee = new MaterialSurface.OutlinedButton();
+            this.tbSearch = new Bunifu.UI.WinForms.BunifuTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Employee)).BeginInit();
+            this.bunifuGroupBox2.SuspendLayout();
+            this.bunifuGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // dgv_Employee
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(346, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "MANAGE EMPLOYEE";
+            this.dgv_Employee.AllowCustomTheming = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgv_Employee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_Employee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Employee.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_Employee.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgv_Employee.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Employee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_Employee.ColumnHeadersHeight = 40;
+            this.dgv_Employee.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.dgv_Employee.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dgv_Employee.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgv_Employee.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dgv_Employee.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_Employee.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.dgv_Employee.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dgv_Employee.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.dgv_Employee.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.dgv_Employee.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgv_Employee.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.dgv_Employee.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dgv_Employee.CurrentTheme.Name = null;
+            this.dgv_Employee.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgv_Employee.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dgv_Employee.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgv_Employee.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dgv_Employee.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Employee.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_Employee.EnableHeadersVisualStyles = false;
+            this.dgv_Employee.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dgv_Employee.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.dgv_Employee.HeaderBgColor = System.Drawing.Color.Empty;
+            this.dgv_Employee.HeaderForeColor = System.Drawing.Color.White;
+            this.dgv_Employee.Location = new System.Drawing.Point(0, 0);
+            this.dgv_Employee.Name = "dgv_Employee";
+            this.dgv_Employee.RowHeadersVisible = false;
+            this.dgv_Employee.RowHeadersWidth = 51;
+            this.dgv_Employee.RowTemplate.Height = 40;
+            this.dgv_Employee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Employee.Size = new System.Drawing.Size(240, 150);
+            this.dgv_Employee.TabIndex = 0;
+            this.dgv_Employee.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            // 
+            // bunifuGroupBox2
+            // 
+            this.bunifuGroupBox2.BorderColor = System.Drawing.SystemColors.Control;
+            this.bunifuGroupBox2.BorderRadius = 1;
+            this.bunifuGroupBox2.BorderThickness = 1;
+            this.bunifuGroupBox2.Controls.Add(this.bunifuGroupBox1);
+            this.bunifuGroupBox2.Controls.Add(this.tbSearch);
+            this.bunifuGroupBox2.Controls.Add(this.label2);
+            this.bunifuGroupBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuGroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuGroupBox2.LabelAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuGroupBox2.LabelIndent = 10;
+            this.bunifuGroupBox2.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
+            this.bunifuGroupBox2.Location = new System.Drawing.Point(0, 0);
+            this.bunifuGroupBox2.Name = "bunifuGroupBox2";
+            this.bunifuGroupBox2.Size = new System.Drawing.Size(1304, 124);
+            this.bunifuGroupBox2.TabIndex = 42;
+            this.bunifuGroupBox2.TabStop = false;
+            // 
+            // bunifuGroupBox1
+            // 
+            this.bunifuGroupBox1.BorderColor = System.Drawing.SystemColors.Control;
+            this.bunifuGroupBox1.BorderRadius = 0;
+            this.bunifuGroupBox1.BorderThickness = 1;
+            this.bunifuGroupBox1.Controls.Add(this.btnDelete);
+            this.bunifuGroupBox1.Controls.Add(this.btnAddEmployee);
+            this.bunifuGroupBox1.Controls.Add(this.btnEditEmployee);
+            this.bunifuGroupBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.bunifuGroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuGroupBox1.LabelAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuGroupBox1.LabelIndent = 10;
+            this.bunifuGroupBox1.LineStyle = Bunifu.UI.WinForms.BunifuGroupBox.LineStyles.Solid;
+            this.bunifuGroupBox1.Location = new System.Drawing.Point(878, 48);
+            this.bunifuGroupBox1.Name = "bunifuGroupBox1";
+            this.bunifuGroupBox1.Size = new System.Drawing.Size(423, 73);
+            this.bunifuGroupBox1.TabIndex = 56;
+            this.bunifuGroupBox1.TabStop = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 10);
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Employee ID";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 59);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Name";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 107);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 20);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Citizen ID";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 151);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 20);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Email";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.tbEmail);
-            this.panel1.Controls.Add(this.tbPassword);
-            this.panel1.Controls.Add(this.tbAddress);
-            this.panel1.Controls.Add(this.tbCitizenID);
-            this.panel1.Controls.Add(this.tbUsername);
-            this.panel1.Controls.Add(this.tbPosition);
-            this.panel1.Controls.Add(this.tbPhone);
-            this.panel1.Controls.Add(this.tbName);
-            this.panel1.Controls.Add(this.tbEmployeeID);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(28, 50);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(879, 227);
-            this.panel1.TabIndex = 2;
-            // 
-            // tbEmail
-            // 
-            this.tbEmail.Location = new System.Drawing.Point(125, 148);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(230, 27);
-            this.tbEmail.TabIndex = 2;
-            // 
-            // tbPassword
-            // 
-            this.tbPassword.Enabled = false;
-            this.tbPassword.Location = new System.Drawing.Point(590, 192);
-            this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(230, 27);
-            this.tbPassword.TabIndex = 2;
-            // 
-            // tbAddress
-            // 
-            this.tbAddress.Location = new System.Drawing.Point(588, 102);
-            this.tbAddress.Name = "tbAddress";
-            this.tbAddress.Size = new System.Drawing.Size(230, 27);
-            this.tbAddress.TabIndex = 2;
-            // 
-            // tbCitizenID
-            // 
-            this.tbCitizenID.Location = new System.Drawing.Point(125, 102);
-            this.tbCitizenID.Name = "tbCitizenID";
-            this.tbCitizenID.Size = new System.Drawing.Size(230, 27);
-            this.tbCitizenID.TabIndex = 2;
-            // 
-            // tbUsername
-            // 
-            this.tbUsername.Enabled = false;
-            this.tbUsername.Location = new System.Drawing.Point(590, 144);
-            this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(230, 27);
-            this.tbUsername.TabIndex = 2;
-            // 
-            // tbPosition
-            // 
-            this.tbPosition.Location = new System.Drawing.Point(588, 54);
-            this.tbPosition.Name = "tbPosition";
-            this.tbPosition.Size = new System.Drawing.Size(230, 27);
-            this.tbPosition.TabIndex = 2;
-            // 
-            // tbPhone
-            // 
-            this.tbPhone.Location = new System.Drawing.Point(588, 9);
-            this.tbPhone.Name = "tbPhone";
-            this.tbPhone.Size = new System.Drawing.Size(230, 27);
-            this.tbPhone.TabIndex = 2;
-            // 
-            // tbName
-            // 
-            this.tbName.Location = new System.Drawing.Point(125, 54);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(230, 27);
-            this.tbName.TabIndex = 2;
-            // 
-            // tbEmployeeID
-            // 
-            this.tbEmployeeID.Enabled = false;
-            this.tbEmployeeID.Location = new System.Drawing.Point(125, 10);
-            this.tbEmployeeID.Name = "tbEmployeeID";
-            this.tbEmployeeID.Size = new System.Drawing.Size(230, 27);
-            this.tbEmployeeID.TabIndex = 2;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(480, 148);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 20);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Username";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(478, 58);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 20);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Position";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(478, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 20);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Phone";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(480, 196);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 20);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Password";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(478, 106);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 20);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Address";
+            this.label2.Size = new System.Drawing.Size(164, 25);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "All of the receipts ";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dgvEmployee
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgvEmployee.AllowCustomTheming = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dgvEmployee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEmployee.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvEmployee.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEmployee.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvEmployee.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgvEmployee.ColumnHeadersHeight = 40;
+            this.dgvEmployee.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.dgvEmployee.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dgvEmployee.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvEmployee.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dgvEmployee.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvEmployee.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.dgvEmployee.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dgvEmployee.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.dgvEmployee.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.dgvEmployee.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvEmployee.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.dgvEmployee.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvEmployee.CurrentTheme.Name = null;
+            this.dgvEmployee.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvEmployee.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dgvEmployee.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvEmployee.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dgvEmployee.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvEmployee.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvEmployee.Location = new System.Drawing.Point(28, 283);
+            this.dgvEmployee.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgvEmployee.EnableHeadersVisualStyles = false;
+            this.dgvEmployee.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dgvEmployee.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.dgvEmployee.HeaderBgColor = System.Drawing.Color.Empty;
+            this.dgvEmployee.HeaderForeColor = System.Drawing.Color.White;
+            this.dgvEmployee.Location = new System.Drawing.Point(0, 124);
+            this.dgvEmployee.Margin = new System.Windows.Forms.Padding(30, 10, 30, 30);
             this.dgvEmployee.Name = "dgvEmployee";
+            this.dgvEmployee.ReadOnly = true;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmployee.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvEmployee.RowHeadersVisible = false;
             this.dgvEmployee.RowHeadersWidth = 51;
-            this.dgvEmployee.RowTemplate.Height = 24;
-            this.dgvEmployee.Size = new System.Drawing.Size(879, 235);
-            this.dgvEmployee.TabIndex = 3;
-            this.dgvEmployee.DoubleClick += new System.EventHandler(this.dgvEmployee_DoubleClick);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnDelete);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.btnAdd);
-            this.panel2.Controls.Add(this.btnEdit);
-            this.panel2.Location = new System.Drawing.Point(28, 524);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(879, 58);
-            this.panel2.TabIndex = 4;
+            this.dgvEmployee.RowTemplate.Height = 40;
+            this.dgvEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEmployee.Size = new System.Drawing.Size(1304, 622);
+            this.dgvEmployee.TabIndex = 43;
+            this.dgvEmployee.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.dgvEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_CellContentClick);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(255, 3);
+            this.btnDelete.BorderColor = System.Drawing.Color.DimGray;
+            this.btnDelete.EffectType = MaterialSurface.ET.Custom;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Red;
+            this.btnDelete.Icon = ((System.Drawing.Image)(resources.GetObject("btnDelete.Icon")));
+            this.btnDelete.Location = new System.Drawing.Point(272, 15);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(10);
+            this.btnDelete.MouseState = MaterialSurface.MouseState.OUT;
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(114, 45);
-            this.btnDelete.TabIndex = 0;
+            this.btnDelete.Padding = new System.Windows.Forms.Padding(10);
+            this.btnDelete.PrimaryColor = System.Drawing.Color.Red;
+            this.btnDelete.Radius = 6;
+            this.btnDelete.Size = new System.Drawing.Size(115, 44);
+            this.btnDelete.TabIndex = 55;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button2
+            // btnAddEmployee
             // 
-            this.button2.Location = new System.Drawing.Point(718, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 45);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "button1";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAddEmployee.AutoSize = true;
+            this.btnAddEmployee.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAddEmployee.BorderColor = System.Drawing.Color.DimGray;
+            this.btnAddEmployee.EffectType = MaterialSurface.ET.Custom;
+            this.btnAddEmployee.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddEmployee.ForeColor = System.Drawing.Color.Green;
+            this.btnAddEmployee.Icon = ((System.Drawing.Image)(resources.GetObject("btnAddEmployee.Icon")));
+            this.btnAddEmployee.Location = new System.Drawing.Point(4, 15);
+            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddEmployee.MouseState = MaterialSurface.MouseState.OUT;
+            this.btnAddEmployee.Name = "btnAddEmployee";
+            this.btnAddEmployee.PrimaryColor = System.Drawing.Color.Green;
+            this.btnAddEmployee.Radius = 6;
+            this.btnAddEmployee.Size = new System.Drawing.Size(115, 44);
+            this.btnAddEmployee.TabIndex = 53;
+            this.btnAddEmployee.Text = "Add";
+            this.btnAddEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddEmployee.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnAddEmployee.UseVisualStyleBackColor = false;
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
-            // btnAdd
+            // btnEditEmployee
             // 
-            this.btnAdd.Location = new System.Drawing.Point(53, 3);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(114, 45);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnEditEmployee.BorderColor = System.Drawing.Color.DimGray;
+            this.btnEditEmployee.EffectType = MaterialSurface.ET.Custom;
+            this.btnEditEmployee.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
+            this.btnEditEmployee.Icon = ((System.Drawing.Image)(resources.GetObject("btnEditEmployee.Icon")));
+            this.btnEditEmployee.Location = new System.Drawing.Point(137, 15);
+            this.btnEditEmployee.Margin = new System.Windows.Forms.Padding(10);
+            this.btnEditEmployee.MouseState = MaterialSurface.MouseState.OUT;
+            this.btnEditEmployee.Name = "btnEditEmployee";
+            this.btnEditEmployee.Padding = new System.Windows.Forms.Padding(10);
+            this.btnEditEmployee.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
+            this.btnEditEmployee.Radius = 6;
+            this.btnEditEmployee.Size = new System.Drawing.Size(115, 44);
+            this.btnEditEmployee.TabIndex = 40;
+            this.btnEditEmployee.Text = "Edit";
+            this.btnEditEmployee.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnEditEmployee.UseVisualStyleBackColor = true;
+            this.btnEditEmployee.Click += new System.EventHandler(this.btnEditEmployee_Click);
             // 
-            // btnEdit
+            // tbSearch
             // 
-            this.btnEdit.Location = new System.Drawing.Point(487, 3);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(114, 45);
-            this.btnEdit.TabIndex = 0;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.tbSearch.AcceptsReturn = false;
+            this.tbSearch.AcceptsTab = false;
+            this.tbSearch.AnimationSpeed = 200;
+            this.tbSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.tbSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.tbSearch.BackColor = System.Drawing.Color.Transparent;
+            this.tbSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tbSearch.BackgroundImage")));
+            this.tbSearch.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.tbSearch.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.tbSearch.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.tbSearch.BorderColorIdle = System.Drawing.Color.Silver;
+            this.tbSearch.BorderRadius = 8;
+            this.tbSearch.BorderThickness = 1;
+            this.tbSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.tbSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbSearch.DefaultFont = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSearch.DefaultText = "";
+            this.tbSearch.FillColor = System.Drawing.Color.White;
+            this.tbSearch.HideSelection = true;
+            this.tbSearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("tbSearch.IconLeft")));
+            this.tbSearch.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbSearch.IconPadding = 10;
+            this.tbSearch.IconRight = null;
+            this.tbSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbSearch.Lines = new string[0];
+            this.tbSearch.Location = new System.Drawing.Point(6, 63);
+            this.tbSearch.MaxLength = 32767;
+            this.tbSearch.MinimumSize = new System.Drawing.Size(1, 1);
+            this.tbSearch.Modified = false;
+            this.tbSearch.Multiline = false;
+            this.tbSearch.Name = "tbSearch";
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.tbSearch.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.tbSearch.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.tbSearch.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.tbSearch.OnIdleState = stateProperties4;
+            this.tbSearch.Padding = new System.Windows.Forms.Padding(3);
+            this.tbSearch.PasswordChar = '\0';
+            this.tbSearch.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.tbSearch.PlaceholderText = "Search by ID, Name";
+            this.tbSearch.ReadOnly = false;
+            this.tbSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tbSearch.SelectedText = "";
+            this.tbSearch.SelectionLength = 0;
+            this.tbSearch.SelectionStart = 0;
+            this.tbSearch.ShortcutsEnabled = true;
+            this.tbSearch.Size = new System.Drawing.Size(517, 44);
+            this.tbSearch.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.tbSearch.TabIndex = 52;
+            this.tbSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbSearch.TextMarginBottom = 0;
+            this.tbSearch.TextMarginLeft = 3;
+            this.tbSearch.TextMarginTop = 0;
+            this.tbSearch.TextPlaceholder = "Search by ID, Name";
+            this.tbSearch.UseSystemPasswordChar = false;
+            this.tbSearch.WordWrap = true;
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged_1);
             // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1304, 731);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1304, 741);
             this.Controls.Add(this.dgvEmployee);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.bunifuGroupBox2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "EmployeeForm";
             this.Text = "EmployeeForm";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Employee)).EndInit();
+            this.bunifuGroupBox2.ResumeLayout(false);
+            this.bunifuGroupBox2.PerformLayout();
+            this.bunifuGroupBox1.ResumeLayout(false);
+            this.bunifuGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
+        private Bunifu.UI.WinForms.BunifuDataGridView dgv_Employee;
+        private Bunifu.UI.WinForms.BunifuGroupBox bunifuGroupBox2;
+        private Bunifu.UI.WinForms.BunifuGroupBox bunifuGroupBox1;
+        private MaterialSurface.OutlinedButton btnEditEmployee;
+        private Bunifu.UI.WinForms.BunifuTextBox tbSearch;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox tbEmail;
-        private System.Windows.Forms.TextBox tbAddress;
-        private System.Windows.Forms.TextBox tbCitizenID;
-        private System.Windows.Forms.TextBox tbPosition;
-        private System.Windows.Forms.TextBox tbPhone;
-        private System.Windows.Forms.TextBox tbName;
-        private System.Windows.Forms.TextBox tbEmployeeID;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dgvEmployee;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox tbPassword;
-        private System.Windows.Forms.TextBox tbUsername;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private Bunifu.UI.WinForms.BunifuDataGridView dgvEmployee;
+        private MaterialSurface.OutlinedButton btnAddEmployee;
+        private MaterialSurface.OutlinedButton btnDelete;
     }
 }

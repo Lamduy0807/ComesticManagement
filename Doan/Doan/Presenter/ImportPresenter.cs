@@ -182,6 +182,12 @@ namespace Doan.Presenter
         {
             string id = import.AddData(importview.EmployeeID, importview.SuplierName, importview.TotalPrice);
 
+            ///chỗ này viết hàm add tự động vô phiếu chi
+            ///
+            string contentReceipt = "Import ID: " + id;
+            string status = "Completed";
+            import.AutoCreatePaySlip(importview.EmployeeID, contentReceipt, importview.TotalPrice, status, "");
+
             if (importview.gvDetailProductData.Rows.Count > 0)
             {
                 foreach (DataGridViewRow row in importview.gvDetailProductData.Rows)

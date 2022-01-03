@@ -36,7 +36,6 @@ namespace Doan.Model
 
         public string AddData(string employee, string re, string totalprice)
         {
-
             DateTime dateTime = DateTime.UtcNow.Date;
 
             SqlCommand cmd = new SqlCommand("INSERT INTO ExportForm (Employee_id, ExportReason, ExportDate,TotalMoney) VALUES (@employ, @re, @date, @price)"
@@ -52,6 +51,8 @@ namespace Doan.Model
 
             ConnectDB connect = new ConnectDB();
             return connect.GetId(cmd).ToString();
+            ////////////////
+            
         }
         public bool AddDetailData(string proid, string id, string price, string quantity, string total)
         {

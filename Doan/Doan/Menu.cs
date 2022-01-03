@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Doan.View.Accountant;
 using Doan.View.Employee;
 using Doan.View.Export;
 using Doan.View.Import;
+using Doan.View.MenuDropdown;
 using Doan.View.Product;
 using Doan.View.Sale;
 using Doan.View.Statistic;
@@ -44,7 +46,8 @@ namespace Doan
         }
         private struct RNBColor
         {
-            public static Color color = Color.FromArgb(197,190,29);
+            //public static Color color = Color.FromArgb(197,190,29);
+            public static Color color = Color.FromArgb(201, 249, 8);
         }
         private void OpenChildForm(Form childForm)
         {
@@ -62,16 +65,17 @@ namespace Doan
             panelDesktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            
+
         }
         private void ActiveButton(object senderbtn, Color color)
         {
-            if(senderbtn != null)
+            if (senderbtn != null)
             {
                 disableButton();
 
                 currentButton = (IconButton)senderbtn;
-                currentButton.BackColor = Color.FromArgb(33,140,44);
+                //currentButton.BackColor = Color.FromArgb(127, 198, 102);
+                currentButton.BackColor = Color.FromArgb(33, 140, 44);
                 currentButton.ForeColor = color;
                 currentButton.TextAlign = ContentAlignment.MiddleCenter;
                 currentButton.IconColor = color;
@@ -89,7 +93,7 @@ namespace Doan
 
         private void disableButton()
         {
-            if(currentButton != null)
+            if (currentButton != null)
             {
                 currentButton.BackColor = Color.FromArgb(33, 140, 44);
                 currentButton.ForeColor = Color.White;
@@ -108,13 +112,14 @@ namespace Doan
         private void icButtonImport_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RNBColor.color);
-            OpenChildForm(new ImportForm(id,name));
+            OpenChildForm(new ImportForm(id, name));
         }
 
         private void iconButtonSale_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RNBColor.color);
-            OpenChildForm(new SaleForm());
+            OpenChildForm(new SaleForm(id));
+
         }
 
         private void icButtonInventory_Click(object sender, EventArgs e)
@@ -173,7 +178,7 @@ namespace Doan
 
         private void btnCloseClick_Click(object sender, EventArgs e)
         {
-            DialogResult r = MessageBox.Show("do you want to quit the app?", "Close Window", MessageBoxButtons.OKCancel);
+            DialogResult r = MessageBox.Show("Do you want to quit the app?", "Close Window", MessageBoxButtons.OKCancel);
             if (r == DialogResult.OK)
                 this.Close();
         }
@@ -182,6 +187,56 @@ namespace Doan
         {
             ActiveButton(sender, RNBColor.color);
             OpenChildForm(new StatisticsForm());
+        }
+
+        private void icHome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            //rjDropdownMenu1.IsMainMenu = true;
+            rjDropdownMenu1.PrimaryColor = Color.DarkOrange;
+        }
+
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            //rjDropdownMenu1.Show(iconButton3, iconButton3.Width, 0);
+            Open_DropdownMenu(rjDropdownMenu1, sender);
+        }
+
+
+        private void receiptsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActiveButton(iconButton3, RNBColor.color);
+            OpenChildForm(new ReceiptsForm(id));
+        }
+
+        private void paySlipToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActiveButton(iconButton3, RNBColor.color);
+            OpenChildForm(new PaySlipForm(id));
+        }
+
+        private void Open_DropdownMenu( RJDropdownMenu dropdownMenu, object sender)
+        {
+            Control control = (Control)sender;
+            dropdownMenu.VisibleChanged+=new EventHandler((sender2, ev)
+                => DropdownMenu_VisibleChanged(sender2, ev, control));
+            dropdownMenu.Show(control, control.Width - dropdownMenu.Width, control.Height);
+        }
+
+        private void DropdownMenu_VisibleChanged(object sender, EventArgs e, Control ctrl)
+        {
+            RJDropdownMenu dropdownMenu = (RJDropdownMenu)sender;
+            if(!DesignMode)
+            {
+                /*if (dropdownMenu.Visible)
+                    ctrl.BackColor = Color.FromArgb(72, 52, 183);
+                else ctrl.BackColor = Color.FromArgb(24, 24, 36);*/
+            }    
         }
     }
 }

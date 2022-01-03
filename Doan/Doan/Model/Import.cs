@@ -110,5 +110,41 @@ namespace Doan.Model
             else
                 return false;
         }
+
+
+
+        ///hàm auto create phiếu chi
+        ///
+        public bool AutoCreatePaySlip(string Employee_id, string Content, string TotalPay, string Status, string Note)
+        {
+            DateTime dateTime = DateTime.UtcNow.Date;
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO PaySlip (Employee_id, Content, CreateDate, TotalPay, Status, Note) VALUES (@Employee_id, @Content, @date, @TotalPay, @Status, @Note)");
+            cmd.Parameters.Add("@Employee_id", SqlDbType.Int);
+            cmd.Parameters["@Employee_id"].Value = Convert.ToInt32(Employee_id);
+
+            cmd.Parameters.AddWithValue("@Content", Content);
+            cmd.Parameters.AddWithValue("@Note", Note);
+            cmd.Parameters.AddWithValue("@Status", Status);
+
+            cmd.Parameters.Add("@date", SqlDbType.Date);
+            cmd.Parameters["@date"].Value = dateTime;
+
+            cmd.Parameters.Add("@TotalPay", SqlDbType.Float);
+            cmd.Parameters["@TotalPay"].Value = Convert.ToDouble(TotalPay);
+
+
+
+
+            ConnectDB connect = new ConnectDB();
+            if (connect.HandleData(cmd))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

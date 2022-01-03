@@ -111,5 +111,12 @@ namespace Doan.Model
             else
                 return false;
         }
+
+        public DataTable SearchData(string search)
+        {
+            ConnectDB connect = new ConnectDB();
+            string sqlQuery = "select Employee_id, EmployName, Citizen_id, Address, PhoneNumber, Email, Position, Username, Password from Employee where (Employee_id like '" + search + "%' or EmployName like N'" + search + "%')";
+            return connect.GetData(sqlQuery);
+        }
     }
 }
