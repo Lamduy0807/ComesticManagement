@@ -43,10 +43,16 @@ namespace Doan.Model
             string sqlQuery = "Select EmployName from Employee where Username = '" + username + "' and Password = '" + password + "'";
             return connect.GetData(sqlQuery).Rows[0]["EmployName"].ToString();
         }
+        public string GetPosition(string username, string password)
+        {
+            ConnectDB connect = new ConnectDB();
+            string sqlQuery = "Select Position from Employee where Username = '" + username + "' and Password = '" + password + "'";
+            return connect.GetData(sqlQuery).Rows[0]["Position"].ToString();
+        }
         public DataTable LoadListEmployee()
         {
             ConnectDB connect = new ConnectDB();
-            string sqlQuery = "Select * from Employee";           
+            string sqlQuery = "Select Employee_id as ID, EmployName as Name, Citizen_id, Address, PhoneNumber as Phone, Email, Position, Username, Password from Employee";           
             return connect.GetData(sqlQuery);
 
         }
@@ -115,7 +121,7 @@ namespace Doan.Model
         public DataTable SearchData(string search)
         {
             ConnectDB connect = new ConnectDB();
-            string sqlQuery = "select Employee_id, EmployName, Citizen_id, Address, PhoneNumber, Email, Position, Username, Password from Employee where (Employee_id like '" + search + "%' or EmployName like N'" + search + "%')";
+            string sqlQuery = "select Employee_id as ID, EmployName, Citizen_id, Address, PhoneNumber, Email, Position, Username, Password from Employee where (Employee_id like '" + search + "%' or EmployName like N'" + search + "%')";
             return connect.GetData(sqlQuery);
         }
     }

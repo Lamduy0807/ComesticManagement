@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.UI.WinForms;
+using Doan.Custom;
 using Doan.Presenter;
 
 namespace Doan.View
@@ -50,7 +52,7 @@ namespace Doan.View
             set 
             {
                 _message = value;
-                MessageBox.Show(_message);
+                //MessageBox.Show(_message);
             } 
         }
         private void btnLogin_Click(object sender, EventArgs e)
@@ -60,10 +62,16 @@ namespace Doan.View
             {
                 string id = loginPresenter.GetId();
                 string name = loginPresenter.GetName();
-                Menu menu = new Menu(id, name);
+                string position = loginPresenter.GetPosition();
+                Menu menu = new Menu(id, name, position);
+                //Dialog menu = new Dialog();
                 this.Hide();
                 menu.Show();
-            }           
+            } 
+            else
+            {
+                MessageBox.Show(_message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCloseClick_Click(object sender, EventArgs e)

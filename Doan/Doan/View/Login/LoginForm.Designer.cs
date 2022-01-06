@@ -29,16 +29,11 @@ namespace Doan.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -49,9 +44,7 @@ namespace Doan.View
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnCloseClick = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -70,7 +63,7 @@ namespace Doan.View
             this.txtUsername.ForeColor = System.Drawing.Color.White;
             this.txtUsername.Location = new System.Drawing.Point(66, 12);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(534, 36);
+            this.txtUsername.Size = new System.Drawing.Size(313, 36);
             this.txtUsername.TabIndex = 0;
             // 
             // txtPassword
@@ -81,7 +74,7 @@ namespace Doan.View
             this.txtPassword.ForeColor = System.Drawing.Color.White;
             this.txtPassword.Location = new System.Drawing.Point(66, 13);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(534, 36);
+            this.txtPassword.Size = new System.Drawing.Size(313, 36);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -91,88 +84,20 @@ namespace Doan.View
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(198)))), ((int)(((byte)(102)))));
-            this.btnLogin.Location = new System.Drawing.Point(151, 195);
+            this.btnLogin.Location = new System.Drawing.Point(91, 166);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(368, 59);
+            this.btnLogin.Size = new System.Drawing.Size(231, 59);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(314, 679);
-            this.panel1.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(140)))), ((int)(((byte)(44)))));
-            this.label4.Location = new System.Drawing.Point(212, 645);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 25);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Team 7";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(140)))), ((int)(((byte)(44)))));
-            this.label3.Location = new System.Drawing.Point(97, 384);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(198, 34);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Management";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(140)))), ((int)(((byte)(44)))));
-            this.label2.Location = new System.Drawing.Point(153, 347);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 34);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Comestic";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(140)))), ((int)(((byte)(44)))));
-            this.label1.Location = new System.Drawing.Point(114, 313);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 34);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Welcome to";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(314, 218);
-            this.panel3.TabIndex = 1;
-            // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(66, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(314, 218);
+            this.pictureBox1.Size = new System.Drawing.Size(285, 206);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -185,9 +110,9 @@ namespace Doan.View
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(314, 0);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(632, 679);
+            this.panel2.Size = new System.Drawing.Size(412, 555);
             this.panel2.TabIndex = 4;
             // 
             // panel5
@@ -197,9 +122,9 @@ namespace Doan.View
             this.panel5.Controls.Add(this.panel7);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 299);
+            this.panel5.Location = new System.Drawing.Point(0, 248);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(632, 380);
+            this.panel5.Size = new System.Drawing.Size(412, 307);
             this.panel5.TabIndex = 7;
             // 
             // panel8
@@ -209,7 +134,7 @@ namespace Doan.View
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 70);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(632, 60);
+            this.panel8.Size = new System.Drawing.Size(412, 60);
             this.panel8.TabIndex = 2;
             // 
             // pictureBox3
@@ -228,7 +153,7 @@ namespace Doan.View
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 60);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(632, 10);
+            this.panel7.Size = new System.Drawing.Size(412, 10);
             this.panel7.TabIndex = 1;
             // 
             // panel6
@@ -238,7 +163,7 @@ namespace Doan.View
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(632, 60);
+            this.panel6.Size = new System.Drawing.Size(412, 60);
             this.panel6.TabIndex = 0;
             // 
             // pictureBox2
@@ -260,7 +185,7 @@ namespace Doan.View
             this.btnCloseClick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseClick.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseClick.ForeColor = System.Drawing.Color.White;
-            this.btnCloseClick.Location = new System.Drawing.Point(592, 0);
+            this.btnCloseClick.Location = new System.Drawing.Point(372, 0);
             this.btnCloseClick.Name = "btnCloseClick";
             this.btnCloseClick.Size = new System.Drawing.Size(40, 40);
             this.btnCloseClick.TabIndex = 3;
@@ -270,39 +195,29 @@ namespace Doan.View
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(632, 299);
+            this.panel4.Size = new System.Drawing.Size(412, 248);
             this.panel4.TabIndex = 6;
             // 
-            // label5
+            // bunifuElipse1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(60, 235);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(346, 34);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Login with your account";
+            this.bunifuElipse1.ElipseRadius = 5;
+            this.bunifuElipse1.TargetControl = this;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(946, 679);
+            this.ClientSize = new System.Drawing.Size(412, 555);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -313,7 +228,6 @@ namespace Doan.View
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -323,22 +237,16 @@ namespace Doan.View
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnCloseClick;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }

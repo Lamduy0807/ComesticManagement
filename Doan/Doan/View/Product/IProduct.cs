@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.UI.WinForms;
 using static System.Windows.Forms.ComboBox;
 
 namespace Doan.View.Product
@@ -19,6 +20,6 @@ namespace Doan.View.Product
         string ProductType { get; set; }
         string message { get; set; }
         ObjectCollection cbData { get; }
-        DataGridView gvData { get; set; }
+        BunifuDataGridView gvData { get; set; }
     }
 }

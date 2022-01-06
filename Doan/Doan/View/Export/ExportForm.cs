@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.UI.WinForms;
 using Doan.Presenter;
 
 namespace Doan.View.Export
@@ -19,6 +21,7 @@ namespace Doan.View.Export
         }
 
         private string _id;
+        private string _name;
 
         public string ProductId
         {
@@ -31,7 +34,7 @@ namespace Doan.View.Export
             get { return _id; }
         }
 
-        public string TotalPrice
+        public string TotalPriceProduct
         {
             get { return txtTotalPrice.Text; }
             set { txtTotalPrice.Text = value; }
@@ -51,12 +54,12 @@ namespace Doan.View.Export
             get { return txtTotal.Text; }
             set { txtTotal.Text = value; }
         }
-        public DataGridView gvProductData
+        BunifuDataGridView IExport.gvProductData
         {
             get { return dtgvProduct; }
             set { dtgvProduct = value; }
         }
-        public DataGridView gvDetailProductData
+        BunifuDataGridView IExport.gvDetailProductData
         {
             get { return dtgvData; }
             set { dtgvData = value; }
@@ -91,15 +94,23 @@ namespace Doan.View.Export
             set { txtReason.Text = value; } 
         }
 
-        public ExportForm(string id) : this()
+        public string EmployeeName { get { return _name; } }
+
+        public ExportForm(string id, string name) : this()
         {
             this._id = id;
+            this._name = name;
         }
 
         private void ExportForm_Load(object sender, EventArgs e)
         {
             ExportPresenter exportPresenter = new ExportPresenter(this);
             exportPresenter.GetProduct();
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnCancel.Enabled = false;
+            btnDelete.Enabled = false;
+            btnCreate.Enabled = false;
         }
 
         private void dtgvProduct_DoubleClick(object sender, EventArgs e)
@@ -107,12 +118,21 @@ namespace Doan.View.Export
             ExportPresenter exportPresenter = new ExportPresenter(this);
             exportPresenter.RetriveProduct(dtgvProduct.CurrentRow.Index, dtgvProduct.CurrentRow.Cells[0].Value.ToString()
                 , dtgvProduct.CurrentRow.Cells[1].Value.ToString(), dtgvProduct.CurrentRow.Cells[2].Value.ToString());
+            btnAdd.Enabled = true;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
         }
 
         private void txtQuantity_TextChanged(object sender, EventArgs e)
         {
             ExportPresenter exportPresenter = new ExportPresenter(this);
-            exportPresenter.CalculateTotal();
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtQuantity.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.");
+                txtQuantity.Text = txtQuantity.Text.Remove(txtQuantity.Text.Length - 1);
+            }
+            else
+                exportPresenter.CalculateTotal();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -122,6 +142,13 @@ namespace Doan.View.Export
             {
                 exportPresenter.CalculateTotalPrice();
                 exportPresenter.ClearInformation();
+                btnAdd.Enabled = false;
+                btnCancel.Enabled = true;
+                btnCreate.Enabled = true;
+            }
+            else
+            {
+                btnAdd.Enabled = true;
             }
         }
 
@@ -131,20 +158,39 @@ namespace Doan.View.Export
             exportPresenter.RetriveData(dtgvData.CurrentRow.Index, dtgvData.CurrentRow.Cells[0].Value.ToString()
                 , dtgvData.CurrentRow.Cells[1].Value.ToString(), dtgvData.CurrentRow.Cells[2].Value.ToString(),
                 dtgvData.CurrentRow.Cells[3].Value.ToString(), dtgvData.CurrentRow.Cells[4].Value.ToString());
+            btnAdd.Enabled = true;
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             ExportPresenter exportPresenter = new ExportPresenter(this);
-            exportPresenter.EditData(dtgvData.CurrentRow.Index);
-            exportPresenter.CalculateTotalPrice();
+            if (exportPresenter.EditData(dtgvData.CurrentRow.Index))
+            {
+                btnEdit.Enabled = false;
+                btnAdd.Enabled = false;
+                btnDelete.Enabled = false;
+                exportPresenter.CalculateTotalPrice();
+                exportPresenter.ClearInformation();
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             ExportPresenter exportPresenter = new ExportPresenter(this);
-            exportPresenter.DeleteDatainDataGridview();
-            exportPresenter.CalculateTotalPrice();
+            if (exportPresenter.DeleteDatainDataGridview())
+            {
+                btnAdd.Enabled = false;
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
+                if (!exportPresenter.CheckDB())
+                {
+                    btnCreate.Enabled = false;
+                    btnCancel.Enabled = false;
+                }
+                exportPresenter.CalculateTotalPrice();
+            }
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -156,14 +202,55 @@ namespace Doan.View.Export
         private void btnCreate_Click(object sender, EventArgs e)
         {
             ExportPresenter exportPresenter = new ExportPresenter(this);
-            if (exportPresenter.AddDataToDB())
-                exportPresenter.ClearData();
+            if (exportPresenter.CheckReason())
+            {
+                if (exportPresenter.AddDataToDB())
+                {
+                    PrintDialog printDialog = new PrintDialog();
+
+                    PrintDocument printDocument = new PrintDocument();
+
+                    printDialog.Document = printDocument;
+                    printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(Createform);
+                    DialogResult result = printDialog.ShowDialog();
+
+                    if (result == DialogResult.OK)
+                    {
+                        printDocument.Print();
+
+                    }
+                    exportPresenter.ClearData();
+                    btnAdd.Enabled = false;
+                    btnEdit.Enabled = false;
+                    btnCancel.Enabled = false;
+                    btnDelete.Enabled = false;
+                    btnCreate.Enabled = false;
+                }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             ExportPresenter exportPresenter = new ExportPresenter(this);
-            exportPresenter.ClearData();
+            if (exportPresenter.ClearData())
+            {
+                btnAdd.Enabled = false;
+                btnEdit.Enabled = false;
+                btnCancel.Enabled = false;
+                btnDelete.Enabled = false;
+                btnCreate.Enabled = false;
+            }
+            else
+                btnCancel.Enabled = true;
+        }
+        public void Createform(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            ExportPresenter exportPresenter = new ExportPresenter(this);
+            exportPresenter.Print(e);
+        }
+        private void dtgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnDelete.Enabled = true;
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.UI.WinForms;
 using Doan.Presenter;
 
 namespace Doan.View.Suplier
@@ -48,10 +49,10 @@ namespace Doan.View.Suplier
             get { return txtEmail.Text; } 
             set { txtEmail.Text = value; }
         }
-        public DataGridView gvData 
+        BunifuDataGridView ISuplier.gvData 
         { 
-            get { return dtgvsuplier; }
-            set { dtgvsuplier = value; } 
+            get { return dtgvPsuplier; }
+            set { dtgvPsuplier = value; } 
         }
         private string _message;
         public string message 
@@ -68,35 +69,83 @@ namespace Doan.View.Suplier
         {
             SuplierPresenter suplierPresenter = new SuplierPresenter(this);
             suplierPresenter.GetSuplier();
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
         }
 
         private void dtgvsuplier_DoubleClick(object sender, EventArgs e)
         {
             SuplierPresenter suplierPresenter = new SuplierPresenter(this);
-            suplierPresenter.RetriveSuplier(dtgvsuplier.CurrentRow.Index, dtgvsuplier.CurrentRow.Cells[0].Value.ToString()
-                , dtgvsuplier.CurrentRow.Cells[1].Value.ToString(), dtgvsuplier.CurrentRow.Cells[2].Value.ToString(),
-                dtgvsuplier.CurrentRow.Cells[3].Value.ToString(), dtgvsuplier.CurrentRow.Cells[4].Value.ToString());
+            suplierPresenter.RetriveSuplier(dtgvPsuplier.CurrentRow.Index, dtgvPsuplier.CurrentRow.Cells[0].Value.ToString()
+                , dtgvPsuplier.CurrentRow.Cells[1].Value.ToString(), dtgvPsuplier.CurrentRow.Cells[2].Value.ToString(),
+                dtgvPsuplier.CurrentRow.Cells[3].Value.ToString(), dtgvPsuplier.CurrentRow.Cells[4].Value.ToString());
+            btnDelete.Enabled = true;
+            btnEdit.Enabled = true;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             SuplierPresenter suplierPresenter = new SuplierPresenter(this);
-            suplierPresenter.AddData();
-            suplierPresenter.GetSuplier();
+            if (suplierPresenter.AddData())
+            {
+                btnAdd.Enabled = false;
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
+                suplierPresenter.ClearInformation();
+                suplierPresenter.GetSuplier();
+            }
+            else
+            {
+                btnAdd.Enabled = true;
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             SuplierPresenter suplierPresenter = new SuplierPresenter(this);
-            suplierPresenter.EditData();
-            suplierPresenter.GetSuplier();
+            if (suplierPresenter.CheckInformationEdit())
+            {
+                suplierPresenter.EditData();
+                btnAdd.Enabled = false;
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
+                suplierPresenter.ClearInformation();
+                suplierPresenter.GetSuplier();
+            }
+            else
+            {
+                MessageBox.Show("Please check information again!");
+                btnEdit.Enabled = true;
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             SuplierPresenter suplierPresenter = new SuplierPresenter(this);
-            suplierPresenter.DeleteData();
-            suplierPresenter.GetSuplier();
+            if (suplierPresenter.DeleteData())
+            {
+                suplierPresenter.GetSuplier();
+                btnAdd.Enabled = false;
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
+                suplierPresenter.ClearInformation();
+            }
+
+        }
+
+        private void txtSuplierName_TextChanged(object sender, EventArgs e)
+        {
+            SuplierPresenter suplierPresenter = new SuplierPresenter(this);
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtPhoneNumber.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.");
+                txtPhoneNumber.Text = txtPhoneNumber.Text.Remove(txtPhoneNumber.Text.Length - 1);
+            }
+            if (suplierPresenter.CheckInformation())
+                btnAdd.Enabled = true;
+            else
+                btnAdd.Enabled = false;
         }
     }
 }

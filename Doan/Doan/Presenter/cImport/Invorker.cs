@@ -20,21 +20,21 @@ namespace Doan.Presenter.cImport
             this.cancel = CC;
             this.edit = EC;
         }
-        public void AddData()
+        public bool AddData()
         {
-            add.Execute();
+            return add.Execute();
         }
-        public void DeleteData()
+        public bool DeleteData()
         {
-            delete.Execute();
+            return delete.Execute();
         }
-        public void EditData()
+        public bool EditData()
         {
-            edit.Execute();
+            return edit.Execute();
         }
-        public void CancelData()
+        public bool CancelData()
         {
-            cancel.Execute();
+            return cancel.Execute();
         }
     }
 }
