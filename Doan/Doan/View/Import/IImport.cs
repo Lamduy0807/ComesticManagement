@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.UI.WinForms;
 using static System.Windows.Forms.ComboBox;
 
 namespace Doan.View.Import
@@ -15,14 +16,14 @@ namespace Doan.View.Import
         string SuplierName { get; set; }
         string EmployeeID { get; }
         string EmployeeName { get; }
-        string TotalPrice { get; set; }
+        string TotalPriceProduct { get; set; }
         string ImportPrice { get; set; }
         string Quantity { get; set; }
         string Total { get; set; }
         string message { get; set; }
         string Search { get; set; }
         ObjectCollection cbData { get; }
-        DataGridView gvProductData { get; set; }
-        DataGridView gvDetailProductData { get; set; }
+        BunifuDataGridView gvProductData { get; set; }
+        BunifuDataGridView gvDetailProductData { get; set; }
     }
 }

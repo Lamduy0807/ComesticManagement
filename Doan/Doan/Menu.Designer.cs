@@ -33,9 +33,9 @@ namespace Doan
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.icButtonAccountant = new FontAwesome.Sharp.IconButton();
             this.icButtonReport = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.icButtonHome = new FontAwesome.Sharp.IconButton();
             this.icButtonSuplier = new FontAwesome.Sharp.IconButton();
             this.icButtonExport = new FontAwesome.Sharp.IconButton();
             this.icButtonEmployee = new FontAwesome.Sharp.IconButton();
@@ -46,6 +46,9 @@ namespace Doan
             this.panel1 = new System.Windows.Forms.Panel();
             this.img_home = new System.Windows.Forms.PictureBox();
             this.pnTilteBar = new System.Windows.Forms.Panel();
+            this.bunifuImageButton1 = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.lbName = new System.Windows.Forms.Label();
             this.btnCloseClick = new System.Windows.Forms.Button();
             this.icbtncurentform = new FontAwesome.Sharp.IconPictureBox();
             this.panelDesktop = new System.Windows.Forms.Panel();
@@ -80,9 +83,9 @@ namespace Doan
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.iconButton3);
+            this.panel2.Controls.Add(this.icButtonAccountant);
             this.panel2.Controls.Add(this.icButtonReport);
-            this.panel2.Controls.Add(this.iconButton1);
+            this.panel2.Controls.Add(this.icButtonHome);
             this.panel2.Controls.Add(this.icButtonSuplier);
             this.panel2.Controls.Add(this.icButtonExport);
             this.panel2.Controls.Add(this.icButtonEmployee);
@@ -94,31 +97,33 @@ namespace Doan
             this.panel2.Size = new System.Drawing.Size(260, 591);
             this.panel2.TabIndex = 13;
             // 
-            // iconButton3
+            // icButtonAccountant
             // 
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Calculator;
-            this.iconButton3.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 35;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(-7, 423);
-            this.iconButton3.Margin = new System.Windows.Forms.Padding(4);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.iconButton3.Size = new System.Drawing.Size(267, 60);
-            this.iconButton3.TabIndex = 24;
-            this.iconButton3.Text = "Accountant";
-            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = true;
-            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
+            this.icButtonAccountant.Enabled = false;
+            this.icButtonAccountant.FlatAppearance.BorderSize = 0;
+            this.icButtonAccountant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icButtonAccountant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.icButtonAccountant.ForeColor = System.Drawing.Color.Gainsboro;
+            this.icButtonAccountant.IconChar = FontAwesome.Sharp.IconChar.Calculator;
+            this.icButtonAccountant.IconColor = System.Drawing.Color.Gainsboro;
+            this.icButtonAccountant.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icButtonAccountant.IconSize = 35;
+            this.icButtonAccountant.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.icButtonAccountant.Location = new System.Drawing.Point(-7, 423);
+            this.icButtonAccountant.Margin = new System.Windows.Forms.Padding(4);
+            this.icButtonAccountant.Name = "icButtonAccountant";
+            this.icButtonAccountant.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.icButtonAccountant.Size = new System.Drawing.Size(267, 60);
+            this.icButtonAccountant.TabIndex = 24;
+            this.icButtonAccountant.Text = "Accountant";
+            this.icButtonAccountant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.icButtonAccountant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.icButtonAccountant.UseVisualStyleBackColor = true;
+            this.icButtonAccountant.Click += new System.EventHandler(this.iconButton3_Click);
             // 
             // icButtonReport
             // 
+            this.icButtonReport.Enabled = false;
             this.icButtonReport.FlatAppearance.BorderSize = 0;
             this.icButtonReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.icButtonReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -142,30 +147,32 @@ namespace Doan
             this.icButtonReport.UseVisualStyleBackColor = true;
             this.icButtonReport.Click += new System.EventHandler(this.icButtonReport_Click_1);
             // 
-            // iconButton1
+            // icButtonHome
             // 
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 35;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(-3, 3);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.iconButton1.Size = new System.Drawing.Size(260, 60);
-            this.iconButton1.TabIndex = 22;
-            this.iconButton1.Text = "Home";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.icButtonHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.icButtonHome.FlatAppearance.BorderSize = 0;
+            this.icButtonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.icButtonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.icButtonHome.ForeColor = System.Drawing.Color.Gainsboro;
+            this.icButtonHome.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.icButtonHome.IconColor = System.Drawing.Color.Gainsboro;
+            this.icButtonHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icButtonHome.IconSize = 35;
+            this.icButtonHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.icButtonHome.Location = new System.Drawing.Point(0, 0);
+            this.icButtonHome.Margin = new System.Windows.Forms.Padding(4);
+            this.icButtonHome.Name = "icButtonHome";
+            this.icButtonHome.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.icButtonHome.Size = new System.Drawing.Size(260, 60);
+            this.icButtonHome.TabIndex = 22;
+            this.icButtonHome.Text = "Home";
+            this.icButtonHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.icButtonHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.icButtonHome.UseVisualStyleBackColor = true;
             // 
             // icButtonSuplier
             // 
+            this.icButtonSuplier.Enabled = false;
             this.icButtonSuplier.FlatAppearance.BorderSize = 0;
             this.icButtonSuplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.icButtonSuplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -191,6 +198,7 @@ namespace Doan
             // 
             // icButtonExport
             // 
+            this.icButtonExport.Enabled = false;
             this.icButtonExport.FlatAppearance.BorderSize = 0;
             this.icButtonExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.icButtonExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -216,6 +224,7 @@ namespace Doan
             // 
             // icButtonEmployee
             // 
+            this.icButtonEmployee.Enabled = false;
             this.icButtonEmployee.FlatAppearance.BorderSize = 0;
             this.icButtonEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.icButtonEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -241,6 +250,7 @@ namespace Doan
             // 
             // icButtonProduct
             // 
+            this.icButtonProduct.Enabled = false;
             this.icButtonProduct.FlatAppearance.BorderSize = 0;
             this.icButtonProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.icButtonProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -266,6 +276,7 @@ namespace Doan
             // 
             // iconButtonSale
             // 
+            this.iconButtonSale.Enabled = false;
             this.iconButtonSale.FlatAppearance.BorderSize = 0;
             this.iconButtonSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButtonSale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -291,6 +302,7 @@ namespace Doan
             // 
             // icButtonImport
             // 
+            this.icButtonImport.Enabled = false;
             this.icButtonImport.FlatAppearance.BorderSize = 0;
             this.icButtonImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.icButtonImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -321,7 +333,7 @@ namespace Doan
             this.icButtonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.icButtonSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.icButtonSettings.ForeColor = System.Drawing.Color.Gainsboro;
-            this.icButtonSettings.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.icButtonSettings.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.icButtonSettings.IconColor = System.Drawing.Color.Gainsboro;
             this.icButtonSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icButtonSettings.IconSize = 35;
@@ -334,10 +346,11 @@ namespace Doan
             this.icButtonSettings.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.icButtonSettings.Size = new System.Drawing.Size(260, 62);
             this.icButtonSettings.TabIndex = 12;
-            this.icButtonSettings.Text = "Settings";
+            this.icButtonSettings.Text = "Logout";
             this.icButtonSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.icButtonSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.icButtonSettings.UseVisualStyleBackColor = true;
+            this.icButtonSettings.Click += new System.EventHandler(this.icButtonSettings_Click);
             // 
             // panel1
             // 
@@ -363,14 +376,79 @@ namespace Doan
             // pnTilteBar
             // 
             this.pnTilteBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(198)))), ((int)(((byte)(102)))));
+            this.pnTilteBar.Controls.Add(this.bunifuImageButton1);
+            this.pnTilteBar.Controls.Add(this.btnMinimize);
+            this.pnTilteBar.Controls.Add(this.lbName);
             this.pnTilteBar.Controls.Add(this.btnCloseClick);
             this.pnTilteBar.Controls.Add(this.icbtncurentform);
             this.pnTilteBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTilteBar.Location = new System.Drawing.Point(260, 0);
             this.pnTilteBar.Name = "pnTilteBar";
-            this.pnTilteBar.Size = new System.Drawing.Size(1322, 75);
+            this.pnTilteBar.Size = new System.Drawing.Size(1322, 96);
             this.pnTilteBar.TabIndex = 1;
             this.pnTilteBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnTilteBar_MouseDown);
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.ActiveImage = null;
+            this.bunifuImageButton1.AllowAnimations = true;
+            this.bunifuImageButton1.AllowBuffering = false;
+            this.bunifuImageButton1.AllowToggling = false;
+            this.bunifuImageButton1.AllowZooming = true;
+            this.bunifuImageButton1.AllowZoomingOnFocus = false;
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.bunifuImageButton1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.ErrorImage")));
+            this.bunifuImageButton1.FadeWhenInactive = false;
+            this.bunifuImageButton1.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.bunifuImageButton1.Image = global::Doan.Properties.Resources.user;
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.ImageLocation = null;
+            this.bunifuImageButton1.ImageMargin = 0;
+            this.bunifuImageButton1.ImageSize = new System.Drawing.Size(49, 49);
+            this.bunifuImageButton1.ImageZoomSize = new System.Drawing.Size(50, 50);
+            this.bunifuImageButton1.InitialImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.InitialImage")));
+            this.bunifuImageButton1.Location = new System.Drawing.Point(1272, 36);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Rotation = 0;
+            this.bunifuImageButton1.ShowActiveImage = true;
+            this.bunifuImageButton1.ShowCursorChanges = true;
+            this.bunifuImageButton1.ShowImageBorders = true;
+            this.bunifuImageButton1.ShowSizeMarkers = false;
+            this.bunifuImageButton1.Size = new System.Drawing.Size(50, 50);
+            this.bunifuImageButton1.TabIndex = 7;
+            this.bunifuImageButton1.ToolTipText = "";
+            this.bunifuImageButton1.WaitOnLoad = false;
+            this.bunifuImageButton1.Zoom = 0;
+            this.bunifuImageButton1.ZoomSpeed = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Font = new System.Drawing.Font("Verdana", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.Location = new System.Drawing.Point(1263, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(31, 35);
+            this.btnMinimize.TabIndex = 6;
+            this.btnMinimize.Text = "-";
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.ForeColor = System.Drawing.Color.White;
+            this.lbName.Location = new System.Drawing.Point(55, 39);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(90, 29);
+            this.lbName.TabIndex = 5;
+            this.lbName.Text = "Home";
             // 
             // btnCloseClick
             // 
@@ -378,11 +456,11 @@ namespace Doan
             this.btnCloseClick.BackColor = System.Drawing.Color.Transparent;
             this.btnCloseClick.FlatAppearance.BorderSize = 0;
             this.btnCloseClick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseClick.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseClick.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseClick.ForeColor = System.Drawing.Color.White;
-            this.btnCloseClick.Location = new System.Drawing.Point(1279, 0);
+            this.btnCloseClick.Location = new System.Drawing.Point(1291, 0);
             this.btnCloseClick.Name = "btnCloseClick";
-            this.btnCloseClick.Size = new System.Drawing.Size(40, 35);
+            this.btnCloseClick.Size = new System.Drawing.Size(31, 35);
             this.btnCloseClick.TabIndex = 4;
             this.btnCloseClick.Text = "X";
             this.btnCloseClick.UseVisualStyleBackColor = false;
@@ -395,7 +473,7 @@ namespace Doan
             this.icbtncurentform.IconColor = System.Drawing.Color.White;
             this.icbtncurentform.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.icbtncurentform.IconSize = 50;
-            this.icbtncurentform.Location = new System.Drawing.Point(6, 12);
+            this.icbtncurentform.Location = new System.Drawing.Point(6, 36);
             this.icbtncurentform.Name = "icbtncurentform";
             this.icbtncurentform.Size = new System.Drawing.Size(50, 50);
             this.icbtncurentform.TabIndex = 0;
@@ -407,9 +485,9 @@ namespace Doan
             this.panelDesktop.Controls.Add(this.pictureBox1);
             this.panelDesktop.Controls.Add(this.label1);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(260, 75);
+            this.panelDesktop.Location = new System.Drawing.Point(260, 96);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1322, 778);
+            this.panelDesktop.Size = new System.Drawing.Size(1322, 757);
             this.panelDesktop.TabIndex = 2;
             // 
             // label2
@@ -489,6 +567,7 @@ namespace Doan
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.img_home)).EndInit();
             this.pnTilteBar.ResumeLayout(false);
+            this.pnTilteBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icbtncurentform)).EndInit();
             this.panelDesktop.ResumeLayout(false);
             this.panelDesktop.PerformLayout();
@@ -502,28 +581,33 @@ namespace Doan
 
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconButton icButtonImport;
+        private FontAwesome.Sharp.IconButton icButtonHome;
         private FontAwesome.Sharp.IconButton iconButtonSale;
+        private FontAwesome.Sharp.IconButton icButtonProduct;
+        private FontAwesome.Sharp.IconButton icButtonEmployee;
+        private FontAwesome.Sharp.IconButton icButtonSuplier;
+        private FontAwesome.Sharp.IconButton icButtonImport;
+        private FontAwesome.Sharp.IconButton icButtonExport;
+        private FontAwesome.Sharp.IconButton icButtonAccountant;
+        private FontAwesome.Sharp.IconButton icButtonReport;
         private FontAwesome.Sharp.IconButton icButtonSettings;
         private System.Windows.Forms.Panel pnTilteBar;
         private FontAwesome.Sharp.IconPictureBox icbtncurentform;
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.Button btnCloseClick;
-        private FontAwesome.Sharp.IconButton icButtonSuplier;
-        private FontAwesome.Sharp.IconButton icButtonEmployee;
-        private FontAwesome.Sharp.IconButton icButtonProduct;
-        private FontAwesome.Sharp.IconButton icButtonReport;
-        private FontAwesome.Sharp.IconButton icButtonExport;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox img_home;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        
         private View.MenuDropdown.RJDropdownMenu rjDropdownMenu1;
         private System.Windows.Forms.ToolStripMenuItem receiptsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paySlipToolStripMenuItem;
+        private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.Button btnMinimize;
+        private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton1;
     }
 }
 

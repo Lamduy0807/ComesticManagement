@@ -66,21 +66,23 @@ namespace Doan.Presenter
                         if (Convert.ToString(row.Cells[0].Value) == saleview.Product_id)
                         {
                             row.Cells[3].Value = (int.Parse(saleview.Quantity) + Convert.ToInt16(row.Cells[3].Value.ToString()));
-                            //row.Cells[3].Value = (double.Parse(saleview.P) + Convert.ToDouble(row.Cells[3].Value.ToString()));
+                           
                             found = true;
                             return true;
                         }
-                        if (!found)
-                        {
-                            saleview.dgvCart.Rows.Add(saleview.Product_id, saleview.Product_Name, saleview.Price, saleview.Quantity);
-                            return true;
-                        }
-                        else
-                        {
-                            saleview.dgvCart.Rows.Add(saleview.Product_id, saleview.Product_Name, saleview.Price, saleview.Quantity);
-                            return true;
-                        }
+                        
                     }
+                    if (!found)
+                    {
+                        saleview.dgvCart.Rows.Add(saleview.Product_id, saleview.Product_Name, saleview.Price, saleview.Quantity);
+                        return true;
+                    }
+                    
+                }
+                else
+                {
+                    saleview.dgvCart.Rows.Add(saleview.Product_id, saleview.Product_Name, saleview.Price, saleview.Quantity);
+                    return true;
                 }
                 return true;
             }

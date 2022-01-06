@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using Bunifu.UI.WinForms;
 using Doan.Presenter;
 
 namespace Doan.View.Statistic
@@ -49,28 +51,43 @@ namespace Doan.View.Statistic
             get { return lbBillToday.Text; }
             set { lbBillToday.Text = value; }
         }
-        public DataGridView gvBestSeller
+        BunifuDataGridView IStatistics.gvBestSeller
         {
             get { return dtgvBestSeller; }
             set { dtgvBestSeller = value; }
         }
 
-        
+
         private DataTable _data;
         public DataTable data { set { _data = value; } }
 
+        public string ProductToday
+        {
+            get { return lbProduct.Text; }
+            set { lbProduct.Text = value; }
+        }
+        private string _name;
+        string IStatistics.EmployeeName { get { return _name; } }
+
+
+        public StatisticsForm(string name) : this()
+        {
+            this._name = name;
+        }
         private void Statistics_Load(object sender, EventArgs e)
         {
             StatisticPresenter statisticPresenter = new StatisticPresenter(this);
             string sDay = DateTime.Now.ToString("dd");
             string sMonth = DateTime.Now.ToString("MM");
             string sYear = DateTime.Now.ToString("yyyy");
-            statisticPresenter.GetBillMonth(sMonth,sYear);
-            statisticPresenter.GetBillToday(sDay,sMonth,sYear);
-            statisticPresenter.GetRevenueMonth(sMonth,sYear);
+            statisticPresenter.GetBillMonth(sMonth, sYear);
+            statisticPresenter.GetBillToday(sDay, sMonth, sYear);
+            statisticPresenter.GetRevenueMonth(sMonth, sYear);
             statisticPresenter.GetRevenueToday(sDay, sMonth, sYear);
             statisticPresenter.GetTopProduct();
-            statisticPresenter.GetLineChart(sMonth,sYear);
+            statisticPresenter.GetLineChart(sMonth, sYear);
+            statisticPresenter.GetProductMonth(sMonth, sYear);
+            statisticPresenter.GetProductToday(sDay, sMonth, sYear);
             ChartMoneydaybydate();
         }
         private void ChartMoneydaybydate()
@@ -79,8 +96,8 @@ namespace Doan.View.Statistic
             chart1.Series["Revenue"].XValueType = ChartValueType.DateTime;
 
             chart1.ChartAreas[0].AxisX.LabelStyle.Format = "dd";
-;
-            chart1.DataSource = _data; 
+            ;
+            chart1.DataSource = _data;
             chart1.Series["Revenue"].XValueMember = "Ngay";
             chart1.Series["Revenue"].YValueMembers = "Tong";
             chart1.Series["Revenue"].IsValueShownAsLabel = true;
@@ -92,6 +109,28 @@ namespace Doan.View.Statistic
             StatisticPresenter statisticPresenter = new StatisticPresenter(this);
             statisticPresenter.RetriveData();
             ChartMoneydaybydate();
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            PrintDialog printDialog = new PrintDialog();
+
+            PrintDocument printDocument = new PrintDocument();
+
+            printDialog.Document = printDocument;
+            printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(Createform);
+            DialogResult result = printDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                printDocument.Print();
+
+            }
+        }
+        public void Createform(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            StatisticPresenter statisticPresenter = new StatisticPresenter(this);
+            statisticPresenter.Print(e);
         }
     }
 }

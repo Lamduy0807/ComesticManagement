@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.UI.WinForms;
 using Doan.Presenter;
 
 namespace Doan.View.Product
@@ -73,7 +74,7 @@ namespace Doan.View.Product
             }
         }
 
-        public DataGridView gvData 
+        BunifuDataGridView IProduct.gvData 
         {
             get { return dtgvProduct; } 
             set { dtgvProduct = value; }
@@ -84,6 +85,9 @@ namespace Doan.View.Product
             ProductPresenter productPresenter = new ProductPresenter(this);
             productPresenter.GetProductType();
             productPresenter.GetProduct();
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
         }
 
         private void dtgvProduct_DoubleClick(object sender, EventArgs e)
@@ -93,6 +97,8 @@ namespace Doan.View.Product
                 , dtgvProduct.CurrentRow.Cells[1].Value.ToString(), dtgvProduct.CurrentRow.Cells[2].Value.ToString(), 
                 dtgvProduct.CurrentRow.Cells[3].Value.ToString(), dtgvProduct.CurrentRow.Cells[4].Value.ToString(),
                 dtgvProduct.CurrentRow.Cells[5].Value.ToString(), dtgvProduct.CurrentRow.Cells[6].Value.ToString());
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -112,17 +118,50 @@ namespace Doan.View.Product
             { 
                 productPresenter.GetProduct();
                 productPresenter.ClearInformation();
+                btnAdd.Enabled = false;
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
             }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             ProductPresenter productPresenter = new ProductPresenter(this);
-            if (productPresenter.EditData())
+            if (productPresenter.CheckInformationEdit())
             {
-                productPresenter.GetProduct();
-                productPresenter.ClearInformation();
+                if (productPresenter.EditData())
+                {
+                    productPresenter.GetProduct();
+                    productPresenter.ClearInformation();
+                    btnAdd.Enabled = false;
+                    btnEdit.Enabled = false;
+                    btnDelete.Enabled = false;
+                }
             }
+            else
+            {
+                MessageBox.Show("Please check information again!");
+                btnEdit.Enabled = true;
+            }
+        }
+
+        private void txtProductName_TextChanged(object sender, EventArgs e)
+        {
+            ProductPresenter productPresenter = new ProductPresenter(this);
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtPrice.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.");
+                txtPrice.Text = txtPrice.Text.Remove(txtPrice.Text.Length - 1);
+            }
+            if (productPresenter.CheckInformation())
+                btnAdd.Enabled = true;
+            else
+                btnAdd.Enabled = false;
+        }
+
+        private void dtgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnDelete.Enabled = true;
         }
     }
 }

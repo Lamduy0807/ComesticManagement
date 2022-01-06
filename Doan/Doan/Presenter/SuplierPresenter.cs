@@ -88,5 +88,27 @@ namespace Doan.Presenter
                 return false;
             }
         }
+        public bool CheckInformationEdit()
+        {
+            if (suplierview.SuplierId == "" ||
+            suplierview.SuplierName == "" ||
+            suplierview.SuplierAddress == "" ||
+            suplierview.SuplierPhone == "" ||
+            suplierview.SuplierEmail == "")
+                return false;
+            else
+                return true;
+        }
+        public bool CheckInformation()
+        {
+            if (suplierview.SuplierId != "" ||
+            suplierview.SuplierName == "" ||
+            suplierview.SuplierAddress == "" ||
+            suplierview.SuplierPhone == "" ||
+            suplierview.SuplierEmail == "")
+                return false;
+            else
+                return true;
+        }
     }
 }

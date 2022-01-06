@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.UI.WinForms;
 using Doan.Presenter;
 using Doan.Presenter.cImport;
 
@@ -37,7 +38,7 @@ namespace Doan.View.Import
             get { return _id; }
         }
 
-        public string TotalPrice 
+        public string TotalPriceProduct
         {
             get { return txtTotalPrice.Text; } 
             set { txtTotalPrice.Text = value; } 
@@ -65,18 +66,6 @@ namespace Doan.View.Import
                 return cbSuplier.Items;
             }
         }
-
-        public DataGridView gvProductData
-        {
-            get { return dtgvProduct; }
-            set { dtgvProduct = value; }
-        }
-        public DataGridView gvDetailProductData
-        {
-            get { return dtgvData; }
-            set { dtgvData = value; }
-        }
-
         private string _message;
         public string message
         {
@@ -101,6 +90,17 @@ namespace Doan.View.Import
 
         public string EmployeeName { get { return _name; } }
 
+        BunifuDataGridView IImport.gvProductData
+        {
+            get { return dtgvProduct; }
+            set { dtgvProduct = value; }
+        }
+        BunifuDataGridView IImport.gvDetailProductData
+        {
+            get { return dtgvData; }
+            set { dtgvData = value; }
+        }
+
         public ImportForm(string id, string name) : this()
         {
             this._id = id;
@@ -111,7 +111,12 @@ namespace Doan.View.Import
         {
             ImportPresenter importPresenter = new ImportPresenter(this);
             importPresenter.GetProduct();
-            importPresenter.GetSuplier();        
+            importPresenter.GetSuplier();
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnCancel.Enabled = false;
+            btnDelete.Enabled = false; 
+            btnCreate.Enabled = false;
         }
 
         private void dtgvProduct_DoubleClick(object sender, EventArgs e)
@@ -119,6 +124,9 @@ namespace Doan.View.Import
             ImportPresenter importPresenter = new ImportPresenter(this);
             importPresenter.RetriveProduct(dtgvProduct.CurrentRow.Index, dtgvProduct.CurrentRow.Cells[0].Value.ToString()
                 , dtgvProduct.CurrentRow.Cells[1].Value.ToString());
+            btnAdd.Enabled = true;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -129,13 +137,26 @@ namespace Doan.View.Import
             Command cancel = new CancelCommand(importPresenter);
             Command edit = new EditCommand(importPresenter, 0);
             Invorker invorker = new Invorker(add,delete,cancel,edit);
-            invorker.AddData();
+            if (invorker.AddData())
+            {
+                btnAdd.Enabled = false;
+                btnCancel.Enabled = true;
+                btnCreate.Enabled = true;
+            }
+            else
+                btnAdd.Enabled = true;
         }
 
         private void txtQuantity_TextChanged(object sender, EventArgs e)
         {
             ImportPresenter importPresenter = new ImportPresenter(this);
-            importPresenter.CalculateTotal();
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtQuantity.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.");
+                txtQuantity.Text = txtQuantity.Text.Remove(txtQuantity.Text.Length - 1);
+            }
+            else
+                importPresenter.CalculateTotal();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -150,6 +171,9 @@ namespace Doan.View.Import
             importPresenter.RetriveData(dtgvData.CurrentRow.Index, dtgvData.CurrentRow.Cells[0].Value.ToString()
                 , dtgvData.CurrentRow.Cells[1].Value.ToString(), dtgvData.CurrentRow.Cells[2].Value.ToString(),
                 dtgvData.CurrentRow.Cells[3].Value.ToString(), dtgvData.CurrentRow.Cells[4].Value.ToString());
+            btnAdd.Enabled = true;
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -160,7 +184,17 @@ namespace Doan.View.Import
             Command cancel = new CancelCommand(importPresenter);
             Command edit = new EditCommand(importPresenter, 0);
             Invorker invorker = new Invorker(add, delete, cancel, edit);
-            invorker.DeleteData();
+            if (invorker.DeleteData())
+            {
+                btnAdd.Enabled = false;
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
+                if (!importPresenter.CheckDB())
+                {
+                    btnCreate.Enabled = false;
+                    btnCancel.Enabled = false;
+                }
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -171,7 +205,12 @@ namespace Doan.View.Import
             Command delete = new DeleteCommand(importPresenter);
             Command cancel = new CancelCommand(importPresenter);
             Invorker invorker = new Invorker(add, delete, cancel, edit);
-            invorker.EditData();
+            if(invorker.EditData())
+            {
+                btnEdit.Enabled = false;
+                btnAdd.Enabled = false;
+                btnDelete.Enabled = false;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -182,28 +221,45 @@ namespace Doan.View.Import
             Command cancel = new CancelCommand(importPresenter);
             Command edit = new EditCommand(importPresenter, 0);
             Invorker invorker = new Invorker(add, delete, cancel, edit);
-            invorker.CancelData();
+            if (invorker.CancelData())
+            {
+                btnAdd.Enabled = false;
+                btnEdit.Enabled = false;
+                btnCancel.Enabled = false;
+                btnDelete.Enabled = false;
+                btnCreate.Enabled = false;
+            }
+            else
+                btnCancel.Enabled = true;
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
             ImportPresenter importPresenter = new ImportPresenter(this);
-            if (importPresenter.AddDataToDB())
+            if (importPresenter.CheckSuplier())
             {
-                PrintDialog printDialog = new PrintDialog();
-
-                PrintDocument printDocument = new PrintDocument();
-
-                printDialog.Document = printDocument;
-                printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(Createform);
-                DialogResult result = printDialog.ShowDialog();
-
-                if (result == DialogResult.OK)
+                if (importPresenter.AddDataToDB())
                 {
-                    printDocument.Print();
+                    PrintDialog printDialog = new PrintDialog();
 
+                    PrintDocument printDocument = new PrintDocument();
+
+                    printDialog.Document = printDocument;
+                    printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(Createform);
+                    DialogResult result = printDialog.ShowDialog();
+
+                    if (result == DialogResult.OK)
+                    {
+                        printDocument.Print();
+
+                    }
+                    importPresenter.ClearData();
+                    btnAdd.Enabled = false;
+                    btnEdit.Enabled = false;
+                    btnCancel.Enabled = false;
+                    btnDelete.Enabled = false;
+                    btnCreate.Enabled = false;
                 }
-                importPresenter.ClearData();
             }
         }
         public void Createform(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -211,6 +267,24 @@ namespace Doan.View.Import
             ImportPresenter importPresenter = new ImportPresenter(this);
             importPresenter.Print(e);
         }
-        
+
+        private void dtgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnDelete.Enabled = true;
+        }
+
+        private void txtImportPrice_TextChanged(object sender, EventArgs e)
+        {
+            ImportPresenter importPresenter = new ImportPresenter(this);
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtImportPrice.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.");
+                txtImportPrice.Text = txtImportPrice.Text.Remove(txtImportPrice.Text.Length - 1);
+            }
+            else
+                importPresenter.CalculateTotal();
+        }
+
+
     }
 }

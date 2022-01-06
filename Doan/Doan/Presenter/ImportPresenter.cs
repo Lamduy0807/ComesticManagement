@@ -86,17 +86,17 @@ namespace Doan.Presenter
                             found = true;
                             return true;
                         }
-                        if (!found)
-                        {
-                            importview.gvDetailProductData.Rows.Add(importview.ProductId, importview.ProductName, importview.ImportPrice, importview.Quantity, importview.Total);
-                            return true;
-                        }
-                        else
-                        {
-                            importview.gvDetailProductData.Rows.Add(importview.ProductId, importview.ProductName, importview.ImportPrice, importview.Quantity, importview.Total);
-                            return true;
-                        }
                     }
+                    if (!found)
+                    {
+                        importview.gvDetailProductData.Rows.Add(importview.ProductId, importview.ProductName, importview.ImportPrice, importview.Quantity, importview.Total);
+                        return true;
+                    }
+                }
+                else
+                {
+                    importview.gvDetailProductData.Rows.Add(importview.ProductId, importview.ProductName, importview.ImportPrice, importview.Quantity, importview.Total);
+                    return true;
                 }
                 return true;
             }
@@ -108,7 +108,7 @@ namespace Doan.Presenter
         }
         public bool CalculateTotal()
         {
-            if (importview.Quantity!="")
+            if (importview.Quantity!= "" && importview.ImportPrice!="")
             {
                 if (Convert.ToInt32(importview.Quantity) > 0)
                 {
@@ -118,6 +118,7 @@ namespace Doan.Presenter
             }
             return true;
         }
+
         public bool CalculateTotalPrice()
         {
             double sum = 0;
@@ -125,7 +126,7 @@ namespace Doan.Presenter
             {
                 sum += Convert.ToDouble(importview.gvDetailProductData.Rows[i].Cells[4].Value);
             }
-            importview.TotalPrice = sum.ToString();
+            importview.TotalPriceProduct = sum.ToString();
             return true;
         }
         public bool CheckInformation()
@@ -161,32 +162,63 @@ namespace Doan.Presenter
         }
         public bool EditData(int index)
         {
-            DataGridViewRow newDataRow = importview.gvDetailProductData.Rows[index];
-            newDataRow.Cells[0].Value = importview.ProductId;
-            newDataRow.Cells[1].Value = importview.ProductName;
-            newDataRow.Cells[2].Value = importview.ImportPrice;
-            newDataRow.Cells[3].Value = importview.Quantity;
-            newDataRow.Cells[4].Value = importview.Total;
-            return true;
+            if (CheckInformation())
+            {
+                DataGridViewRow newDataRow = importview.gvDetailProductData.Rows[index];
+                newDataRow.Cells[0].Value = importview.ProductId;
+                newDataRow.Cells[1].Value = importview.ProductName;
+                newDataRow.Cells[2].Value = importview.ImportPrice;
+                newDataRow.Cells[3].Value = importview.Quantity;
+                newDataRow.Cells[4].Value = importview.Total;
+                ClearInformation();
+                return true;
+            }
+            else
+            {
+                importview.message = "Check information again";
+                return false;
+            }
         }
         public bool ClearData()
         {
             ClearInformation();
-            importview.TotalPrice = "";
+            importview.TotalPriceProduct = "";
             importview.SuplierName = null;
             importview.gvDetailProductData.Rows.Clear();
             importview.gvDetailProductData.Refresh();
             return true;
         }
+        public bool CheckDB()
+        {
+            if (importview.gvDetailProductData.Rows.Count > 1)
+            {
+                return true;
+            }
+            else
+                return false;
+
+        }
+        public bool CheckSuplier()
+        {
+            if (importview.SuplierName == "")
+            {
+                importview.message = "Please check information again!";
+                return false; 
+            }
+            else
+            {
+                return true;
+            }
+        }
         public bool AddDataToDB()
         {
-            string id = import.AddData(importview.EmployeeID, importview.SuplierName, importview.TotalPrice);
+            string id = import.AddData(importview.EmployeeID, importview.SuplierName, importview.TotalPriceProduct);
 
             ///chỗ này viết hàm add tự động vô phiếu chi
             ///
             string contentReceipt = "Import ID: " + id;
             string status = "Completed";
-            import.AutoCreatePaySlip(importview.EmployeeID, contentReceipt, importview.TotalPrice, status, "");
+            import.AutoCreatePaySlip(importview.EmployeeID, contentReceipt, importview.TotalPriceProduct, status, "");
 
             if (importview.gvDetailProductData.Rows.Count > 0)
             {
@@ -251,7 +283,7 @@ namespace Doan.Presenter
                     }
                 }
                 float total = 0f;
-                float productTotal = float.Parse(importview.TotalPrice);
+                float productTotal = float.Parse(importview.TotalPriceProduct);
                 total = productTotal;
                 offset = offset + 20;
                 graphic.DrawString("Total: ".PadRight(60) + total.ToString("###,###"), new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX, startY + offset);

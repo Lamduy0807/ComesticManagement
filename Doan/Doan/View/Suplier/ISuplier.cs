@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.UI.WinForms;
 
 namespace Doan.View.Suplier
 {
@@ -15,6 +16,6 @@ namespace Doan.View.Suplier
         string SuplierAddress { get; set; }
         string SuplierEmail { get; set; }
         string message { get; set; }
-        DataGridView gvData { get; set; }
+        BunifuDataGridView gvData { get; set; }
     }
 }

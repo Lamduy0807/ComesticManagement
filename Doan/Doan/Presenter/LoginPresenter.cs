@@ -41,5 +41,10 @@ namespace Doan.Presenter
             User user = new User();
             return user.UserName(loginview.Usernametext, loginview.Passwordtext);
         }
+        public string GetPosition()
+        {
+            User user = new User();
+            return user.GetPosition(loginview.Usernametext, loginview.Passwordtext);
+        }
     }
 }

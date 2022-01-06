@@ -102,6 +102,33 @@ namespace Doan.Presenter
                 return false;
             }
         }
-
+        public bool CheckInformation()
+        {
+            if(productview.ProductID != "" || productview.ProductName == "" ||
+            productview.ProductType == ""||
+            productview.Price == ""||
+            productview.Description == ""||
+            productview.Original == ""||
+            productview.Unit == "")
+            {
+                return false;
+            }
+            return true;
+        }
+        public bool CheckInformationEdit()
+        {
+            if (productview.ProductID == "" ||
+            productview.ProductName == "" ||
+            productview.ProductType == "" ||
+            productview.Price == "" ||
+            productview.Description == "" ||
+            productview.Original == "" ||
+            productview.Unit == "")
+            {
+                return false;
+            }
+            else
+                return true;
+        }
     }
 }

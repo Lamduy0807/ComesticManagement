@@ -24,13 +24,13 @@ namespace Doan.Model
         public DataTable GetProductData()
         {
             ConnectDB connect = new ConnectDB();
-            string sqlQuery = "select Product_id, ProductName, Price, Description, Origin, Unit, TypeName from Product , ProductType where Product.ProductType = ProductType.ProductType_id";
+            string sqlQuery = "select Product_id as ID, ProductName as Name, Price, Description, Origin, Unit, TypeName as Type from Product , ProductType where Product.ProductType = ProductType.ProductType_id";
             return connect.GetData(sqlQuery);
         }
         public DataTable SearchData(string search)
         {
             ConnectDB connect = new ConnectDB();
-            string sqlQuery = "select Product_id, ProductName, Price, Description, Origin, Unit, TypeName from Product , ProductType where Product.ProductType = ProductType.ProductType_id and (Product_id like '" + search + "%' or ProductName like N'" + search + "%')";
+            string sqlQuery = "select Product_id as ID, ProductName as Name, Price, Description, Origin, Unit, TypeName as Type from Product , ProductType where Product.ProductType = ProductType.ProductType_id and (Product_id like '" + search + "%' or ProductName like N'" + search + "%')";
             return connect.GetData(sqlQuery);
         }
 
