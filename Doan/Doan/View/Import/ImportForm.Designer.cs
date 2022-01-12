@@ -29,21 +29,20 @@ namespace Doan.View.Import
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportForm));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties29 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties30 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties31 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties32 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.txtProductName = new MaterialSurface.MaterialTextfield();
             this.txtImportPrice = new MaterialSurface.MaterialTextfield();
             this.txtProductId = new MaterialSurface.MaterialTextfield();
-            this.txtTotalPrice = new MaterialSurface.MaterialTextfield();
             this.txtQuantity = new MaterialSurface.MaterialTextfield();
             this.txtTotal = new MaterialSurface.MaterialTextfield();
             this.cbSuplier = new MaterialSurface.MaterialComboBox();
@@ -62,6 +61,8 @@ namespace Doan.View.Import
             this.txtSearch = new Bunifu.UI.WinForms.BunifuTextBox();
             this.btnCancel = new MaterialSurface.OutlinedButton();
             this.btnCreate = new MaterialSurface.OutlinedButton();
+            this.lbTotal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.bunifuGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProduct)).BeginInit();
             this.bunifuGroupBox2.SuspendLayout();
@@ -80,7 +81,7 @@ namespace Doan.View.Import
             this.txtProductName.HelperText = "";
             this.txtProductName.HideSelection = true;
             this.txtProductName.HintText = "Product Name";
-            this.txtProductName.Location = new System.Drawing.Point(885, 84);
+            this.txtProductName.Location = new System.Drawing.Point(902, 84);
             this.txtProductName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtProductName.MaxLength = 32767;
             this.txtProductName.MouseState = MaterialSurface.MouseState.OUT;
@@ -108,7 +109,7 @@ namespace Doan.View.Import
             this.txtImportPrice.HelperText = "";
             this.txtImportPrice.HideSelection = true;
             this.txtImportPrice.HintText = "Import Price";
-            this.txtImportPrice.Location = new System.Drawing.Point(885, 169);
+            this.txtImportPrice.Location = new System.Drawing.Point(902, 169);
             this.txtImportPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtImportPrice.MaxLength = 32767;
             this.txtImportPrice.MouseState = MaterialSurface.MouseState.OUT;
@@ -138,7 +139,7 @@ namespace Doan.View.Import
             this.txtProductId.HelperText = "";
             this.txtProductId.HideSelection = true;
             this.txtProductId.HintText = "Product ID";
-            this.txtProductId.Location = new System.Drawing.Point(885, 12);
+            this.txtProductId.Location = new System.Drawing.Point(902, 12);
             this.txtProductId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtProductId.MaxLength = 32767;
             this.txtProductId.MouseState = MaterialSurface.MouseState.OUT;
@@ -154,35 +155,6 @@ namespace Doan.View.Import
             this.txtProductId.TabIndex = 19;
             this.txtProductId.UseSystemPasswordChar = false;
             // 
-            // txtTotalPrice
-            // 
-            this.txtTotalPrice.AutoScaleColor = true;
-            this.txtTotalPrice.BackColor = System.Drawing.SystemColors.Control;
-            this.txtTotalPrice.CountText = false;
-            this.txtTotalPrice.Enabled = false;
-            this.txtTotalPrice.FieldType = MaterialSurface.BoxType.Normal;
-            this.txtTotalPrice.FloatingLabelText = "";
-            this.txtTotalPrice.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtTotalPrice.HandleError = false;
-            this.txtTotalPrice.HelperText = "";
-            this.txtTotalPrice.HideSelection = true;
-            this.txtTotalPrice.HintText = "Total Price";
-            this.txtTotalPrice.Location = new System.Drawing.Point(885, 588);
-            this.txtTotalPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTotalPrice.MaxLength = 32767;
-            this.txtTotalPrice.MouseState = MaterialSurface.MouseState.OUT;
-            this.txtTotalPrice.Multiline = false;
-            this.txtTotalPrice.Name = "txtTotalPrice";
-            this.txtTotalPrice.PasswordChar = '\0';
-            this.txtTotalPrice.PrimaryColor = System.Drawing.Color.DarkGreen;
-            this.txtTotalPrice.ReadOnly = false;
-            this.txtTotalPrice.ShortcutsEnable = true;
-            this.txtTotalPrice.ShowCaret = true;
-            this.txtTotalPrice.Size = new System.Drawing.Size(373, 49);
-            this.txtTotalPrice.Style = MaterialSurface.MaterialTextfield.TextfieldStyle.HintAsFloatingLabel;
-            this.txtTotalPrice.TabIndex = 22;
-            this.txtTotalPrice.UseSystemPasswordChar = false;
-            // 
             // txtQuantity
             // 
             this.txtQuantity.AutoScaleColor = true;
@@ -195,7 +167,7 @@ namespace Doan.View.Import
             this.txtQuantity.HelperText = "";
             this.txtQuantity.HideSelection = true;
             this.txtQuantity.HintText = "Quantity";
-            this.txtQuantity.Location = new System.Drawing.Point(885, 267);
+            this.txtQuantity.Location = new System.Drawing.Point(902, 240);
             this.txtQuantity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQuantity.MaxLength = 32767;
             this.txtQuantity.MouseState = MaterialSurface.MouseState.OUT;
@@ -225,7 +197,7 @@ namespace Doan.View.Import
             this.txtTotal.HelperText = "";
             this.txtTotal.HideSelection = true;
             this.txtTotal.HintText = "Price";
-            this.txtTotal.Location = new System.Drawing.Point(1074, 267);
+            this.txtTotal.Location = new System.Drawing.Point(1091, 240);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTotal.MaxLength = 32767;
             this.txtTotal.MouseState = MaterialSurface.MouseState.OUT;
@@ -252,7 +224,7 @@ namespace Doan.View.Import
             this.cbSuplier.FormattingEnabled = true;
             this.cbSuplier.HintText = "Suplier";
             this.cbSuplier.ItemHeight = 47;
-            this.cbSuplier.Location = new System.Drawing.Point(895, 348);
+            this.cbSuplier.Location = new System.Drawing.Point(909, 520);
             this.cbSuplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbSuplier.MaxDropDownItems = 4;
             this.cbSuplier.MouseState = MaterialSurface.MouseState.OUT;
@@ -282,22 +254,22 @@ namespace Doan.View.Import
             // 
             this.dtgvProduct.AllowCustomTheming = true;
             this.dtgvProduct.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dtgvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle43.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle43.ForeColor = System.Drawing.Color.Black;
+            this.dtgvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle43;
             this.dtgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvProduct.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvProduct.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgvProduct.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(111)))), ((int)(((byte)(27)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle44.BackColor = System.Drawing.Color.ForestGreen;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(111)))), ((int)(((byte)(27)))));
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
             this.dtgvProduct.ColumnHeadersHeight = 40;
             this.dtgvProduct.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtgvProduct.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
@@ -317,14 +289,14 @@ namespace Doan.View.Import
             this.dtgvProduct.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dtgvProduct.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(185)))), ((int)(((byte)(122)))));
             this.dtgvProduct.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(231)))), ((int)(((byte)(210)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(185)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvProduct.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(231)))), ((int)(((byte)(210)))));
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle45.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(185)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvProduct.DefaultCellStyle = dataGridViewCellStyle45;
             this.dtgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvProduct.EnableHeadersVisualStyles = false;
             this.dtgvProduct.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(220)))), ((int)(((byte)(188)))));
@@ -364,22 +336,22 @@ namespace Doan.View.Import
             // 
             this.dtgvData.AllowCustomTheming = true;
             this.dtgvData.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.dtgvData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle46.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle46.ForeColor = System.Drawing.Color.Black;
+            this.dtgvData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
             this.dtgvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvData.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvData.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgvData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(111)))), ((int)(((byte)(27)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle47.BackColor = System.Drawing.Color.ForestGreen;
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle47.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(111)))), ((int)(((byte)(27)))));
+            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
             this.dtgvData.ColumnHeadersHeight = 40;
             this.dtgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -405,14 +377,14 @@ namespace Doan.View.Import
             this.dtgvData.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dtgvData.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(185)))), ((int)(((byte)(122)))));
             this.dtgvData.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(231)))), ((int)(((byte)(210)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(185)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvData.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(231)))), ((int)(((byte)(210)))));
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(185)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvData.DefaultCellStyle = dataGridViewCellStyle48;
             this.dtgvData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvData.EnableHeadersVisualStyles = false;
             this.dtgvData.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(220)))), ((int)(((byte)(188)))));
@@ -434,21 +406,21 @@ namespace Doan.View.Import
             // 
             // id
             // 
-            this.id.HeaderText = "Product ID";
+            this.id.HeaderText = "ID";
             this.id.MinimumWidth = 6;
             this.id.Name = "id";
             this.id.ReadOnly = true;
             // 
             // name
             // 
-            this.name.HeaderText = "Product Name";
+            this.name.HeaderText = "Name";
             this.name.MinimumWidth = 6;
             this.name.Name = "name";
             this.name.ReadOnly = true;
             // 
             // price
             // 
-            this.price.HeaderText = "Import Price";
+            this.price.HeaderText = "I_Price";
             this.price.MinimumWidth = 6;
             this.price.Name = "price";
             this.price.ReadOnly = true;
@@ -474,7 +446,7 @@ namespace Doan.View.Import
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Red;
             this.btnDelete.Icon = ((System.Drawing.Image)(resources.GetObject("btnDelete.Icon")));
-            this.btnDelete.Location = new System.Drawing.Point(895, 512);
+            this.btnDelete.Location = new System.Drawing.Point(912, 422);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(10);
             this.btnDelete.MouseState = MaterialSurface.MouseState.OUT;
             this.btnDelete.Name = "btnDelete";
@@ -495,7 +467,7 @@ namespace Doan.View.Import
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
             this.btnEdit.Icon = ((System.Drawing.Image)(resources.GetObject("btnEdit.Icon")));
-            this.btnEdit.Location = new System.Drawing.Point(1084, 426);
+            this.btnEdit.Location = new System.Drawing.Point(1101, 336);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(10);
             this.btnEdit.MouseState = MaterialSurface.MouseState.OUT;
             this.btnEdit.Name = "btnEdit";
@@ -518,7 +490,7 @@ namespace Doan.View.Import
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Green;
             this.btnAdd.Icon = ((System.Drawing.Image)(resources.GetObject("btnAdd.Icon")));
-            this.btnAdd.Location = new System.Drawing.Point(895, 426);
+            this.btnAdd.Location = new System.Drawing.Point(912, 336);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(0);
             this.btnAdd.MouseState = MaterialSurface.MouseState.OUT;
             this.btnAdd.Name = "btnAdd";
@@ -565,30 +537,30 @@ namespace Doan.View.Import
             this.txtSearch.Modified = false;
             this.txtSearch.Multiline = false;
             this.txtSearch.Name = "txtSearch";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtSearch.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtSearch.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtSearch.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtSearch.OnIdleState = stateProperties4;
+            stateProperties29.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties29.FillColor = System.Drawing.Color.Empty;
+            stateProperties29.ForeColor = System.Drawing.Color.Empty;
+            stateProperties29.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtSearch.OnActiveState = stateProperties29;
+            stateProperties30.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties30.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties30.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtSearch.OnDisabledState = stateProperties30;
+            stateProperties31.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties31.FillColor = System.Drawing.Color.Empty;
+            stateProperties31.ForeColor = System.Drawing.Color.Empty;
+            stateProperties31.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtSearch.OnHoverState = stateProperties31;
+            stateProperties32.BorderColor = System.Drawing.Color.Silver;
+            stateProperties32.FillColor = System.Drawing.Color.White;
+            stateProperties32.ForeColor = System.Drawing.Color.Empty;
+            stateProperties32.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtSearch.OnIdleState = stateProperties32;
             this.txtSearch.Padding = new System.Windows.Forms.Padding(3);
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtSearch.PlaceholderText = "Search by ...";
+            this.txtSearch.PlaceholderText = "Search product by ID, name";
             this.txtSearch.ReadOnly = false;
             this.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtSearch.SelectedText = "";
@@ -602,7 +574,7 @@ namespace Doan.View.Import
             this.txtSearch.TextMarginBottom = 0;
             this.txtSearch.TextMarginLeft = 3;
             this.txtSearch.TextMarginTop = 0;
-            this.txtSearch.TextPlaceholder = "Search by ...";
+            this.txtSearch.TextPlaceholder = "Search product by ID, name";
             this.txtSearch.UseSystemPasswordChar = false;
             this.txtSearch.WordWrap = true;
             this.txtSearch.TextChange += new System.EventHandler(this.txtSearch_TextChanged);
@@ -614,7 +586,7 @@ namespace Doan.View.Import
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Crimson;
             this.btnCancel.Icon = global::Doan.Properties.Resources.cancel_icon;
-            this.btnCancel.Location = new System.Drawing.Point(1084, 512);
+            this.btnCancel.Location = new System.Drawing.Point(1101, 422);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.MouseState = MaterialSurface.MouseState.OUT;
             this.btnCancel.Name = "btnCancel";
@@ -634,7 +606,7 @@ namespace Doan.View.Import
             this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnCreate.Icon = global::Doan.Properties.Resources.icons8_create_order_48;
-            this.btnCreate.Location = new System.Drawing.Point(950, 662);
+            this.btnCreate.Location = new System.Drawing.Point(955, 666);
             this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCreate.MouseState = MaterialSurface.MouseState.OUT;
             this.btnCreate.Name = "btnCreate";
@@ -647,12 +619,35 @@ namespace Doan.View.Import
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
+            // lbTotal
+            // 
+            this.lbTotal.AutoSize = true;
+            this.lbTotal.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.Location = new System.Drawing.Point(991, 610);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(66, 25);
+            this.lbTotal.TabIndex = 65;
+            this.lbTotal.Text = "0 VND";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(920, 610);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 25);
+            this.label1.TabIndex = 66;
+            this.label1.Text = "Total: ";
+            // 
             // ImportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1304, 741);
+            this.Controls.Add(this.lbTotal);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.cbSuplier);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtSearch);
@@ -660,10 +655,8 @@ namespace Doan.View.Import
             this.Controls.Add(this.bunifuGroupBox1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnCreate);
-            this.Controls.Add(this.cbSuplier);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.txtQuantity);
-            this.Controls.Add(this.txtTotalPrice);
             this.Controls.Add(this.txtProductName);
             this.Controls.Add(this.txtImportPrice);
             this.Controls.Add(this.txtProductId);
@@ -684,7 +677,6 @@ namespace Doan.View.Import
         private MaterialSurface.MaterialTextfield txtProductName;
         private MaterialSurface.MaterialTextfield txtImportPrice;
         private MaterialSurface.MaterialTextfield txtProductId;
-        private MaterialSurface.MaterialTextfield txtTotalPrice;
         private MaterialSurface.MaterialTextfield txtQuantity;
         private MaterialSurface.MaterialTextfield txtTotal;
         private MaterialSurface.MaterialComboBox cbSuplier;
@@ -694,14 +686,16 @@ namespace Doan.View.Import
         private Bunifu.UI.WinForms.BunifuDataGridView dtgvProduct;
         private Bunifu.UI.WinForms.BunifuGroupBox bunifuGroupBox2;
         private Bunifu.UI.WinForms.BunifuDataGridView dtgvData;
+        private Bunifu.UI.WinForms.BunifuTextBox txtSearch;
+        private MaterialSurface.OutlinedButton btnAdd;
+        private MaterialSurface.OutlinedButton btnEdit;
+        private MaterialSurface.OutlinedButton btnDelete;
+        private System.Windows.Forms.Label lbTotal;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quan;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
-        private Bunifu.UI.WinForms.BunifuTextBox txtSearch;
-        private MaterialSurface.OutlinedButton btnAdd;
-        private MaterialSurface.OutlinedButton btnEdit;
-        private MaterialSurface.OutlinedButton btnDelete;
     }
 }

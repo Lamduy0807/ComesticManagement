@@ -16,7 +16,7 @@ namespace Doan.View.Employee
 
         private bool _isNew;
         private string employeeID;
-     
+
         public NewEmployee()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace Doan.View.Employee
 
         public NewEmployee(bool isNew) : this()
         {
-            this._isNew = isNew;            
+            this._isNew = isNew;
         }
 
         public NewEmployee(bool isNew, string employee_id, string name,
@@ -40,7 +40,7 @@ namespace Doan.View.Employee
 
         public string Nametext
         {
-            get{return tbName.Text;}
+            get { return tbName.Text; }
             set
             {
                 tbName.Text = value;
@@ -168,10 +168,18 @@ namespace Doan.View.Employee
             {
                 if (newEmployeePresenter.EditData())
                 {
+                    MessageBox.Show(_message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+
                     this.Hide();
                 }
+                else
+                {
+                    MessageBox.Show(_message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
+
+                }
+
             }
-        }
+        } 
 
         private void btnCancel_Click(object sender, EventArgs e)
         {

@@ -59,7 +59,7 @@ namespace Doan.Presenter
                 {
                     if (user.UpdateEmployee(newEmployeeview.employee_id, newEmployeeview.Nametext,
                   newEmployeeview.Citizen_idtext, newEmployeeview.Emailtext, newEmployeeview.PhoneNumtext,
-                  newEmployeeview.Positiontext, newEmployeeview.Addresstext, newEmployeeview.Password))
+                  newEmployeeview.Positiontext, newEmployeeview.Addresstext,newEmployeeview.Username, newEmployeeview.Password))
                     {
                         newEmployeeview.message = "Update employee successfully";
                         return true;
@@ -96,16 +96,7 @@ namespace Doan.Presenter
                 return false;
             // else if (string.IsNullOrEmpty(newEmployeeview.Positiontext))
             else if (newEmployeeview.Positiontext == "")
-                return false;
-            /*  else if (newEmployeeview.Positiontext != "ShopOwner" || newEmployeeview.Positiontext != "SalesMan" 
-                  || newEmployeeview.Positiontext != "InventoryDepartment" || newEmployeeview.Positiontext != "AccountingDepartment")
-                  return false;*/
-            /*else if (newEmployeeview.Positiontext != "SalesMan")
-                return false;
-            else if (newEmployeeview.Positiontext != "InventoryDepartment")
-                return false;
-            else if (newEmployeeview.Positiontext != "AccountingDepartment")*/
-            //return false;
+                return false;           
             else if (string.IsNullOrEmpty(newEmployeeview.Emailtext))
                 return false;
             else if (string.IsNullOrEmpty(newEmployeeview.Addresstext))

@@ -57,8 +57,44 @@ namespace Doan.Model
 
         }
 
+        /// <summary>
+        /// Function random password
+        /// </summary>
+
+        const string LOWER_CASE = "abcdefghijklmnopqursuvwxyz";
+        const string UPPER_CASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const string NUMBERS = "123456789";
+        const string SPECIALS = @"!@£$%^&*()#€";
+
+
+        public string GeneratePassword(bool useLowercase, bool useUppercase, bool useNumbers, bool useSpecial,
+            int passwordSize)
+        {
+            char[] _password = new char[passwordSize];
+            string charSet = "";
+            System.Random _random = new Random();
+            int counter;
+
+
+            if (useLowercase) charSet += LOWER_CASE;
+
+            if (useUppercase) charSet += UPPER_CASE;
+
+            if (useNumbers) charSet += NUMBERS;
+
+            if (useSpecial) charSet += SPECIALS;
+
+            for (counter = 0; counter < passwordSize; counter++)
+            {
+                _password[counter] = charSet[_random.Next(charSet.Length - 1)];
+            }
+
+            return string.Join(null, _password);
+        }
+
         public bool AddEmployee(string name, string citizen_id, string email, string phone, string position, string address)
-        { 
+        {
+            string _pass = GeneratePassword(true, true, true, false, 6);
             SqlCommand cmd = new SqlCommand("INSERT INTO Employee (EmployName, Citizen_id, Address, PhoneNumber, Email, Position, Username, Password) VALUES (@name, @citizen_id, @address, @phone, @email, @position, @username, @password)");
             
             cmd.Parameters.AddWithValue("@name", name);
@@ -68,7 +104,7 @@ namespace Doan.Model
             cmd.Parameters.AddWithValue("@position", position);
             cmd.Parameters.AddWithValue("@address", address);            
             cmd.Parameters.AddWithValue("@username", email);
-            cmd.Parameters.AddWithValue("@password", citizen_id);
+            cmd.Parameters.AddWithValue("@password", _pass);
            
             ConnectDB connect = new ConnectDB();
             if (connect.HandleData(cmd))
@@ -95,15 +131,16 @@ namespace Doan.Model
         }
        
         public bool UpdateEmployee(string id, string name, string citizen_id, string email, string phone, string position,
-            string address, string password)
+            string address, string username, string password)
         {  
-            SqlCommand cmd = new SqlCommand("UPDATE	Employee SET EmployName = @name, Citizen_id = @citizen_id, Address = @address, PhoneNumber = @phone, Email = @email, Position = @position, Password = @password WHERE Employee_id = @id");
+            SqlCommand cmd = new SqlCommand("UPDATE	Employee SET EmployName = @name, Citizen_id = @citizen_id, Address = @address, PhoneNumber = @phone, Email = @email, Position = @position, Password = @password, Username = @username WHERE Employee_id = @id");
             cmd.Parameters.AddWithValue("@name", name);
             cmd.Parameters.AddWithValue("@citizen_id", citizen_id); 
             cmd.Parameters.AddWithValue("@email", email);
             cmd.Parameters.AddWithValue("@phone", phone);
             cmd.Parameters.AddWithValue("@position", position);
             cmd.Parameters.AddWithValue("@address", address);
+            cmd.Parameters.AddWithValue("@username", username);
             cmd.Parameters.AddWithValue("@password", password);
             cmd.Parameters.Add("@id", SqlDbType.Int);
             cmd.Parameters["@id"].Value = Convert.ToInt32(id);

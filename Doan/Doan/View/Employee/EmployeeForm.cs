@@ -27,7 +27,6 @@ namespace Doan.View.Employee
             set
             {
                 _message = value;
-                MessageBox.Show(_message);
             }
         }
 
@@ -48,7 +47,6 @@ namespace Doan.View.Employee
 
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
-
             EmployeePresenter employeePresenter = new EmployeePresenter(this);
             employeePresenter.LoadListEmployee();
 
@@ -79,7 +77,6 @@ namespace Doan.View.Employee
         {
             NewEmployee newEmployee = new NewEmployee(true);
             newEmployee.Show();
-            //EmployeeForm_Load(sender, e);
         }
 
         private void btnEditEmployee_Click(object sender, EventArgs e)
@@ -100,7 +97,6 @@ namespace Doan.View.Employee
                     dgvEmployee.CurrentRow.Cells[8].Value.ToString());
 
                 newEmployee.Show();
-                //EmployeeForm_Load(sender,e);
             }
         }
 
@@ -127,7 +123,12 @@ namespace Doan.View.Employee
                 if (employeePresenter.DeleteData())
                 {
                     employeePresenter.LoadListEmployee();
-                    //employeePresenter.ClearEmployee();
+                    MessageBox.Show(_message, "Notification", MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show(_message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

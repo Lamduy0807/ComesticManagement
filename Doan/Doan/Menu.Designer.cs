@@ -191,7 +191,7 @@ namespace Doan
             this.icButtonSuplier.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.icButtonSuplier.Size = new System.Drawing.Size(260, 60);
             this.icButtonSuplier.TabIndex = 26;
-            this.icButtonSuplier.Text = "Supliers";
+            this.icButtonSuplier.Text = "Suppliers";
             this.icButtonSuplier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.icButtonSuplier.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.icButtonSuplier.UseVisualStyleBackColor = true;

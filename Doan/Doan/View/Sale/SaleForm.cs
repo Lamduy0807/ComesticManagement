@@ -75,6 +75,12 @@ namespace Doan.View.Sale
             set { lbTotal.Text = value; }
         }
 
+        BunifuDataGridView ISale.dgvDetailBill
+        {
+            get { return dgvDetailBill; }
+            set { dgvDetailBill = value; }
+        }
+
         private void SaleForm_Load(object sender, EventArgs e)
         {
             SalePresenter salePresenter = new SalePresenter(this);
@@ -83,6 +89,8 @@ namespace Doan.View.Sale
             btnDelete.Enabled = false;
             btnAdd.Enabled = false;
             btnCancel.Enabled = false;
+            bunifuGroupBox4.Hide();
+
         }
 
         private void dgv_ListProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -138,7 +146,6 @@ namespace Doan.View.Sale
                     }
 
                     salePresenter.ClearData();
-                    // btnCancel.Enabled = false;
                     btnCreateBill.Enabled = false;
                     btnDelete.Enabled = false;
                     btnAdd.Enabled = false;
@@ -153,7 +160,6 @@ namespace Doan.View.Sale
             {
                 MessageBox.Show("Not yet add product into cart. Please try again.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
         private void Createbill(object sender, PrintPageEventArgs e)
@@ -196,8 +202,16 @@ namespace Doan.View.Sale
 
         private void txtFind_TextChanged_1(object sender, EventArgs e)
         {
-            SalePresenter salePresenter = new SalePresenter(this);
-            salePresenter.SearchInformation(txtFind.Text);
+            if (label2.Text == "View all bills")
+            {
+                SalePresenter salePresenter = new SalePresenter(this);
+                salePresenter.SearchInformation(txtFind.Text);
+            }
+            else
+            {
+                SalePresenter salePresenter = new SalePresenter(this);
+                salePresenter.SearchBill(txtFind.Text);
+            }
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
@@ -228,14 +242,6 @@ namespace Doan.View.Sale
                 btnCreateBill.Enabled = false;
             }
         }
-
-
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dgvCart_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex != 3)
@@ -252,10 +258,56 @@ namespace Doan.View.Sale
         private string _textEdit = "";
         private void dgvCart_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            _textEdit = dgvCart.CurrentRow.Cells[e.ColumnIndex].Value.ToString();
+            if (label2.Text == "View all bills")
+            {
+                _textEdit = dgvCart.CurrentRow.Cells[e.ColumnIndex].Value.ToString();
+            }
 
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+            if (label2.Text == "View all bills")
+            {
+                SalePresenter salePresenter = new SalePresenter(this);
+                salePresenter.GetBill();
+                label2.Text = "Selling";
+                bunifuGroupBox1.Text = "All bills";
+                txtFind.PlaceholderText = "Search bill by ID, name or phone";
+                bunifuGroupBox2.Hide();
+                bunifuGroupBox3.Hide();
+                bunifuGroupBox4.Show();
+                btnAdd.Hide();
+                btnDelete.Hide();
+            }
+            else
+            {
+                SalePresenter salePresenter = new SalePresenter(this);
+                salePresenter.GetProduct();
+                label2.Text = "View all bills";
+                bunifuGroupBox1.Text = "Product table";
+                txtFind.PlaceholderText = "Search product by ID, name";
+                bunifuGroupBox2.Show();
+                bunifuGroupBox3.Show();
+                bunifuGroupBox4.Hide();
+                btnAdd.Show();
+                btnDelete.Show();
+            }
+        }
 
+        private void dgv_ListProduct_DoubleClick(object sender, EventArgs e)
+        {
+            if (label2.Text == "Selling")
+            {
+                SalePresenter salePresenter = new SalePresenter(this);
+                if (salePresenter.LoadDetailBill(dgv_ListProduct.CurrentRow.Cells[0].Value.ToString()))
+                {
+                   /* salePresenter.CalculateTotalPrice();
+                    salePresenter.ClearInformation();
+                    btnAdd.Enabled = false;*/
+
+                }
+            }
+        }
     }
 }

@@ -54,7 +54,7 @@ namespace Doan.Model
             ////////////////
             
         }
-        public bool AddDetailData(string proid, string id, string price, string quantity, string total)
+       /* public bool AddDetailData(string proid, string id, string price, string quantity, string total)
         {
             SqlCommand cmd = new SqlCommand("INSERT INTO DetailExportForm (Product_id, ExportForm_id,Price,Quantity, Total) VALUES (@pid, @exportid, @price, @quan, @total)");
             cmd.Parameters.Add("@pid", SqlDbType.Int);
@@ -77,7 +77,7 @@ namespace Doan.Model
             {
                 return false;
             }
-        }
+        }*/
         public bool UpdateProduct(string quantity, string id)
         {
             SqlCommand cmd = new SqlCommand("Update Product set Quantities = Quantities - @quan where Product_id = @id");

@@ -75,12 +75,21 @@ namespace Doan.View.Suplier
 
         private void dtgvsuplier_DoubleClick(object sender, EventArgs e)
         {
+
             SuplierPresenter suplierPresenter = new SuplierPresenter(this);
             suplierPresenter.RetriveSuplier(dtgvPsuplier.CurrentRow.Index, dtgvPsuplier.CurrentRow.Cells[0].Value.ToString()
                 , dtgvPsuplier.CurrentRow.Cells[1].Value.ToString(), dtgvPsuplier.CurrentRow.Cells[2].Value.ToString(),
                 dtgvPsuplier.CurrentRow.Cells[3].Value.ToString(), dtgvPsuplier.CurrentRow.Cells[4].Value.ToString());
-            btnDelete.Enabled = true;
-            btnEdit.Enabled = true;
+            if (dtgvPsuplier.CurrentRow.Cells[0].Value.ToString() != "")
+            {
+                btnDelete.Enabled = true;
+                btnEdit.Enabled = true;
+            }
+            else
+            {
+                btnDelete.Enabled = false;
+                btnEdit.Enabled = false;
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -131,6 +140,7 @@ namespace Doan.View.Suplier
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+
             DialogResult dr = MessageBox.Show("Are you sure you want to delete this supplier?", "Question", MessageBoxButtons.YesNo,
                   MessageBoxIcon.Question);
 

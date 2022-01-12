@@ -37,6 +37,7 @@ namespace Doan.Presenter
             exportview.ExportPrice = "";
             exportview.Quantity = "";
             exportview.Total = "";
+            exportview.ExportReason = "";
 
             return true;
         }
@@ -155,13 +156,21 @@ namespace Doan.Presenter
         }
         public bool EditData(int index)
         {
-            DataGridViewRow newDataRow = exportview.gvDetailProductData.Rows[index];
-            newDataRow.Cells[0].Value = exportview.ProductId;
-            newDataRow.Cells[1].Value = exportview.ProductName;
-            newDataRow.Cells[2].Value = exportview.ExportPrice;
-            newDataRow.Cells[3].Value = exportview.Quantity;
-            newDataRow.Cells[4].Value = exportview.Total;
-            return true;
+            if (CheckInformation())
+            {
+                DataGridViewRow newDataRow = exportview.gvDetailProductData.Rows[index];
+                newDataRow.Cells[0].Value = exportview.ProductId;
+                newDataRow.Cells[1].Value = exportview.ProductName;
+                newDataRow.Cells[2].Value = exportview.ExportPrice;
+                newDataRow.Cells[3].Value = exportview.Quantity;
+                newDataRow.Cells[4].Value = exportview.Total;
+                return true;
+            }
+            else
+            {
+                exportview.message = "Please check infromation again";
+                return false;
+            }
         }
         public bool ClearData()
         {
@@ -182,12 +191,15 @@ namespace Doan.Presenter
                 {
                     if (Convert.ToString(row.Cells[0].Value) != "")
                     {
-                        export.AddDetailData(row.Cells[0].Value.ToString(), id, row.Cells[2].Value.ToString(),
+                        DetailExport detailExport = new DetailExport();
+                        detailExport.AddDetailData(row.Cells[0].Value.ToString(), id, row.Cells[2].Value.ToString(),
                           row.Cells[3].Value.ToString(), row.Cells[4].Value.ToString());
+                        /*export.AddDetailData(row.Cells[0].Value.ToString(), id, row.Cells[2].Value.ToString(),
+                          row.Cells[3].Value.ToString(), row.Cells[4].Value.ToString());*/
                         export.UpdateProduct(row.Cells[3].Value.ToString(), row.Cells[0].Value.ToString());
                     }
                 }
-                exportview.message = "Add successfully";
+                exportview.message = "Created export form successfully. Do you want to print this form?";
                 return true;
             }
             else
@@ -260,7 +272,7 @@ namespace Doan.Presenter
         {
             if (exportview.ExportReason == "")
             {
-                exportview.message = "Please check information again!";
+                exportview.message = "Not yet enter the reason export. Please try again!";
                 return false;
             }
             else

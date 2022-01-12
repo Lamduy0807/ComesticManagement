@@ -141,6 +141,11 @@ namespace Doan.View.Product
                     btnEdit.Enabled = false;
                     btnDelete.Enabled = false;
                 }
+                else
+                {
+                    MessageBox.Show(_message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
             }
         }
 
@@ -151,11 +156,17 @@ namespace Doan.View.Product
             {
                 if (productPresenter.EditData())
                 {
+                    MessageBox.Show(_message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     productPresenter.GetProduct();
                     productPresenter.ClearInformation();
                     btnAdd.Enabled = false;
                     btnEdit.Enabled = false;
                     btnDelete.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show(_message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
             }
             else

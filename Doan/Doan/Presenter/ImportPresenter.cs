@@ -175,7 +175,7 @@ namespace Doan.Presenter
             }
             else
             {
-                importview.message = "Check information again";
+                importview.message = "Please check information again.";
                 return false;
             }
         }
@@ -202,7 +202,7 @@ namespace Doan.Presenter
         {
             if (importview.SuplierName == "")
             {
-                importview.message = "Please check information again!";
+                importview.message = "Not yet select supplier. Please try again!";
                 return false; 
             }
             else
@@ -226,12 +226,15 @@ namespace Doan.Presenter
                 {
                     if (Convert.ToString(row.Cells[0].Value) != "")
                     {
-                        import.AddDetailData(row.Cells[0].Value.ToString(), id, row.Cells[2].Value.ToString(),
-                          row.Cells[3].Value.ToString(), row.Cells[4].Value.ToString());
+                        /*  import.AddDetailData(row.Cells[0].Value.ToString(), id, row.Cells[2].Value.ToString(),
+                            row.Cells[3].Value.ToString(), row.Cells[4].Value.ToString());*/
+                        DetailImport detailImport = new DetailImport();
+                        detailImport.AddDetailData(row.Cells[0].Value.ToString(), id, row.Cells[2].Value.ToString(),
+                         row.Cells[3].Value.ToString(), row.Cells[4].Value.ToString());
                         import.UpdateProduct(row.Cells[3].Value.ToString(), row.Cells[0].Value.ToString());
                     }
                 }
-                importview.message = "Add successfully";
+                importview.message = "Created import form successfully. Do you want to print this form?";
                 return true;
             }
             else
