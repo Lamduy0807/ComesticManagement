@@ -22,6 +22,7 @@ namespace Doan.View.Sale
         string message { get; set; }
         BunifuDataGridView dgvCart { get; set; }        
         BunifuDataGridView dgv_ListProduct { get; set; }
+        BunifuDataGridView dgvDetailBill { get; set; }
 
     }
 }

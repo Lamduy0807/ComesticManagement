@@ -76,7 +76,7 @@ namespace Doan.View
 
         private void btnCloseClick_Click(object sender, EventArgs e)
         {
-            DialogResult r = MessageBox.Show("do you want to quit the app?", "Close Window", MessageBoxButtons.OKCancel);
+            DialogResult r = MessageBox.Show("Do you want to quit the app?", "Close Window", MessageBoxButtons.OKCancel);
             if (r == DialogResult.OK)
                 this.Close();
         }

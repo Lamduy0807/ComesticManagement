@@ -36,8 +36,10 @@ namespace Doan.View.Export
 
         public string TotalPriceProduct
         {
-            get { return txtTotalPrice.Text; }
-            set { txtTotalPrice.Text = value; }
+            /*get { return txtTotalPrice.Text; }
+            set { txtTotalPrice.Text = value; }*/
+            get { return lbTotal.Text; }
+            set { lbTotal.Text = value; }
         }
         public string ExportPrice
         {
@@ -72,7 +74,6 @@ namespace Doan.View.Export
             set
             {
                 _message = value;
-                MessageBox.Show(_message);
             }
         }
         public string Search
@@ -86,8 +87,6 @@ namespace Doan.View.Export
             get { return txtProductName.Text; }
             set { txtProductName.Text = value; }
         }
-
-       
         public string ExportReason 
         {
             get { return txtReason.Text; } 
@@ -128,7 +127,7 @@ namespace Doan.View.Export
             ExportPresenter exportPresenter = new ExportPresenter(this);
             if (System.Text.RegularExpressions.Regex.IsMatch(txtQuantity.Text, "[^0-9]"))
             {
-                MessageBox.Show("Please enter only numbers.");
+                MessageBox.Show("Please enter only numbers.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtQuantity.Text = txtQuantity.Text.Remove(txtQuantity.Text.Length - 1);
             }
             else
@@ -149,11 +148,14 @@ namespace Doan.View.Export
             else
             {
                 btnAdd.Enabled = true;
+                MessageBox.Show(_message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
         }
 
         private void dtgvData_DoubleClick(object sender, EventArgs e)
         {
+
             ExportPresenter exportPresenter = new ExportPresenter(this);
             exportPresenter.RetriveData(dtgvData.CurrentRow.Index, dtgvData.CurrentRow.Cells[0].Value.ToString()
                 , dtgvData.CurrentRow.Cells[1].Value.ToString(), dtgvData.CurrentRow.Cells[2].Value.ToString(),
@@ -161,10 +163,12 @@ namespace Doan.View.Export
             btnAdd.Enabled = true;
             btnEdit.Enabled = true;
             btnDelete.Enabled = true;
+
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+
             ExportPresenter exportPresenter = new ExportPresenter(this);
             if (exportPresenter.EditData(dtgvData.CurrentRow.Index))
             {
@@ -174,6 +178,12 @@ namespace Doan.View.Export
                 exportPresenter.CalculateTotalPrice();
                 exportPresenter.ClearInformation();
             }
+            else
+            {
+                MessageBox.Show(_message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -184,12 +194,14 @@ namespace Doan.View.Export
                 btnAdd.Enabled = false;
                 btnEdit.Enabled = false;
                 btnDelete.Enabled = false;
+
                 if (!exportPresenter.CheckDB())
                 {
                     btnCreate.Enabled = false;
                     btnCancel.Enabled = false;
                 }
                 exportPresenter.CalculateTotalPrice();
+                exportPresenter.ClearInformation();
             }
         }
 
@@ -206,18 +218,24 @@ namespace Doan.View.Export
             {
                 if (exportPresenter.AddDataToDB())
                 {
-                    PrintDialog printDialog = new PrintDialog();
+                    DialogResult dr = MessageBox.Show(_message, "Notification", MessageBoxButtons.YesNo,
+                  MessageBoxIcon.Information);
 
-                    PrintDocument printDocument = new PrintDocument();
-
-                    printDialog.Document = printDocument;
-                    printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(Createform);
-                    DialogResult result = printDialog.ShowDialog();
-
-                    if (result == DialogResult.OK)
+                    if (dr == DialogResult.Yes)
                     {
-                        printDocument.Print();
+                        PrintDialog printDialog = new PrintDialog();
 
+                        PrintDocument printDocument = new PrintDocument();
+
+                        printDialog.Document = printDocument;
+                        printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(Createform);
+                        DialogResult result = printDialog.ShowDialog();
+
+                        if (result == DialogResult.OK)
+                        {
+                            printDocument.Print();
+
+                        }
                     }
                     exportPresenter.ClearData();
                     btnAdd.Enabled = false;
@@ -226,6 +244,16 @@ namespace Doan.View.Export
                     btnDelete.Enabled = false;
                     btnCreate.Enabled = false;
                 }
+                else
+                {
+                    MessageBox.Show(_message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+            else
+            {
+                MessageBox.Show(_message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
         }
 
@@ -248,14 +276,14 @@ namespace Doan.View.Export
             ExportPresenter exportPresenter = new ExportPresenter(this);
             exportPresenter.Print(e);
         }
-        private void dtgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+       /* private void dtgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            // btnDelete.Enabled = true;
-        }
+        }*/
 
-        private void dtgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+       /* private void dtgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
+        }*/
     }
 }

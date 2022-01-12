@@ -25,8 +25,23 @@ namespace Doan.Model
         public DataTable GetProductData()
         {
             ConnectDB connect = new ConnectDB();
-            //string sqlQuery = "select Product_id, ProductName, Price, Description, Origin, Unit, TypeName from Product , ProductType where Product.ProductType = ProductType.ProductType_id";
             string sqlQuery = "select Product_id as ID, ProductName as Name, Price, Quantities as Quantity from Product ";
+
+            return connect.GetData(sqlQuery);
+        }
+
+        public DataTable GetBillData()
+        {
+            ConnectDB connect = new ConnectDB();
+            string sqlQuery = "select Bill_id, Cus_Name as Customer, PhoneNumber as Phone, BillValue as Value, DateBill as Date from Bill ";
+
+            return connect.GetData(sqlQuery);
+        }
+
+        public DataTable GetDetailBill(string bill_id)
+        {
+            ConnectDB connect = new ConnectDB();
+            string sqlQuery = "select Bill_id as BillID, Product_id as ProductID, Quantity, PresentPrice as Price from DetailBill where Bill_id =" +bill_id ;
 
             return connect.GetData(sqlQuery);
         }
@@ -34,6 +49,12 @@ namespace Doan.Model
         {
             ConnectDB connect = new ConnectDB();
             string sqlQuery = "select Product_id as ID, ProductName as Name, Price, Quantities as Quantity from Product  where (Product_id like '" + search + "%' or ProductName like N'" + search + "%')";
+            return connect.GetData(sqlQuery);
+        }
+        public DataTable SearchBill(string search)
+        {
+            ConnectDB connect = new ConnectDB();
+            string sqlQuery = "select Bill_id, Cus_Name as Customer, PhoneNumber as Phone, BillValue as Value, DateBill as Date from Bill  where (Bill_id like '" + search + "%' or Cus_Name like N'" + search + "%' or PhoneNumber like '" + search + "%' )";
             return connect.GetData(sqlQuery);
         }
 
@@ -58,7 +79,7 @@ namespace Doan.Model
             return connect.GetId(cmd).ToString();
         }
 
-        public bool AddDetailData(string bill_id, string product_id,  string price, string quantity)
+        /*public bool AddDetailData(string bill_id, string product_id,  string price, string quantity)
         {
             SqlCommand cmd = new SqlCommand("INSERT INTO DetailBill (Bill_id, Product_id, Quantity, PresentPrice) VALUES (@bill_id, @product_id,  @quan, @price )");
             cmd.Parameters.Add("@product_id", SqlDbType.Int);
@@ -79,7 +100,7 @@ namespace Doan.Model
             {
                 return false;
             }
-        }
+        }*/
 
         public bool UpdateProduct(string quantity, string id)
         {

@@ -17,6 +17,7 @@ namespace Doan.Presenter.cImport
         public override bool Execute()
         {
             import.DeleteDatainDataGridview();
+            import.ClearInformation();
             import.CalculateTotalPrice();
             return true;
         }
