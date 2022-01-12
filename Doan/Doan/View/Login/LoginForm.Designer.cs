@@ -45,6 +45,7 @@ namespace Doan.View
             this.btnCloseClick = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.btnAdd = new MaterialSurface.OutlinedButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -84,7 +85,7 @@ namespace Doan.View
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(198)))), ((int)(((byte)(102)))));
-            this.btnLogin.Location = new System.Drawing.Point(91, 166);
+            this.btnLogin.Location = new System.Drawing.Point(95, 170);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(231, 59);
             this.btnLogin.TabIndex = 2;
@@ -95,7 +96,7 @@ namespace Doan.View
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(66, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(66, 30);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(285, 206);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -117,6 +118,7 @@ namespace Doan.View
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.btnAdd);
             this.panel5.Controls.Add(this.panel8);
             this.panel5.Controls.Add(this.btnLogin);
             this.panel5.Controls.Add(this.panel7);
@@ -207,6 +209,28 @@ namespace Doan.View
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.AutoSize = true;
+            this.btnAdd.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAdd.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAdd.EffectType = MaterialSurface.ET.Custom;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Icon = ((System.Drawing.Image)(resources.GetObject("btnAdd.Icon")));
+            this.btnAdd.Location = new System.Drawing.Point(80, 263);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAdd.MouseState = MaterialSurface.MouseState.OUT;
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.PrimaryColor = System.Drawing.Color.White;
+            this.btnAdd.Radius = 6;
+            this.btnAdd.Size = new System.Drawing.Size(250, 33);
+            this.btnAdd.TabIndex = 34;
+            this.btnAdd.Text = "Copyright by team 7";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -221,6 +245,7 @@ namespace Doan.View
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -248,5 +273,6 @@ namespace Doan.View
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private MaterialSurface.OutlinedButton btnAdd;
     }
 }

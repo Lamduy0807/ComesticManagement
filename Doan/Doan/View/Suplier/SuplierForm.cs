@@ -133,7 +133,7 @@ namespace Doan.View.Suplier
             }
             else
             {
-                MessageBox.Show("Please check information again!");
+                MessageBox.Show("Please check information again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 btnEdit.Enabled = true;
             }
         }
