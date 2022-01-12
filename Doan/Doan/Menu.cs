@@ -155,8 +155,11 @@ namespace Doan
 
         private void img_home_Click(object sender, EventArgs e)
         {
-            Reset();
-            currentChildForm.Close();
+            if (currentChildForm != null)
+            {
+                Reset();
+                currentChildForm.Close();
+            }
         }
         private void icButtonSuplier_Click(object sender, EventArgs e)
         {
@@ -203,15 +206,16 @@ namespace Doan
             lbName.Text = "Report";
         }
 
-        private void icHome_Click(object sender, EventArgs e)
+       /* private void icHome_Click(object sender, EventArgs e)
         {
 
-        }
+        }*/
 
         private void Menu_Load(object sender, EventArgs e)
         {
             //rjDropdownMenu1.IsMainMenu = true;
             rjDropdownMenu1.PrimaryColor = Color.DarkOrange;
+            //label1.Text = "Welcome to store with " + position + " permission";
             if(position == "SalesMan")
             {
                 iconButtonSale.Enabled = true;
@@ -302,6 +306,15 @@ namespace Doan
             //transition.ShowSync(menu, false,
             //    Bunifu.UI.WinForms.BunifuAnimatorNS.Animation.Transparent);
             p.Show();
+        }
+
+        private void icButtonHome_Click(object sender, EventArgs e)
+        {
+           if(currentChildForm!=null)
+            {
+                Reset();
+                currentChildForm.Close();
+            }   
         }
     }
 }

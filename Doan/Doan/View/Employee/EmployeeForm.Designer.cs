@@ -301,14 +301,16 @@ namespace Doan.View.Employee
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 25);
+            this.label2.Size = new System.Drawing.Size(175, 25);
             this.label2.TabIndex = 45;
-            this.label2.Text = "All of the receipts ";
+            this.label2.Text = "All of the employee";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dgvEmployee
             // 
             this.dgvEmployee.AllowCustomTheming = true;
+            this.dgvEmployee.AllowUserToAddRows = false;
+            this.dgvEmployee.AllowUserToDeleteRows = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.dgvEmployee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
@@ -321,6 +323,7 @@ namespace Doan.View.Employee
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.ForestGreen;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(111)))), ((int)(((byte)(27)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -352,13 +355,14 @@ namespace Doan.View.Employee
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvEmployee.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEmployee.EnableHeadersVisualStyles = false;
             this.dgvEmployee.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(220)))), ((int)(((byte)(188)))));
             this.dgvEmployee.HeaderBackColor = System.Drawing.Color.ForestGreen;
             this.dgvEmployee.HeaderBgColor = System.Drawing.Color.Empty;
             this.dgvEmployee.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvEmployee.Location = new System.Drawing.Point(18, 124);
-            this.dgvEmployee.Margin = new System.Windows.Forms.Padding(30, 10, 30, 30);
+            this.dgvEmployee.Location = new System.Drawing.Point(0, 124);
+            this.dgvEmployee.Margin = new System.Windows.Forms.Padding(20);
             this.dgvEmployee.Name = "dgvEmployee";
             this.dgvEmployee.ReadOnly = true;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -373,7 +377,7 @@ namespace Doan.View.Employee
             this.dgvEmployee.RowHeadersWidth = 51;
             this.dgvEmployee.RowTemplate.Height = 40;
             this.dgvEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmployee.Size = new System.Drawing.Size(1127, 622);
+            this.dgvEmployee.Size = new System.Drawing.Size(1304, 617);
             this.dgvEmployee.TabIndex = 43;
             this.dgvEmployee.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.dgvEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_CellContentClick);
@@ -406,8 +410,8 @@ namespace Doan.View.Employee
         private MaterialSurface.OutlinedButton btnEditEmployee;
         private Bunifu.UI.WinForms.BunifuTextBox tbSearch;
         private System.Windows.Forms.Label label2;
-        private Bunifu.UI.WinForms.BunifuDataGridView dgvEmployee;
         private MaterialSurface.OutlinedButton btnAddEmployee;
         private MaterialSurface.OutlinedButton btnDelete;
+        private Bunifu.UI.WinForms.BunifuDataGridView dgvEmployee;
     }
 }

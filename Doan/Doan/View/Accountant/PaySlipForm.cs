@@ -91,11 +91,18 @@ namespace Doan.View.Accountant
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //chuwaa
+            if (btnEdit.Enabled.ToString() == "True")
+            {
+                AddPaySlip addPaySlip = new AddPaySlip(false, id, dgvPaySlip.CurrentRow.Cells[0].Value.ToString(), dgvPaySlip.CurrentRow.Cells[2].Value.ToString(),
+                    dgvPaySlip.CurrentRow.Cells[3].Value.ToString(), dgvPaySlip.CurrentRow.Cells[5].Value.ToString(),
+                    dgvPaySlip.CurrentRow.Cells[4].Value.ToString());
+                addPaySlip.Show();
+            }
         }
 
         private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label1.Font = new Font(label1.Font, FontStyle.Bold);
             label2.Font = new Font(label2.Font, FontStyle.Regular);
             dateTimePicker1.SkinColor = Color.White;
             PaySlipPresenter paySlipPresenter = new PaySlipPresenter(this);

@@ -68,6 +68,7 @@ namespace Doan.View.Accountant
         {
             label2.Font = new Font(label2.Font, FontStyle.Bold);
             label1.Font = new Font(label1.Font, FontStyle.Regular);
+            btnEdit.Enabled = false;
             dateTimePicker1.SkinColor = Color.White;
             ReceiptsPresenter receiptsPresenter = new ReceiptsPresenter(this);
             receiptsPresenter.LoadReceipts();
@@ -106,6 +107,7 @@ namespace Doan.View.Accountant
 
         private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
+            label1.Font = new Font(label1.Font, FontStyle.Bold);
             label2.Font = new Font(label2.Font, FontStyle.Regular);
             dateTimePicker1.SkinColor = Color.White;
             ReceiptsPresenter receiptsPresenter = new ReceiptsPresenter(this);

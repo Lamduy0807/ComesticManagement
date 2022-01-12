@@ -42,9 +42,6 @@ namespace Doan.View.Accountant
             this._isNew = isNew;
             this._id = employee_id;
             this.paySlip_id = paySlip_id;
-
-
-
             AddPaySlipPresenter addPaySlipPresenter = new AddPaySlipPresenter(this);
             addPaySlipPresenter.RetriveData(content, value, date, status);
 
@@ -67,8 +64,8 @@ namespace Doan.View.Accountant
         }
         public string Status
         {
-            get { return cbStatus.SelectedItem.ToString(); }
-            set { cbStatus.Text = value; }
+            get { return cbStatus.Texts; }
+            set { cbStatus.Texts = value; }
         }
 
         private string _message;
@@ -78,7 +75,6 @@ namespace Doan.View.Accountant
             set
             {
                 _message = value;
-                MessageBox.Show(_message);
             }
         }
 
@@ -89,14 +85,28 @@ namespace Doan.View.Accountant
             {
                 if (addPaySlipPresenter.AddDataToDB())
                 {
+                    MessageBox.Show(_message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show(_message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 }
             }
             else
             {
                 if (addPaySlipPresenter.UpdateData())
                 {
+                    MessageBox.Show(_message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show(_message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 }
             }
         }
@@ -115,6 +125,13 @@ namespace Doan.View.Accountant
             this.Hide();
         }
 
-      
+        private void txtValue_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtValue.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtValue.Text = txtValue.Text.Remove(txtValue.Text.Length - 1);
+            }
+        }
     }
 }

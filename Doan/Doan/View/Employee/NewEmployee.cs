@@ -16,6 +16,7 @@ namespace Doan.View.Employee
 
         private bool _isNew;
         private string employeeID;
+     
         public NewEmployee()
         {
             InitializeComponent();
@@ -26,7 +27,8 @@ namespace Doan.View.Employee
             this._isNew = isNew;            
         }
 
-        public NewEmployee(bool isNew, string employee_id, string name, string phone, string address, string citizenID,
+        public NewEmployee(bool isNew, string employee_id, string name,
+            string phone, string address, string citizenID,
             string email, string position, string username, string password) : this()
         {
             this._isNew = isNew;
@@ -38,10 +40,7 @@ namespace Doan.View.Employee
 
         public string Nametext
         {
-            get
-            {
-                return tbName.Text;
-            }
+            get{return tbName.Text;}
             set
             {
                 tbName.Text = value;
@@ -86,11 +85,11 @@ namespace Doan.View.Employee
         {
             get
             {
-                return cbPosition.SelectedItem.ToString();
+                return cbPosition.Texts;
             }
             set
             {
-                cbPosition.Text = value;
+                cbPosition.Texts = value;
             }
         }
         public string PhoneNumtext
@@ -139,22 +138,31 @@ namespace Doan.View.Employee
             set
             {
                 _message = value;
-                MessageBox.Show(_message, "Notification", MessageBoxButtons.OK); ;
             }
         }
 
 
         string INewEmployee.employee_id { get { return employeeID; } }
 
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             NewEmployeePresenter newEmployeePresenter = new NewEmployeePresenter(this);
             if (this._isNew)
             {
+
                 if (newEmployeePresenter.AddData())
                 {
+                    MessageBox.Show(_message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+
                     this.Hide();
                 }
+                else
+                {
+                    MessageBox.Show(_message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
+
+                }
+
             }
             else
             {
@@ -174,13 +182,31 @@ namespace Doan.View.Employee
         {
             if (this._isNew)
             {
-                /*tbUsername.Enabled = false;
-                tbPassword.Enabled = false;*/
                 tbUsername.Hide();
                 tbPassword.Hide();
                 label5.Hide();
                 label7.Hide();
             }
         }
+
+        private void tbPhone_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(tbPhone.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbPhone.Text = tbPhone.Text.Remove(tbPhone.Text.Length - 1);
+            }
+        }
+
+        private void tbCitizenID_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(tbCitizenID.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbCitizenID.Text = tbCitizenID.Text.Remove(tbCitizenID.Text.Length - 1);
+            }
+        }
+
+       
     }
 }

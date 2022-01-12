@@ -70,7 +70,6 @@ namespace Doan.View.Product
             set 
             { 
                 _message = value;
-                MessageBox.Show(_message);
             }
         }
 
@@ -92,13 +91,24 @@ namespace Doan.View.Product
 
         private void dtgvProduct_DoubleClick(object sender, EventArgs e)
         {
+            if (dtgvProduct.CurrentRow.Cells[0].Value.ToString() != "")
+            {
+                btnEdit.Enabled = true;
+                btnDelete.Enabled = true;
+            }
+            else
+            {
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
+            }
+
             ProductPresenter productPresenter = new ProductPresenter(this);
-            productPresenter.RetriveProduct(dtgvProduct.CurrentRow.Index,dtgvProduct.CurrentRow.Cells[0].Value.ToString()
-                , dtgvProduct.CurrentRow.Cells[1].Value.ToString(), dtgvProduct.CurrentRow.Cells[2].Value.ToString(), 
+            productPresenter.RetriveProduct(dtgvProduct.CurrentRow.Index, dtgvProduct.CurrentRow.Cells[0].Value.ToString()
+                , dtgvProduct.CurrentRow.Cells[1].Value.ToString(), dtgvProduct.CurrentRow.Cells[2].Value.ToString(),
                 dtgvProduct.CurrentRow.Cells[3].Value.ToString(), dtgvProduct.CurrentRow.Cells[4].Value.ToString(),
                 dtgvProduct.CurrentRow.Cells[5].Value.ToString(), dtgvProduct.CurrentRow.Cells[6].Value.ToString());
-            btnEdit.Enabled = true;
-            btnDelete.Enabled = true;
+
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -106,6 +116,9 @@ namespace Doan.View.Product
             ProductPresenter productPresenter = new ProductPresenter(this);
             if (productPresenter.AddData())
             {
+                MessageBox.Show(_message, "Notification", MessageBoxButtons.OK,
+                   MessageBoxIcon.Information);
+
                 productPresenter.GetProduct();
                 productPresenter.ClearInformation();
             }
@@ -113,14 +126,21 @@ namespace Doan.View.Product
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            ProductPresenter productPresenter = new ProductPresenter(this);
-            if (productPresenter.DeleteData())
-            { 
-                productPresenter.GetProduct();
-                productPresenter.ClearInformation();
-                btnAdd.Enabled = false;
-                btnEdit.Enabled = false;
-                btnDelete.Enabled = false;
+            DialogResult dr = MessageBox.Show("Are you sure you want to delete this product?", "Question", MessageBoxButtons.YesNo,
+                  MessageBoxIcon.Question);
+
+            if (dr == DialogResult.Yes)
+            {
+                ProductPresenter productPresenter = new ProductPresenter(this);
+                if (productPresenter.DeleteData())
+                {
+                    MessageBox.Show(_message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    productPresenter.GetProduct();
+                    productPresenter.ClearInformation();
+                    btnAdd.Enabled = false;
+                    btnEdit.Enabled = false;
+                    btnDelete.Enabled = false;
+                }
             }
         }
 
@@ -161,7 +181,7 @@ namespace Doan.View.Product
 
         private void dtgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnDelete.Enabled = true;
+           /* btnDelete.Enabled = true;*/
         }
     }
 }

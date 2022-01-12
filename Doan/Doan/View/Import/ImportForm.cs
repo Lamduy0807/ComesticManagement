@@ -284,7 +284,5 @@ namespace Doan.View.Import
             else
                 importPresenter.CalculateTotal();
         }
-
-
     }
 }

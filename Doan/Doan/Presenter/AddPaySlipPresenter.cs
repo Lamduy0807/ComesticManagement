@@ -23,6 +23,8 @@ namespace Doan.Presenter
             if (CheckInformation())
             {
                 paySlip.AddPaySlip(addPaySlipview.Employee, addPaySlipview.Content, addPaySlipview.Value, addPaySlipview.Status, "");
+                addPaySlipview.message = "Created pay slip successfully";
+
                 return true;
             }
             else
@@ -37,6 +39,8 @@ namespace Doan.Presenter
             if (CheckInformation())
             {
                 paySlip.UpdatePaySlip(addPaySlipview.PaySlip_id, addPaySlipview.Status);
+                addPaySlipview.message = "Updated pay slip successfully";
+
                 return true;
             }
             else

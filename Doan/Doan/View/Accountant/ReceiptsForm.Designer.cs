@@ -29,9 +29,9 @@ namespace Doan.View.Accountant
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvReceipts = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.btnAddReceipts = new MaterialSurface.OutlinedButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,23 +45,23 @@ namespace Doan.View.Accountant
             // dgvReceipts
             // 
             this.dgvReceipts.AllowCustomTheming = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dgvReceipts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dgvReceipts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvReceipts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvReceipts.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvReceipts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvReceipts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvReceipts.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(111)))), ((int)(((byte)(27)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReceipts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.ForestGreen;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(111)))), ((int)(((byte)(27)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReceipts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvReceipts.ColumnHeadersHeight = 40;
             this.dgvReceipts.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvReceipts.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
@@ -81,14 +81,14 @@ namespace Doan.View.Accountant
             this.dgvReceipts.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvReceipts.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(185)))), ((int)(((byte)(122)))));
             this.dgvReceipts.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(231)))), ((int)(((byte)(210)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(185)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvReceipts.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(231)))), ((int)(((byte)(210)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(185)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvReceipts.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvReceipts.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvReceipts.EnableHeadersVisualStyles = false;
             this.dgvReceipts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(220)))), ((int)(((byte)(188)))));
@@ -115,7 +115,7 @@ namespace Doan.View.Accountant
             this.btnAddReceipts.EffectType = MaterialSurface.ET.Custom;
             this.btnAddReceipts.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddReceipts.ForeColor = System.Drawing.Color.Green;
-            this.btnAddReceipts.Icon = null;
+            this.btnAddReceipts.Icon = global::Doan.Properties.Resources.add__4_;
             this.btnAddReceipts.Location = new System.Drawing.Point(931, 24);
             this.btnAddReceipts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddReceipts.MouseState = MaterialSurface.MouseState.OUT;
@@ -124,7 +124,7 @@ namespace Doan.View.Accountant
             this.btnAddReceipts.Radius = 6;
             this.btnAddReceipts.Size = new System.Drawing.Size(150, 40);
             this.btnAddReceipts.TabIndex = 40;
-            this.btnAddReceipts.Text = "Add Receipts";
+            this.btnAddReceipts.Text = "Add";
             this.btnAddReceipts.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnAddReceipts.UseVisualStyleBackColor = true;
             this.btnAddReceipts.Click += new System.EventHandler(this.btnAddReceipts_Click);
@@ -142,10 +142,11 @@ namespace Doan.View.Accountant
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(34, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 25);
+            this.label2.Size = new System.Drawing.Size(166, 27);
             this.label2.TabIndex = 43;
             this.label2.Text = "All of the receipts ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -156,17 +157,17 @@ namespace Doan.View.Accountant
             this.btnEdit.BorderColor = System.Drawing.Color.DimGray;
             this.btnEdit.EffectType = MaterialSurface.ET.Custom;
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.Green;
-            this.btnEdit.Icon = null;
+            this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
+            this.btnEdit.Icon = global::Doan.Properties.Resources.edit__5_;
             this.btnEdit.Location = new System.Drawing.Point(1121, 24);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.MouseState = MaterialSurface.MouseState.OUT;
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.PrimaryColor = System.Drawing.Color.Green;
+            this.btnEdit.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
             this.btnEdit.Radius = 6;
             this.btnEdit.Size = new System.Drawing.Size(150, 40);
             this.btnEdit.TabIndex = 44;
-            this.btnEdit.Text = "Edit Receipts";
+            this.btnEdit.Text = "Edit";
             this.btnEdit.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);

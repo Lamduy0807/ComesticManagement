@@ -65,17 +65,21 @@ namespace Doan.Model
 
         public bool DeleteProduct(string id)
         {
-            SqlCommand cmd = new SqlCommand("DELETE Product WHERE Product_id = @id");
-            cmd.Parameters.Add("@id", SqlDbType.Int);
-            cmd.Parameters["@id"].Value = Convert.ToInt32(id);
-
-            ConnectDB connect = new ConnectDB();
-            if (connect.HandleData(cmd))
+            if (id != "")
             {
-                return true;
+                SqlCommand cmd = new SqlCommand("DELETE Product WHERE Product_id = @id");
+                cmd.Parameters.Add("@id", SqlDbType.Int);
+                cmd.Parameters["@id"].Value = Convert.ToInt32(id);
+
+                ConnectDB connect = new ConnectDB();
+                if (connect.HandleData(cmd))
+                {
+                    return true;
+                }
+                else
+                    return false;
             }
-            else
-                return false;
+            else { return false; }
         }
 
         public bool UpdateProduct(string id, string name, string price, string des, string ori, string unit, string type)

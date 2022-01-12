@@ -23,11 +23,14 @@ namespace Doan.Presenter
             if(CheckInformation())
             {    
             receipts.AddReceipts(addReceiptsview.Employee, addReceiptsview.Content, addReceiptsview.Value, addReceiptsview.Status, "");
-            return true;
+
+                addReceiptsview.message = "Created receipts successfully";
+
+                return true;
             }
             else
             {
-                addReceiptsview.message = "Please fullfill information" + addReceiptsview.Content + addReceiptsview.Value + addReceiptsview.Status;
+                addReceiptsview.message = "Please fullfill information";
                 return false;
             }
         }
@@ -37,6 +40,8 @@ namespace Doan.Presenter
             if (CheckInformation())
             {
                 receipts.UpdateReceipts(addReceiptsview.Receipts_id, addReceiptsview.Status);
+                addReceiptsview.message = "Updated receipts successfully";
+
                 return true;
             }
             else

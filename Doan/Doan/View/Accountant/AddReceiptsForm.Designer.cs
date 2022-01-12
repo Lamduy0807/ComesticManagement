@@ -217,6 +217,7 @@ namespace Doan.View.Accountant
             this.txtValue.TextPlaceholder = "Enter text";
             this.txtValue.UseSystemPasswordChar = false;
             this.txtValue.WordWrap = true;
+            this.txtValue.TextChanged += new System.EventHandler(this.txtValue_TextChanged);
             // 
             // txtContent
             // 

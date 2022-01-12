@@ -74,7 +74,7 @@ namespace Doan.View.Product
             this.txtOriginal.ShowCaret = true;
             this.txtOriginal.Size = new System.Drawing.Size(382, 49);
             this.txtOriginal.Style = MaterialSurface.MaterialTextfield.TextfieldStyle.HintAsFloatingLabel;
-            this.txtOriginal.TabIndex = 19;
+            this.txtOriginal.TabIndex = 22;
             this.txtOriginal.UseSystemPasswordChar = false;
             this.txtOriginal.TextChanged += new System.EventHandler(this.txtProductName_TextChanged);
             // 
@@ -125,7 +125,7 @@ namespace Doan.View.Product
             this.cbProductType.Name = "cbProductType";
             this.cbProductType.PrimaryColor = System.Drawing.Color.DarkGreen;
             this.cbProductType.Size = new System.Drawing.Size(382, 53);
-            this.cbProductType.TabIndex = 17;
+            this.cbProductType.TabIndex = 23;
             this.cbProductType.TextChanged += new System.EventHandler(this.txtProductName_TextChanged);
             // 
             // txtDescription
@@ -153,7 +153,7 @@ namespace Doan.View.Product
             this.txtDescription.ShowCaret = true;
             this.txtDescription.Size = new System.Drawing.Size(392, 121);
             this.txtDescription.Style = MaterialSurface.MaterialTextfield.TextfieldStyle.HintAsFloatingLabel;
-            this.txtDescription.TabIndex = 16;
+            this.txtDescription.TabIndex = 21;
             this.txtDescription.UseSystemPasswordChar = false;
             this.txtDescription.TextChanged += new System.EventHandler(this.txtProductName_TextChanged);
             // 
@@ -182,7 +182,7 @@ namespace Doan.View.Product
             this.txtPrice.ShowCaret = true;
             this.txtPrice.Size = new System.Drawing.Size(373, 49);
             this.txtPrice.Style = MaterialSurface.MaterialTextfield.TextfieldStyle.HintAsFloatingLabel;
-            this.txtPrice.TabIndex = 15;
+            this.txtPrice.TabIndex = 19;
             this.txtPrice.UseSystemPasswordChar = false;
             this.txtPrice.TextChanged += new System.EventHandler(this.txtProductName_TextChanged);
             // 
@@ -228,8 +228,8 @@ namespace Doan.View.Product
             this.cbUnit.ItemHeight = 47;
             this.cbUnit.Items.AddRange(new object[] {
             "Bottle",
-            "tube",
-            "can"});
+            "Tube",
+            "Can"});
             this.cbUnit.Location = new System.Drawing.Point(39, 223);
             this.cbUnit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbUnit.MaxDropDownItems = 4;
@@ -237,7 +237,7 @@ namespace Doan.View.Product
             this.cbUnit.Name = "cbUnit";
             this.cbUnit.PrimaryColor = System.Drawing.Color.DarkGreen;
             this.cbUnit.Size = new System.Drawing.Size(373, 53);
-            this.cbUnit.TabIndex = 13;
+            this.cbUnit.TabIndex = 20;
             this.cbUnit.TextChanged += new System.EventHandler(this.txtProductName_TextChanged);
             // 
             // bunifuGroupBox1
@@ -379,7 +379,7 @@ namespace Doan.View.Product
             this.btnAdd.PrimaryColor = System.Drawing.Color.Green;
             this.btnAdd.Radius = 6;
             this.btnAdd.Size = new System.Drawing.Size(140, 44);
-            this.btnAdd.TabIndex = 58;
+            this.btnAdd.TabIndex = 24;
             this.btnAdd.Text = "Add";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.TextAlignment = System.Drawing.StringAlignment.Center;

@@ -471,6 +471,7 @@ namespace Doan.View.Export
             this.dtgvProduct.Size = new System.Drawing.Size(813, 378);
             this.dtgvProduct.TabIndex = 1;
             this.dtgvProduct.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.dtgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvProduct_CellContentClick);
             this.dtgvProduct.DoubleClick += new System.EventHandler(this.dtgvProduct_DoubleClick);
             // 
             // txtSearch
