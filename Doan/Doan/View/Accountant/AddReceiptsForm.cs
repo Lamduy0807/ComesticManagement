@@ -61,8 +61,8 @@ namespace Doan.View.Accountant
             set { txtValue.Text = value; }
         }
         public string Status {
-            get { return cbStatus.SelectedItem.ToString(); }
-            set { cbStatus.Text = value; }
+            get { return cbStatus.Texts; }
+            set { cbStatus.Texts = value; }
         }
 
         private string _message;
@@ -72,7 +72,6 @@ namespace Doan.View.Accountant
             set
             {
                 _message = value;
-                MessageBox.Show(_message);
             }
         }
 
@@ -83,16 +82,22 @@ namespace Doan.View.Accountant
             {
                 if (addReceiptsPresenter.AddDataToDB())
                 {
+                    MessageBox.Show(_message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     this.Hide();
                 }
+                else { MessageBox.Show(_message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
             } 
             else
             {
                 if (addReceiptsPresenter.UpdateData())
                 {
+                    MessageBox.Show(_message, "Notification", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.Hide();
                 }
-            }   
+                else { MessageBox.Show(_message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+
+            }
         }
 
         private void AddReceiptsForm_Load(object sender, EventArgs e)
@@ -109,10 +114,15 @@ namespace Doan.View.Accountant
             this.Hide();
         }
 
-        /*private void cbStatus_OnSelectedIndexChanged(object sender, EventArgs e)
+        private void txtValue_TextChanged(object sender, EventArgs e)
         {
-            //cbStatus.Texts = 
-            cbStatus.Text = cbStatus.SelectedItem.ToString();
-        }*/
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtValue.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtValue.Text = txtValue.Text.Remove(txtValue.Text.Length - 1);
+            }
+        }
+
+       
     }
 }

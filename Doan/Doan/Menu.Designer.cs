@@ -114,7 +114,7 @@ namespace Doan
             this.icButtonAccountant.Name = "icButtonAccountant";
             this.icButtonAccountant.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.icButtonAccountant.Size = new System.Drawing.Size(267, 60);
-            this.icButtonAccountant.TabIndex = 24;
+            this.icButtonAccountant.TabIndex = 29;
             this.icButtonAccountant.Text = "Accountant";
             this.icButtonAccountant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.icButtonAccountant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -140,7 +140,7 @@ namespace Doan
             this.icButtonReport.Name = "icButtonReport";
             this.icButtonReport.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.icButtonReport.Size = new System.Drawing.Size(260, 60);
-            this.icButtonReport.TabIndex = 17;
+            this.icButtonReport.TabIndex = 30;
             this.icButtonReport.Text = "Report";
             this.icButtonReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.icButtonReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -169,6 +169,7 @@ namespace Doan
             this.icButtonHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.icButtonHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.icButtonHome.UseVisualStyleBackColor = true;
+            this.icButtonHome.Click += new System.EventHandler(this.icButtonHome_Click);
             // 
             // icButtonSuplier
             // 
@@ -189,7 +190,7 @@ namespace Doan
             this.icButtonSuplier.Name = "icButtonSuplier";
             this.icButtonSuplier.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.icButtonSuplier.Size = new System.Drawing.Size(260, 60);
-            this.icButtonSuplier.TabIndex = 21;
+            this.icButtonSuplier.TabIndex = 26;
             this.icButtonSuplier.Text = "Supliers";
             this.icButtonSuplier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.icButtonSuplier.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -215,7 +216,7 @@ namespace Doan
             this.icButtonExport.Name = "icButtonExport";
             this.icButtonExport.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.icButtonExport.Size = new System.Drawing.Size(260, 60);
-            this.icButtonExport.TabIndex = 16;
+            this.icButtonExport.TabIndex = 28;
             this.icButtonExport.Text = "Export";
             this.icButtonExport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.icButtonExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -241,7 +242,7 @@ namespace Doan
             this.icButtonEmployee.Name = "icButtonEmployee";
             this.icButtonEmployee.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.icButtonEmployee.Size = new System.Drawing.Size(260, 60);
-            this.icButtonEmployee.TabIndex = 20;
+            this.icButtonEmployee.TabIndex = 25;
             this.icButtonEmployee.Text = "Employee";
             this.icButtonEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.icButtonEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -267,7 +268,7 @@ namespace Doan
             this.icButtonProduct.Name = "icButtonProduct";
             this.icButtonProduct.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.icButtonProduct.Size = new System.Drawing.Size(260, 60);
-            this.icButtonProduct.TabIndex = 19;
+            this.icButtonProduct.TabIndex = 24;
             this.icButtonProduct.Text = "Product";
             this.icButtonProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.icButtonProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -293,7 +294,7 @@ namespace Doan
             this.iconButtonSale.Name = "iconButtonSale";
             this.iconButtonSale.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.iconButtonSale.Size = new System.Drawing.Size(260, 60);
-            this.iconButtonSale.TabIndex = 8;
+            this.iconButtonSale.TabIndex = 23;
             this.iconButtonSale.Text = "Sale";
             this.iconButtonSale.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonSale.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -319,7 +320,7 @@ namespace Doan
             this.icButtonImport.Name = "icButtonImport";
             this.icButtonImport.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.icButtonImport.Size = new System.Drawing.Size(260, 60);
-            this.icButtonImport.TabIndex = 9;
+            this.icButtonImport.TabIndex = 27;
             this.icButtonImport.Text = "Import";
             this.icButtonImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.icButtonImport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -345,7 +346,7 @@ namespace Doan
             this.icButtonSettings.Name = "icButtonSettings";
             this.icButtonSettings.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.icButtonSettings.Size = new System.Drawing.Size(260, 62);
-            this.icButtonSettings.TabIndex = 12;
+            this.icButtonSettings.TabIndex = 31;
             this.icButtonSettings.Text = "Logout";
             this.icButtonSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.icButtonSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -516,11 +517,11 @@ namespace Doan
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Sitka Banner", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(140)))), ((int)(((byte)(44)))));
-            this.label1.Location = new System.Drawing.Point(384, 83);
+            this.label1.Location = new System.Drawing.Point(429, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(481, 58);
+            this.label1.Size = new System.Drawing.Size(371, 58);
             this.label1.TabIndex = 0;
-            this.label1.Text = "WELCOME TO STORE WITH ";
+            this.label1.Text = "WELCOME TO STORE";
             // 
             // rjDropdownMenu1
             // 

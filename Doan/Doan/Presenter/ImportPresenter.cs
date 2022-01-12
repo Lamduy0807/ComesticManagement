@@ -214,7 +214,7 @@ namespace Doan.Presenter
         {
             string id = import.AddData(importview.EmployeeID, importview.SuplierName, importview.TotalPriceProduct);
 
-            ///chỗ này viết hàm add tự động vô phiếu chi
+            ///auto add payslip 
             ///
             string contentReceipt = "Import ID: " + id;
             string status = "Completed";

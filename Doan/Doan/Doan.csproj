@@ -406,6 +406,7 @@
   <ItemGroup>
     <Content Include="Resources\add %281%29.png" />
     <Content Include="Resources\icons8-create-50.png" />
+    <None Include="Resources\search .png" />
     <None Include="Resources\user.png" />
     <None Include="Resources\icons8-create-order-48.png" />
     <None Include="Resources\icons8-create-501.png" />

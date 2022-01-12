@@ -29,9 +29,9 @@ namespace Doan.View.Accountant
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.btnEdit = new MaterialSurface.OutlinedButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -62,17 +62,17 @@ namespace Doan.View.Accountant
             this.btnEdit.BorderColor = System.Drawing.Color.DimGray;
             this.btnEdit.EffectType = MaterialSurface.ET.Custom;
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.Green;
-            this.btnEdit.Icon = null;
+            this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
+            this.btnEdit.Icon = global::Doan.Properties.Resources.edit__5_;
             this.btnEdit.Location = new System.Drawing.Point(1122, 24);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.MouseState = MaterialSurface.MouseState.OUT;
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.PrimaryColor = System.Drawing.Color.Green;
+            this.btnEdit.PrimaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(102)))));
             this.btnEdit.Radius = 6;
             this.btnEdit.Size = new System.Drawing.Size(150, 40);
             this.btnEdit.TabIndex = 54;
-            this.btnEdit.Text = "Edit Pay Slip";
+            this.btnEdit.Text = "Edit";
             this.btnEdit.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -80,10 +80,11 @@ namespace Doan.View.Accountant
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(35, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 25);
+            this.label2.Size = new System.Drawing.Size(159, 27);
             this.label2.TabIndex = 53;
             this.label2.Text = "All of the pay slip";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -105,7 +106,7 @@ namespace Doan.View.Accountant
             this.btnAddPaySlip.EffectType = MaterialSurface.ET.Custom;
             this.btnAddPaySlip.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddPaySlip.ForeColor = System.Drawing.Color.Green;
-            this.btnAddPaySlip.Icon = null;
+            this.btnAddPaySlip.Icon = global::Doan.Properties.Resources.add__4_;
             this.btnAddPaySlip.Location = new System.Drawing.Point(932, 24);
             this.btnAddPaySlip.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddPaySlip.MouseState = MaterialSurface.MouseState.OUT;
@@ -114,7 +115,7 @@ namespace Doan.View.Accountant
             this.btnAddPaySlip.Radius = 6;
             this.btnAddPaySlip.Size = new System.Drawing.Size(150, 40);
             this.btnAddPaySlip.TabIndex = 50;
-            this.btnAddPaySlip.Text = "Add Pay Slip";
+            this.btnAddPaySlip.Text = "Add";
             this.btnAddPaySlip.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnAddPaySlip.UseVisualStyleBackColor = true;
             this.btnAddPaySlip.Click += new System.EventHandler(this.btnAddPaySlip_Click);
@@ -122,22 +123,22 @@ namespace Doan.View.Accountant
             // dgvPaySlip
             // 
             this.dgvPaySlip.AllowCustomTheming = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dgvPaySlip.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dgvPaySlip.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPaySlip.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPaySlip.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPaySlip.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvPaySlip.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPaySlip.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.ForestGreen;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(111)))), ((int)(((byte)(27)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPaySlip.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPaySlip.ColumnHeadersHeight = 40;
             this.dgvPaySlip.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvPaySlip.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
@@ -157,17 +158,17 @@ namespace Doan.View.Accountant
             this.dgvPaySlip.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvPaySlip.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(185)))), ((int)(((byte)(122)))));
             this.dgvPaySlip.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPaySlip.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(231)))), ((int)(((byte)(210)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(185)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPaySlip.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPaySlip.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvPaySlip.EnableHeadersVisualStyles = false;
-            this.dgvPaySlip.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dgvPaySlip.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(220)))), ((int)(((byte)(188)))));
             this.dgvPaySlip.HeaderBackColor = System.Drawing.Color.ForestGreen;
             this.dgvPaySlip.HeaderBgColor = System.Drawing.Color.Empty;
             this.dgvPaySlip.HeaderForeColor = System.Drawing.Color.White;

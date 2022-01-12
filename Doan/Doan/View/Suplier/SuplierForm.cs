@@ -61,7 +61,6 @@ namespace Doan.View.Suplier
             set
             {
                 _message = value;
-                MessageBox.Show(_message);
             }
         }
 
@@ -89,6 +88,8 @@ namespace Doan.View.Suplier
             SuplierPresenter suplierPresenter = new SuplierPresenter(this);
             if (suplierPresenter.AddData())
             {
+                MessageBox.Show(_message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 btnAdd.Enabled = false;
                 btnEdit.Enabled = false;
                 btnDelete.Enabled = false;
@@ -97,6 +98,7 @@ namespace Doan.View.Suplier
             }
             else
             {
+                MessageBox.Show(_message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btnAdd.Enabled = true;
             }
         }
@@ -106,12 +108,19 @@ namespace Doan.View.Suplier
             SuplierPresenter suplierPresenter = new SuplierPresenter(this);
             if (suplierPresenter.CheckInformationEdit())
             {
-                suplierPresenter.EditData();
-                btnAdd.Enabled = false;
-                btnEdit.Enabled = false;
-                btnDelete.Enabled = false;
-                suplierPresenter.ClearInformation();
-                suplierPresenter.GetSuplier();
+                if (suplierPresenter.EditData())
+                {
+                    MessageBox.Show(_message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnAdd.Enabled = false;
+                    btnEdit.Enabled = false;
+                    btnDelete.Enabled = false;
+                    suplierPresenter.ClearInformation();
+                    suplierPresenter.GetSuplier();
+                }
+                else
+                {
+                    MessageBox.Show(_message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
@@ -122,14 +131,22 @@ namespace Doan.View.Suplier
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            SuplierPresenter suplierPresenter = new SuplierPresenter(this);
-            if (suplierPresenter.DeleteData())
+            DialogResult dr = MessageBox.Show("Are you sure you want to delete this supplier?", "Question", MessageBoxButtons.YesNo,
+                  MessageBoxIcon.Question);
+
+            if (dr == DialogResult.Yes)
             {
-                suplierPresenter.GetSuplier();
-                btnAdd.Enabled = false;
-                btnEdit.Enabled = false;
-                btnDelete.Enabled = false;
-                suplierPresenter.ClearInformation();
+                SuplierPresenter suplierPresenter = new SuplierPresenter(this);
+                if (suplierPresenter.DeleteData())
+                {
+                    MessageBox.Show(_message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    suplierPresenter.GetSuplier();
+                    btnAdd.Enabled = false;
+                    btnEdit.Enabled = false;
+                    btnDelete.Enabled = false;
+                    suplierPresenter.ClearInformation();
+                }
             }
 
         }
@@ -139,7 +156,7 @@ namespace Doan.View.Suplier
             SuplierPresenter suplierPresenter = new SuplierPresenter(this);
             if (System.Text.RegularExpressions.Regex.IsMatch(txtPhoneNumber.Text, "[^0-9]"))
             {
-                MessageBox.Show("Please enter only numbers.");
+                MessageBox.Show("Please enter only numbers.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPhoneNumber.Text = txtPhoneNumber.Text.Remove(txtPhoneNumber.Text.Length - 1);
             }
             if (suplierPresenter.CheckInformation())

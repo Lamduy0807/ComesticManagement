@@ -22,15 +22,24 @@ namespace Doan.Presenter
         {
             if (CheckInformation())
             {
-                if (user.AddEmployee(newEmployeeview.Nametext, newEmployeeview.Citizen_idtext, newEmployeeview.Emailtext,
-                newEmployeeview.PhoneNumtext, newEmployeeview.Positiontext, newEmployeeview.Addresstext))
+                if (newEmployeeview.Positiontext == "ShopOwner" || newEmployeeview.Positiontext == "SalesMan"
+                 || newEmployeeview.Positiontext == "InventoryDepartment" || newEmployeeview.Positiontext == "AccountingDepartment")
                 {
-                    newEmployeeview.message = "Add employee successfully";
-                    return true;
+                    if (user.AddEmployee(newEmployeeview.Nametext, newEmployeeview.Citizen_idtext, newEmployeeview.Emailtext,
+                newEmployeeview.PhoneNumtext, newEmployeeview.Positiontext, newEmployeeview.Addresstext))
+                    {
+                        newEmployeeview.message = "Add employee successfully";
+                        return true;
+                    }
+                    else
+                    {
+                        newEmployeeview.message = "Add employee failed";
+                        return false;
+                    }
                 }
                 else
                 {
-                    newEmployeeview.message = "Add employee unsuccessfully";
+                    newEmployeeview.message = "Position is not exist. Please try again";
                     return false;
                 }
             }
@@ -43,18 +52,27 @@ namespace Doan.Presenter
 
         public bool EditData()
         {
-            if(CheckInformation())
+            if (CheckInformation())
             {
-                if (user.UpdateEmployee(newEmployeeview.employee_id, newEmployeeview.Nametext,
+                if (newEmployeeview.Positiontext == "ShopOwner" || newEmployeeview.Positiontext == "SalesMan"
+                  || newEmployeeview.Positiontext == "InventoryDepartment" || newEmployeeview.Positiontext == "AccountingDepartment")
+                {
+                    if (user.UpdateEmployee(newEmployeeview.employee_id, newEmployeeview.Nametext,
                   newEmployeeview.Citizen_idtext, newEmployeeview.Emailtext, newEmployeeview.PhoneNumtext,
                   newEmployeeview.Positiontext, newEmployeeview.Addresstext, newEmployeeview.Password))
-                {
-                    newEmployeeview.message = "Update employee successfully";
-                    return true;
+                    {
+                        newEmployeeview.message = "Update employee successfully";
+                        return true;
+                    }
+                    else
+                    {
+                        newEmployeeview.message = "Update employee failed";
+                        return false;
+                    }
                 }
                 else
-                    newEmployeeview.message = "Update employee unsuccessfully";
                 {
+                    newEmployeeview.message = "Position is not exist. Please try again";
                     return false;
                 }
             }
@@ -63,7 +81,7 @@ namespace Doan.Presenter
                 newEmployeeview.message = "Please fullfill information";
                 return false;
             }
-            
+
         }
         
         public bool CheckInformation()
@@ -76,8 +94,18 @@ namespace Doan.Presenter
                 return false;
             else if (string.IsNullOrEmpty(newEmployeeview.Citizen_idtext))
                 return false;
-            else if (string.IsNullOrEmpty(newEmployeeview.Positiontext))
+            // else if (string.IsNullOrEmpty(newEmployeeview.Positiontext))
+            else if (newEmployeeview.Positiontext == "")
                 return false;
+            /*  else if (newEmployeeview.Positiontext != "ShopOwner" || newEmployeeview.Positiontext != "SalesMan" 
+                  || newEmployeeview.Positiontext != "InventoryDepartment" || newEmployeeview.Positiontext != "AccountingDepartment")
+                  return false;*/
+            /*else if (newEmployeeview.Positiontext != "SalesMan")
+                return false;
+            else if (newEmployeeview.Positiontext != "InventoryDepartment")
+                return false;
+            else if (newEmployeeview.Positiontext != "AccountingDepartment")*/
+            //return false;
             else if (string.IsNullOrEmpty(newEmployeeview.Emailtext))
                 return false;
             else if (string.IsNullOrEmpty(newEmployeeview.Addresstext))

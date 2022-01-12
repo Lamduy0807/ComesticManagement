@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Printing;
+
 
 namespace Doan.View.Sale
 {
@@ -17,7 +19,7 @@ namespace Doan.View.Sale
         public SaleForm()
         {
             InitializeComponent();
-        }        
+        }
 
         public string Find {
             get { return txtFind.Text; }
@@ -35,7 +37,7 @@ namespace Doan.View.Sale
 
         private string _id;
         public string Employee {
-            get { return _id; }            
+            get { return _id; }
         }
         public SaleForm(string id) : this()
         {
@@ -48,7 +50,7 @@ namespace Doan.View.Sale
             set
             {
                 _message = value;
-                MessageBox.Show(_message);
+
             }
         }
 
@@ -69,51 +71,106 @@ namespace Doan.View.Sale
         string ISale.Quantity { get; set; }
         public string BillValue
         {
-            get { return txtTotalPrice.Text; }
-            set { txtTotalPrice.Text = value; }
+            get { return lbTotal.Text; }
+            set { lbTotal.Text = value; }
         }
 
         private void SaleForm_Load(object sender, EventArgs e)
         {
             SalePresenter salePresenter = new SalePresenter(this);
             salePresenter.GetProduct();
-
+            btnCreateBill.Enabled = false;
+            btnDelete.Enabled = false;
+            btnAdd.Enabled = false;
+            btnCancel.Enabled = false;
         }
-    
+
         private void dgv_ListProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
             SalePresenter salePresenter = new SalePresenter(this);
-            salePresenter.RetriveProduct(dgv_ListProduct.CurrentRow.Index, dgv_ListProduct.CurrentRow.Cells[0].Value.ToString()
-                , dgv_ListProduct.CurrentRow.Cells[1].Value.ToString(), dgv_ListProduct.CurrentRow.Cells[2].Value.ToString());
-        }        
+            if (salePresenter.RetriveProduct(dgv_ListProduct.CurrentRow.Index, dgv_ListProduct.CurrentRow.Cells[0].Value.ToString()
+                , dgv_ListProduct.CurrentRow.Cells[1].Value.ToString(), dgv_ListProduct.CurrentRow.Cells[2].Value.ToString()))
+            {
+                btnAdd.Enabled = true;
+            }
+
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            btnCancel.Enabled = true;
             SalePresenter salePresenter = new SalePresenter(this);
             if (salePresenter.AddDataToDataGridview())
             {
                 salePresenter.CalculateTotalPrice();
                 salePresenter.ClearInformation();
-            }
+                btnAdd.Enabled = false;
 
+            }
         }
 
         private void btnCreateBill_Click(object sender, EventArgs e)
         {
+            if (dgvCart.Rows.Count > 0)
+            {
+                SalePresenter salePresenter = new SalePresenter(this);
+                if (salePresenter.AddDataToDB())
+                {
+                    salePresenter.GetProduct();
+
+                    DialogResult dr = MessageBox.Show(_message, "Notification", MessageBoxButtons.YesNo,
+                   MessageBoxIcon.Information);
+
+                    if (dr == DialogResult.Yes)
+                    {
+                        PrintDialog printDialog = new PrintDialog();
+                        PrintDocument printDocument = new PrintDocument();
+
+                        printDialog.Document = printDocument;
+                        printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(Createbill); DialogResult result = printDialog.ShowDialog();
+
+                        if (result == DialogResult.OK)
+                        {
+                            printDocument.Print();
+
+                        }
+                    }
+
+                    salePresenter.ClearData();
+                    // btnCancel.Enabled = false;
+                    btnCreateBill.Enabled = false;
+                    btnDelete.Enabled = false;
+                    btnAdd.Enabled = false;
+                    btnCancel.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show(_message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Not yet add product into cart. Please try again.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+        private void Createbill(object sender, PrintPageEventArgs e)
+        {
             SalePresenter salePresenter = new SalePresenter(this);
-            if (salePresenter.AddDataToDB())
-            {               
-                salePresenter.ClearData();
-            }    
-               
+            salePresenter.Print(e);
         }
 
         private void dgvCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             SalePresenter salePresenter = new SalePresenter(this);
-            salePresenter.RetriveProduct(dgvCart.CurrentRow.Index, dgvCart.CurrentRow.Cells[0].Value.ToString()
-                , dgvCart.CurrentRow.Cells[1].Value.ToString(), dgvCart.CurrentRow.Cells[2].Value.ToString()
-                );
+            if (salePresenter.RetriveProduct(dgvCart.CurrentRow.Index, dgvCart.CurrentRow.Cells[0].Value.ToString()
+                 , dgvCart.CurrentRow.Cells[1].Value.ToString(), dgvCart.CurrentRow.Cells[2].Value.ToString()
+                 ))
+            {
+                btnDelete.Enabled = true;
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -121,12 +178,20 @@ namespace Doan.View.Sale
             SalePresenter salePresenter = new SalePresenter(this);
             salePresenter.DeleteDatainDataGridview();
             salePresenter.CalculateTotalPrice();
+            btnDelete.Enabled = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            SalePresenter salePresenter = new SalePresenter(this);
-            salePresenter.ClearData();
+            DialogResult dr = MessageBox.Show("Are you sure cancel all information?", "Notification", MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question);
+
+            if (dr == DialogResult.Yes)
+            {
+                SalePresenter salePresenter = new SalePresenter(this);
+                salePresenter.ClearData();
+                btnCancel.Enabled = false;
+            }
         }
 
         private void txtFind_TextChanged_1(object sender, EventArgs e)
@@ -134,5 +199,63 @@ namespace Doan.View.Sale
             SalePresenter salePresenter = new SalePresenter(this);
             salePresenter.SearchInformation(txtFind.Text);
         }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(txtPhone.Text))
+            {
+                btnCreateBill.Enabled = true;
+            }
+            else
+            {
+                btnCreateBill.Enabled = false;
+            }
+        }
+
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtPhone.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPhone.Text = txtPhone.Text.Remove(txtPhone.Text.Length - 1);
+            }
+            if (!string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(txtPhone.Text))
+            {
+                btnCreateBill.Enabled = true;
+            }
+            else
+            {
+                btnCreateBill.Enabled = false;
+            }
+        }
+
+
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvCart_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex != 3)
+            {
+                MessageBox.Show("Only edit in column Quantity", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dgvCart.CurrentRow.Cells[e.ColumnIndex].Value = _textEdit;
+            }
+            else
+            {
+                SalePresenter salePresenter = new SalePresenter(this);
+                salePresenter.CalculateTotalPrice();
+            }
+        }
+        private string _textEdit = "";
+        private void dgvCart_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            _textEdit = dgvCart.CurrentRow.Cells[e.ColumnIndex].Value.ToString();
+
+        }
+
+
     }
 }

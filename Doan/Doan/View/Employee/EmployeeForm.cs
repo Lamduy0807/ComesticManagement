@@ -79,13 +79,15 @@ namespace Doan.View.Employee
         {
             NewEmployee newEmployee = new NewEmployee(true);
             newEmployee.Show();
-
+            //EmployeeForm_Load(sender, e);
         }
 
         private void btnEditEmployee_Click(object sender, EventArgs e)
         {
             if (btnEditEmployee.Enabled.ToString() == "True")
             {
+                btnEditEmployee.Enabled = false;
+                btnDelete.Enabled = false;
                 NewEmployee newEmployee = new NewEmployee(false,
                     dgvEmployee.CurrentRow.Cells[0].Value.ToString(),
                     dgvEmployee.CurrentRow.Cells[1].Value.ToString(),
@@ -98,6 +100,7 @@ namespace Doan.View.Employee
                     dgvEmployee.CurrentRow.Cells[8].Value.ToString());
 
                 newEmployee.Show();
+                //EmployeeForm_Load(sender,e);
             }
         }
 

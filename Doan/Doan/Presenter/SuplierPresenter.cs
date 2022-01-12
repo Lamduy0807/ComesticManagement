@@ -52,12 +52,12 @@ namespace Doan.Presenter
         {
             if (suplier.AddSuplier(suplierview.SuplierName, suplierview.SuplierAddress, suplierview.SuplierPhone, suplierview.SuplierEmail))
             {
-                suplierview.message = "Add new suplier successfully";
+                suplierview.message = "Add new supplier successfully";
                 return true;
             }
             else
             {
-                suplierview.message = "Add new suplier fail";
+                suplierview.message = "Add new supplier failed";
                 return false;
             }
         }
@@ -65,12 +65,12 @@ namespace Doan.Presenter
         {
             if (suplier.DeleteSuplier(suplierview.SuplierId))
             {
-                suplierview.message = "Deleted suplier successfully";
+                suplierview.message = "Deleted supplier successfully";
                 return true;
             }
             else
             {
-                suplierview.message = "Deleted suplier fail";
+                suplierview.message = "Deleted supplier failed";
                 return false;
             }
         }
@@ -79,12 +79,12 @@ namespace Doan.Presenter
         {
             if (suplier.UpdateSuplier(suplierview.SuplierId, suplierview.SuplierName, suplierview.SuplierAddress, suplierview.SuplierPhone, suplierview.SuplierEmail))
             {
-                suplierview.message = "Update suplier successfully";
+                suplierview.message = "Update supplier successfully";
                 return true;
             }
             else
             {
-                suplierview.message = "Update suplier fail";
+                suplierview.message = "Update supplier failed";
                 return false;
             }
         }

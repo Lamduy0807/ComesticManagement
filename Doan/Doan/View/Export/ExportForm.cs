@@ -250,7 +250,12 @@ namespace Doan.View.Export
         }
         private void dtgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnDelete.Enabled = true;
+           // btnDelete.Enabled = true;
+        }
+
+        private void dtgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

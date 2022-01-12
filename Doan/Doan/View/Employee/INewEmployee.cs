@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.ComboBox;
 
 namespace Doan.View.Employee
 {
@@ -14,7 +15,7 @@ namespace Doan.View.Employee
         string Emailtext { get; set; }
         string Citizen_idtext { get; set; }
         string Addresstext { get; set; }
-        string Positiontext { get; set; }
+        string  Positiontext { get; set; }
         string PhoneNumtext { get; set; }
         string Username { get; set; }
         string Password { get; set; }

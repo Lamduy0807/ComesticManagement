@@ -281,6 +281,7 @@ namespace Doan.View.Import
             // dtgvProduct
             // 
             this.dtgvProduct.AllowCustomTheming = true;
+            this.dtgvProduct.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dtgvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -362,6 +363,7 @@ namespace Doan.View.Import
             // dtgvData
             // 
             this.dtgvData.AllowCustomTheming = true;
+            this.dtgvData.AllowUserToAddRows = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             this.dtgvData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;

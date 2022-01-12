@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
+
 
 namespace Doan.Presenter
 {
@@ -88,10 +90,8 @@ namespace Doan.Presenter
             }
             else
             {
-               //exportview.message = "Please check infromation again";
                 return false;
             }
-            ///////////////////////////////////
 
            
 
@@ -138,6 +138,7 @@ namespace Doan.Presenter
             {
                 DataGridViewRow row = saleview.dgvCart.Rows[item.Index];
                 saleview.dgvCart.Rows.RemoveAt(item.Index);
+               
             }
             return true;
         }
@@ -146,7 +147,7 @@ namespace Doan.Presenter
         {
             string id = bill.AddData(saleview.Employee, saleview.Cus_Name, saleview.Phone, saleview.BillValue);
 
-            ///chỗ này add tự động vô phiếu thu
+            ///auto add receipts
             string contentReceipt = "Bill ID: " + id;
             string status = "Completed";
             bill.AutoCreateReceipts(saleview.Employee, contentReceipt, saleview.BillValue, status, "");
@@ -160,15 +161,16 @@ namespace Doan.Presenter
                     {
                         bill.AddDetailData(id, row.Cells[0].Value.ToString(),  row.Cells[2].Value.ToString(),
                           row.Cells[3].Value.ToString());
-                        //bill.UpdateProduct(row.Cells[3].Value.ToString(), row.Cells[0].Value.ToString());
+                        bill.UpdateProduct(row.Cells[3].Value.ToString(), row.Cells[0].Value.ToString());
+
                     }
                 }
-                saleview.message = "Add successfully";
+                saleview.message = "Created bill successfully. Do you want to print this bill?";
                 return true;
             }
             else
             {
-                saleview.message = "Check information again";
+                saleview.message = "Not yet add product into cart. Please try again.";
                 return false;
             }
         }
@@ -183,6 +185,56 @@ namespace Doan.Presenter
             return true;
         }
 
-       
+        public bool Print(System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Graphics graphic = e.Graphics;
+
+            Font font = new Font("Courier New", 12); //must use a mono spaced font as the spaces need to line up
+
+            float fontHeight = font.GetHeight();
+
+            int startX = 10;
+            int startY = 10;
+            int offset = 40;
+
+            graphic.DrawString("Green Beauty", new Font("Courier New", 18), new SolidBrush(Color.Black), startX, startY);
+
+            graphic.DrawString("Addresss: 136, Linh Trung, Thủ Đức, TP Thủ Đức", font, new SolidBrush(Color.Black), startX, 40);
+
+           // graphic.DrawString("Phone: 1900 1555".PadRight(40) + "Employee: " + saleview.EmployeeName, font, new SolidBrush(Color.Black), startX, 60);
+            offset = offset + 50;
+            //string top = "Product".PadRight(20) + "Quantities".PadRight(20) + "Unit Price".PadRight(20) + "Total".PadRight(10);
+            string top = "Product".PadRight(20) + "Quantities".PadRight(20) + "Total".PadRight(10);
+            graphic.DrawString(top, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight; //make the spacing consistent
+            graphic.DrawString("-------------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)fontHeight + 5; //make the spacing consistent
+
+            if (saleview.dgvCart.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in saleview.dgvCart.Rows)
+                {
+                    if (Convert.ToString(row.Cells[0].Value) != "")
+                    {
+                        string Name = row.Cells[1].Value.ToString();
+                        int Quantities = int.Parse(row.Cells[3].Value.ToString());
+                        //float UnitPrice = float.Parse(row.Cells[2].Value.ToString());
+                        float Total = float.Parse(row.Cells[2].Value.ToString());
+
+                        graphic.DrawString(Name, font, new SolidBrush(Color.Black), startX, startY + offset);
+                        graphic.DrawString(Quantities.ToString(), font, new SolidBrush(Color.Black), 260, startY + offset);
+                       // graphic.DrawString(UnitPrice.ToString(), font, new SolidBrush(Color.Black), 440, startY + offset);
+                        graphic.DrawString(Total.ToString(), font, new SolidBrush(Color.Black), 630, startY + offset);
+                        offset = offset + (int)fontHeight + 5; //make the spacing consistent       
+                    }
+                }
+                float total = 0f;
+                float productTotal = float.Parse(saleview.BillValue);
+                total = productTotal;
+                offset = offset + 20;
+                graphic.DrawString("Total: ".PadRight(60) + total.ToString("###,###"), new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX, startY + offset);
+            }
+            return true;
+        }
     }
 }
