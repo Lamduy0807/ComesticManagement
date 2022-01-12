@@ -798,7 +798,7 @@ namespace Doan.View.Employee
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "NewEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NewEmployee";
+            this.Text = "Employee Information";
             this.Load += new System.EventHandler(this.NewEmployee_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

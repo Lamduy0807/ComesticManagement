@@ -122,6 +122,11 @@ namespace Doan.View.Product
                 productPresenter.GetProduct();
                 productPresenter.ClearInformation();
             }
+            else
+            {
+                MessageBox.Show(_message, "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -171,7 +176,7 @@ namespace Doan.View.Product
             }
             else
             {
-                MessageBox.Show("Please check information again!");
+                MessageBox.Show("Please check information again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 btnEdit.Enabled = true;
             }
         }
@@ -181,7 +186,7 @@ namespace Doan.View.Product
             ProductPresenter productPresenter = new ProductPresenter(this);
             if (System.Text.RegularExpressions.Regex.IsMatch(txtPrice.Text, "[^0-9]"))
             {
-                MessageBox.Show("Please enter only numbers.");
+                MessageBox.Show("Please enter only numbers.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPrice.Text = txtPrice.Text.Remove(txtPrice.Text.Length - 1);
             }
             if (productPresenter.CheckInformation())

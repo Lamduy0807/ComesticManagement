@@ -338,9 +338,10 @@ namespace Doan.Custom
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 245);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ProfileForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ProfileForm";
+            this.Text = "Profile Information";
             this.Load += new System.EventHandler(this.ProfileForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
