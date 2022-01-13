@@ -264,6 +264,7 @@ namespace Doan.View.Product
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dtgvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvProduct.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvProduct.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgvProduct.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;

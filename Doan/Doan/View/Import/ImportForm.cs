@@ -308,5 +308,10 @@ namespace Doan.View.Import
             else
                 importPresenter.CalculateTotal();
         }
+
+        private void dtgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
