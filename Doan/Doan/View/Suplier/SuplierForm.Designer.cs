@@ -222,6 +222,7 @@ namespace Doan.View.Suplier
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dtgvPsuplier.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvPsuplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvPsuplier.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dtgvPsuplier.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvPsuplier.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgvPsuplier.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
